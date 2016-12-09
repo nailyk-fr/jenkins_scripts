@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BUILD_VER="cm-12.1"
+export EXPERIMENTAL_USE_JAVA8=true
 
 echo "---------home set to: $HOME"
 

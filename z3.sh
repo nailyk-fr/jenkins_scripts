@@ -39,5 +39,5 @@ echo "---------device sony z3 patched"
 cd ~/
 source ./build/envsetup.sh
 breakfast z3
-make toto -j4
+make bootimage -j4
 

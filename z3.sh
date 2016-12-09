@@ -1,7 +1,8 @@
 #!/bin/bash
 
 BUILD_VER="cm-12.1"
-export EXPERIMENTAL_USE_JAVA8=true
+
+export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
 
 echo "---------home set to: $HOME"
 
@@ -10,6 +11,7 @@ git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
 sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
+sed -i 's,javac -version,java -version,g' build/core/main.mk
 echo "---------vendor cm patched"
 
 cd ~/packages/apps/Browser

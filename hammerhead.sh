@@ -6,5 +6,5 @@ echo "---------home set to: $HOME"
 
 cd ~/
 source ./build/envsetup.sh
-breakfast hammerhead
+lunch aosp_hammerhead-userdebug
 make toto -j4

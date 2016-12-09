@@ -7,4 +7,4 @@ echo "---------home set to: $HOME"
 cd ~/
 source ./build/envsetup.sh
 lunch aosp_hammerhead-userdebug
-make toto -j4
+make bootimage -j4

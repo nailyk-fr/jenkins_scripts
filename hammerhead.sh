@@ -19,4 +19,4 @@ patch -p1 < ~/device/lge/hammerhead/patches/system_sepolicy.patch
 
 cd ~/
 lunch aosp_hammerhead-userdebug
-make bootimage -j4
+make target-files-package -j4

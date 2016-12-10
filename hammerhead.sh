@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BUILD_VER="nougat-mr0.5-release"
+export USER=jenkins
 
 echo "---------home set to: $HOME"
 
@@ -25,5 +26,5 @@ patch -p1 < ~/device/lge/hammerhead/patches/kernel.diff
 
 cd ~/
 lunch aosp_hammerhead-userdebug
-#make target-files-package -j4
-make bootimage -j4
+make target-files-package -j4
+#make bootimage -j4

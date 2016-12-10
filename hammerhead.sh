@@ -20,7 +20,7 @@ patch -p1 < ~/device/lge/hammerhead/patches/system_sepolicy.patch
 cd ~/kernel/lge/hammerhead
 git reset --hard
 git clean -fxd :/
-git checkout "github/${BUILD_VER}_staging"
+git checkout "github/cm-14.1"
 patch -p1 < ~/device/lge/hammerhead/patches/kernel.diff
 
 cd ~/

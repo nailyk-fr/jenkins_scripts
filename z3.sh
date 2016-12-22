@@ -1,7 +1,8 @@
 #!/bin/bash
 
 BUILD_VER="cm-12.1"
-
+export USER=jenkins
+export LANG=C
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
 
 echo "---------home set to: $HOME"
@@ -39,5 +40,5 @@ echo "---------device sony z3 patched"
 cd ~/
 source ./build/envsetup.sh
 breakfast z3
-make bacon -j4
+make bacon -j6
 

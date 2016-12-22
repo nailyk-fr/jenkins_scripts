@@ -12,7 +12,6 @@ git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
 sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
-sed -i 's,javac -version,java -version,g' build/core/main.mk
 echo "---------vendor cm patched"
 
 cd ~/packages/apps/Browser

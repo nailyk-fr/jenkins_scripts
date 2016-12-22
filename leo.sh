@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export USER=jenkins
+export LANG=C
+export USE_NINJA=false
+
 echo "---------home set to: $HOME"
 
 cd ~/vendor/cm
@@ -28,8 +32,16 @@ git clean -fxd :/
 git checkout github/cm-14.1
 git fetch https://review.cyanogenmod.org/CyanogenMod/android_packages_apps_FMRadio refs/changes/23/176123/1 && git cherry-pick FETCH_HEAD
 
+
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
+
+./prebuilts/sdk/tools/jack-admin kill-server
+
+echo "--------jack args $ANDROID_JACK_VM_ARGS"
+
 cd ~/
 source ./build/envsetup.sh
 breakfast leo
-make bacon -j4
+make bacon -j6
 

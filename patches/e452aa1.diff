@@ -1,0 +1,29 @@
+From e452aa1f2c64263abe491b147451b434eb329ea7 Mon Sep 17 00:00:00 2001
+From: nailyk <nailyk_gerrit@nailyk.fr>
+Date: Sat, 17 Dec 2016 17:08:48 +0100
+Subject: [PATCH] display: Use 8994 HAL for Sony 8974 targets
+
+ * Sony 3.10 1.3.3 kernel requires a more recent display HAL
+ * Switch to 8994 include only when SOMC_PLATFORM is rhine or shinano
+
+Change-Id: I7742cbb22452c6ce8413b8af16d985b9284ef18d
+---
+
+diff --git a/Android.mk b/Android.mk
+index 6725cce..c51530f 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -8,7 +8,12 @@
+   else
+     ifneq ($(filter msm8974 msm8x74,$(TARGET_BOARD_PLATFORM)),)
+       #This is for 8974 based (and B-family) platforms
+-      include $(call all-named-subdir-makefiles,msm8974)
++      ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
++        #Sony's msm8974 platform need 8994 HAL
++        include $(call all-named-subdir-makefiles,msm8994)
++      else
++        include $(call all-named-subdir-makefiles,msm8974)
++      endif
+     else
+       ifneq ($(filter msm8226 msm8x26,$(TARGET_BOARD_PLATFORM)),)
+         include $(call all-named-subdir-makefiles,msm8226)

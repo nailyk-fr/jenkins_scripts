@@ -1,0 +1,26 @@
+From 0962f7979b2d2a960adbd31c2d65c0b81a7ec3bc Mon Sep 17 00:00:00 2001
+From: Adam Farden <adam@farden.cz>
+Date: Sat, 05 Nov 2016 15:14:51 -0400
+Subject: [PATCH] display: Copy QServiceUtils.h
+
+Some camera HALs need this, or you get:
+
+hardware/qcom/camera/QCamera2/HAL/QCamera2HWI.cpp:43:27: fatal error: QServiceUtils.h: No such file or directory
+
+Change-Id: I9d2342cadecaaeb8737f2678ad57e69dea872371
+---
+
+diff --git a/msm8994/libqservice/Android.mk b/msm8994/libqservice/Android.mk
+index 924791d..7626f2e 100644
+--- a/msm8994/libqservice/Android.mk
++++ b/msm8994/libqservice/Android.mk
+@@ -16,7 +16,8 @@
+                                  IQClient.cpp
+ LOCAL_COPY_HEADERS_TO         := $(common_header_export_path)
+ LOCAL_COPY_HEADERS            := IQService.h \
+-                                 IQClient.h
++                                 IQClient.h \
++                                 QServiceUtils.h
+ 
+ 
+ include $(BUILD_SHARED_LIBRARY)

@@ -1,0 +1,13 @@
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index 1b8e49c..f4fca91 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -26,7 +26,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/z3/include
+ BOARD_HARDWARE_CLASS += device/sony/z3/cmhw
+ 
+ # Kernel properties
+-TARGET_KERNEL_CONFIG := cm_shinano_leo_defconfig
++TARGET_KERNEL_CONFIG := cm12_shinano_leo_defconfig
+ 
+ # Partition information
+ BOARD_VOLD_MAX_PARTITIONS := 25

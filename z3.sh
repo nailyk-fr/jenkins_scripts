@@ -33,6 +33,7 @@ git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
 git fetch https://review.cyanogenmod.org/CyanogenMod/android_device_sony_z3 refs/changes/41/159441/1 && git cherry-pick FETCH_HEAD
+patch -p1 < ~/scripts/patches/z3_defconfig.diff
 echo "---------device sony z3 patched"
 
 

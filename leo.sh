@@ -25,6 +25,7 @@ git clean -fxd :/
 git checkout github/cm-14.1
 patch -p1 < ~/scripts/patches/e452aa1.diff
 patch -p1 < ~/scripts/patches/0962f79.diff
+patch -p1 < ~/scripts/patches/display_server.diff
 
 cd ~/hardware/qcom/audio/default
 git reset --hard

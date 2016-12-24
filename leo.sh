@@ -52,3 +52,5 @@ source ./build/envsetup.sh
 breakfast leo
 make bacon -j6
 
+#kill jack when done to prevent error on other builds
+./prebuilts/sdk/tools/jack-admin kill-server

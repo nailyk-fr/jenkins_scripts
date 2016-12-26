@@ -20,6 +20,14 @@ patch -p1 < ~/device/lge/hammerhead/patches/system_sepolicy.patch
 
 echo "--------sepolicyes patched"
 
+cd ~/packages/apps/F-Droid
+git reset --hard
+git clean -fxd :/
+git checkout "github/${BUILD_VER}"
+patch -p1 < ~/scripts/patches/fdroid.diff
+
+echo "--------F-droid patched"
+
 cd ~/kernel/lge/hammerhead
 git reset --hard
 git clean -fxd :/

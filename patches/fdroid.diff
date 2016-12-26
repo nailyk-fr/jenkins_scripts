@@ -1,0 +1,14 @@
+diff --git a/build.gradle b/build.gradle
+index 49b0130..2f7a80c 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -1,6 +1,8 @@
+ buildscript {
+     repositories {
+-        jcenter()
++        maven {
++                url "https://jcenter.bintray.com"
++              }
+     }
+     dependencies {
+         classpath 'com.android.tools.build:gradle:2.1.3'

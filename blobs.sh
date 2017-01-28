@@ -15,10 +15,15 @@ so_search() {
 }
 
 global_search() {
-	for blob in `so_search $1`; do 
-		so_search $blob 
+	RESULT=$(so_search $1 | egrep -v "^${FOUND}")
+	for blob in `echo -n $RESULT`; do
+		echo $blob
+		FOUND=$1\ $FOUND
+		global_search $blob
 	done
+
 }
 
+FOUND=$1
+global_search $1
 
-global_search $1 | sort | uniq

@@ -15,10 +15,10 @@ so_search() {
 }
 
 global_search() {
-	RESULT=$(so_search $1 | egrep -v "^${FOUND}")
+	RESULT=$(so_search $1 | egrep -v "^${FOUND}" | grep -v "libc.so\|libdl.so\|libc++.so\|libm.so\|liblog.so\|libcutils.so")
 	for blob in `echo -n $RESULT`; do
 		echo $blob
-		FOUND=$1\ $FOUND
+		FOUND=$1\|$FOUND
 		global_search $blob
 	done
 

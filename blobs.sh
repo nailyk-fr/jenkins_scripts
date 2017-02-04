@@ -5,6 +5,7 @@
 lib_lookup() {
 
 	readelf -d $1 | grep NEEDED | cut -d "[" -f2 | cut -d"]" -f 1
+	#readelf -d $1 | awk '/NEEDED/ {print $5}' | sed -e 's/\[\|\]//g'
 
 }
 

@@ -17,7 +17,7 @@ cd ~/kernel/sony/msm8974
 git reset --hard
 git clean -fxd :/
 git checkout github/aosp/LA.BR.1.3.3_rb2.14
-#patch -p1 < ~/scripts/patches/usb_workaround.patch
+patch -p1 < ~/scripts/patches/usb_workaround.patch
 
 cd ~/hardware/qcom/display
 git reset --hard

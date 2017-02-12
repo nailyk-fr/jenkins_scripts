@@ -1,0 +1,34 @@
+From 42c01d8e3f937f78a65e646aaa7f427ae6909c4f Mon Sep 17 00:00:00 2001
+From: nailyk-fr <nailyk_git@nailyk.fr>
+Date: Tue, 17 Jan 2017 23:01:27 +0100
+Subject: [PATCH] ASoC: msm8974: Add ignore_suspend to MI2S links
+
+ * MI2S links are used while in call.
+   This prevent kernel enter sleepmode while in call which cause a segfault.
+
+Change-Id: I63be8ecbc55301e464f319622a440d5397cb0113
+---
+ sound/soc/msm/msm8974.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/sound/soc/msm/msm8974.c b/sound/soc/msm/msm8974.c
+index 6e79c6a..04cb228 100644
+--- a/sound/soc/msm/msm8974.c
++++ b/sound/soc/msm/msm8974.c
+@@ -2959,6 +2959,7 @@ static struct snd_soc_dai_link msm8974_common_dai_links[] = {
+ 		.be_id = MSM_BACKEND_DAI_QUATERNARY_MI2S_RX,
+ 		.be_hw_params_fixup = msm_be_hw_params_fixup,
+ 		.ops = &msm8974_mi2s_be_ops,
++		.ignore_suspend = 1,
+ 	},
+ 	/* MI2S Capture BACK END DAI Link */
+ 	{
+@@ -2972,6 +2973,7 @@ static struct snd_soc_dai_link msm8974_common_dai_links[] = {
+ 		.be_id = MSM_BACKEND_DAI_QUATERNARY_MI2S_TX,
+ 		.be_hw_params_fixup = msm_be_hw_params_fixup,
+ 		.ops = &msm8974_mi2s_be_ops,
++		.ignore_suspend = 1,
+ 	},
+ #endif
+ 	/* Incall Music BACK END DAI Link */
+

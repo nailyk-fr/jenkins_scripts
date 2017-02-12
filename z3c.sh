@@ -28,7 +28,7 @@ git checkout "github/${BUILD_VER}"
 #git fetch https://review.lineageos.org/LineageOS/android_frameworks_base refs/changes/64/65064/2 && git cherry-pick FETCH_HEAD
 echo "---------frameworks base patched"
 
-cd ~/device/sony/z3
+cd ~/device/sony/z3c
 git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
@@ -39,6 +39,6 @@ echo "---------device sony z3c patched"
 
 cd ~/
 source ./build/envsetup.sh
-breakfast z3
+breakfast z3c
 make bacon -j6
 

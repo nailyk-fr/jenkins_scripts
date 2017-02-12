@@ -18,14 +18,14 @@ cd ~/packages/apps/Browser
 git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
-git fetch https://review.lineageos.org/LineageOS/android_packages_apps_Browser refs/changes/52/110752/1 && git cherry-pick FETCH_HEAD
+#git fetch https://review.lineageos.org/LineageOS/android_packages_apps_Browser refs/changes/52/110752/1 && git cherry-pick FETCH_HEAD
 echo "---------package apps Browser patched"
 
 cd ~/frameworks/base
 git reset --hard
 git clean -fxd :/
 git checkout "github/${BUILD_VER}"
-git fetch https://review.lineageos.org/LineageOS/android_frameworks_base refs/changes/64/65064/2 && git cherry-pick FETCH_HEAD
+#git fetch https://review.lineageos.org/LineageOS/android_frameworks_base refs/changes/64/65064/2 && git cherry-pick FETCH_HEAD
 echo "---------frameworks base patched"
 
 cd ~/device/sony/z3

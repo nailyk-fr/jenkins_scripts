@@ -10,7 +10,7 @@ cd ~/vendor/cm
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
-git fetch https://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/49/175749/5 && git cherry-pick FETCH_HEAD
+git fetch https://review.lineageos.org/LineageOS/android_vendor_cm refs/changes/88/144688/5 && git cherry-pick FETCH_HEAD
 sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
 
 cd ~/kernel/sony/msm8974
@@ -38,7 +38,7 @@ cd ~/packages/apps/FMRadio
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
-git fetch https://review.cyanogenmod.org/CyanogenMod/android_packages_apps_FMRadio refs/changes/23/176123/1 && git cherry-pick FETCH_HEAD
+#git fetch https://review.lineageos.org/LineageOS/android_packages_apps_FMRadio refs/changes/16/122216/1 && git cherry-pick FETCH_HEAD
 
 
 cd ~/

@@ -44,8 +44,14 @@ git checkout github/cm-14.1
 cd ~/vendor/sony
 git reset --hard
 git clean -fxd :/
-git checkout github/android-7.0
-patch -p1 < ~/scripts/patches/vendor_sony_codename.patch
+git checkout git checkout f466059d05ae3df9788440c9cecff74bc58dbb19
+
+cd ~/vendor/qcom
+git reset --hard
+#donot clean qcom or it will empty subrepos
+git checkout e1512714fa468960a9ea2f9f3a101f8edae8c220
+
+
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

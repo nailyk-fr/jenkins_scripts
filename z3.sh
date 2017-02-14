@@ -40,6 +40,11 @@ git clean -fxd :/
 git checkout github/cm-14.1
 #git fetch https://review.lineageos.org/LineageOS/android_packages_apps_FMRadio refs/changes/16/122216/1 && git cherry-pick FETCH_HEAD
 
+cd ~/vendor/sony
+git reset --hard
+git clean -fxd :/
+git checkout github/android-7.0
+patch -p1 < ~/scripts/patches/vendor_sony_codename.patch
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

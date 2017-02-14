@@ -44,7 +44,7 @@ git checkout github/cm-14.1
 cd ~/vendor/sony
 git reset --hard
 git clean -fxd :/
-git checkout git checkout f466059d05ae3df9788440c9cecff74bc58dbb19
+git checkout f466059d05ae3df9788440c9cecff74bc58dbb19
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

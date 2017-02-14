@@ -19,7 +19,7 @@ cd ~/kernel/sony/msm8974
 echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
-git checkout github/aosp/LA.BR.1.3.3_rb2.14
+git checkout github/cm-14.1
 patch -p1 < ~/scripts/patches/usb_workaround.patch
 patch -p1 < ~/scripts/patches/calls_reboot.patch
 

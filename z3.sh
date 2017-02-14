@@ -3,6 +3,7 @@
 export USER=jenkins
 export LANG=C
 export USE_NINJA=false
+export WITH_SU=true
 
 echo "---------home set to: $HOME"
 

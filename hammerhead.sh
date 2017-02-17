@@ -2,8 +2,12 @@
 
 BUILD_VER="nougat-mr1.1-release"
 export USER=jenkins
-
+export GRADLE_USER_HOME=$HOME
 echo "---------home set to: $HOME"
+
+export ANDROID_HOME=/var/jenkins_home/SDK
+/var/jenkins_home/SDK/tools/bin/sdkmanager --update
+echo "---------end of sdk update $ANDROID_HOME"
 
 cd ~/
 source ./build/envsetup.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILD_VER="nougat-mr0.5-release"
+BUILD_VER="nougat-mr1.1-release"
 export USER=jenkins
 
 echo "---------home set to: $HOME"

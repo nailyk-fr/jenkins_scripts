@@ -1,4 +1,4 @@
-BUILD_VER="nougat-mr0.5-release"
+BUILD_VER="nougat-mr1.1-release"
 
 cd ~/.repo
 if [ ! -d "$HOME/.repo/local_manifests" ]; then

@@ -7,6 +7,10 @@ if [ -d "$HOME/../releases/copperhead" ]; then
 	echo Releases deleted
 fi
 
+if [ -d "$HOME/../releases/VTS" ]; then
+	find $HOME/../releases/VTS -depth -xdev -type f -mtime +30 -delete -print
+fi
+
 if [ -d "$HOME/out/target/product" ]; then
 	rm -rfv $HOME/out/target/product
 fi

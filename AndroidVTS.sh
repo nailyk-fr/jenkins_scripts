@@ -21,6 +21,7 @@ git reset --hard
 git clean -fxd :/
 git checkout "github/master"
 cp ~/scripts/patches/AndroidVTS.mk ~/packages/apps/AndroidVTS/Android.mk
+cp ~/patches/AndroidVTS.properties ~/packages/apps/AndroidVTS/local.properties
 
 echo "--------AndroidVTS patched"
 

@@ -20,7 +20,7 @@ cd ~/packages/apps/AndroidVTS/
 git reset --hard
 git clean -fxd :/
 git checkout "github/master"
-cp ~/patches/AndroidVTS.mk ~/packages/apps/AndroidVTS/Android.mk
+cp ~/scripts/patches/AndroidVTS.mk ~/packages/apps/AndroidVTS/Android.mk
 
 echo "--------AndroidVTS patched"
 

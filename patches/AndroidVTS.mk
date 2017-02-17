@@ -7,7 +7,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PACKAGE_NAME := AndroidVTS
 
 vts_root  := $(LOCAL_PATH)
-vts_dir   := app 
+vts_dir   := app
 vts_out   := $(PWD)/$(OUT_DIR)/target/common/obj/APPS/$(LOCAL_MODULE)_intermediates
 vts_build := $(vts_root)/$(vts_dir)/build
 vts_apk   := build/outputs/apk/$(vts_dir)-release-unsigned.apk

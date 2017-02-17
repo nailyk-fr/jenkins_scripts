@@ -55,3 +55,5 @@ cd ~/
 lunch aosp_hammerhead-userdebug
 make target-files-package -j4
 #make bootimage -j4
+
+./prebuilts/sdk/tools/jack-admin kill-server

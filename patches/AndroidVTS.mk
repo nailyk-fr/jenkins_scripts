@@ -22,7 +22,7 @@ $(vts_root)/$(vts_dir)/$(vts_apk):
 	APP_BUILD_SCRIPT=${HOME}/packages/apps/AndroidVTS/app/src/main/jni/Android.mk \
 	./gradlew assembleRelease
 
-LOCAL_CERTIFICATE := platform
+LOCAL_CERTIFICATE := shared
 LOCAL_SRC_FILES := $(vts_dir)/$(vts_apk)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)

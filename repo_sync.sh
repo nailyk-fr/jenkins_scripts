@@ -10,5 +10,5 @@ else
 fi
 
 cd ~
-repo sync -j 4
+repo sync -j 4 --force-sync
 echo "--------- repo sync end"

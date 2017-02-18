@@ -29,6 +29,11 @@ git reset --hard
 git clean -fxd :/
 echo "--------AndroidVTS cleaned"
 
+cd ~/hardware/qcom/display
+git reset --hard
+git clean -fxd :/
+echo "--------Display cleaned"
+
 cd ~
 repo sync -j 8 --force-sync
 echo "--------- repo sync end"
@@ -53,3 +58,8 @@ git checkout "github/master"
 cp ~/scripts/patches/AndroidVTS.mk ~/packages/apps/AndroidVTS/Android.mk
 cp ~/scripts/patches/AndroidVTS.properties ~/packages/apps/AndroidVTS/local.properties
 echo "--------AndroidVTS patched"
+
+cd ~/hardware/qcom/display
+git checkout refs/tags/android-7.1.1_r15
+patch -p1 < ~/scripts/patches/hardware_qcom_display.patch
+echo "--------Display patched"

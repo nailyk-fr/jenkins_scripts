@@ -15,16 +15,6 @@ export LANG=C
 unset _JAVA_OPTIONS
 export BUILD_NUMBER=$(date --utc +%Y.%m.%d.%H.%M.%S)
 export DISPLAY_BUILD_NUMBER=true
-
-cd ~/packages/apps/AndroidVTS/
-git reset --hard
-git clean -fxd :/
-git checkout "github/master"
-cp ~/scripts/patches/AndroidVTS.mk ~/packages/apps/AndroidVTS/Android.mk
-cp ~/scripts/patches/AndroidVTS.properties ~/packages/apps/AndroidVTS/local.properties
-
-echo "--------AndroidVTS patched"
-
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 

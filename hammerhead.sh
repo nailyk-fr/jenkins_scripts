@@ -16,31 +16,6 @@ unset _JAVA_OPTIONS
 export BUILD_NUMBER=$(date --utc +%Y.%m.%d.%H.%M.%S)
 export DISPLAY_BUILD_NUMBER=true
 
-cd ~/system/sepolicy
-git reset --hard
-git clean -fxd :/
-git checkout "github/${BUILD_VER}"
-patch -p1 < ~/device/lge/hammerhead/patches/system_sepolicy.patch
-
-echo "--------sepolicyes patched"
-
-cd ~/packages/apps/F-Droid
-git reset --hard
-git clean -fxd :/
-git checkout "github/${BUILD_VER}"
-patch -p1 < ~/scripts/patches/fdroid.diff
-
-echo "--------F-droid patched"
-
-cd ~/kernel/lge/hammerhead
-git reset --hard
-git clean -fxd :/
-git checkout "github/cm-14.1"
-patch -p1 < ~/device/lge/hammerhead/patches/kernel.diff
-
-
-echo "--------kernel patched"
-
 
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"

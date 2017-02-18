@@ -9,11 +9,6 @@ else
   git checkout "origin/${BUILD_VER}_staging"
 fi
 
-cd ~/system/sepolicy
-git reset --hard
-git clean -fxd :/
-echo "--------sepolicies cleaned"
-
 cd ~/kernel/lge/hammerhead
 git reset --hard
 git clean -fxd :/
@@ -32,11 +27,6 @@ echo "--------Display cleaned"
 cd ~
 repo sync -j 8 --force-sync
 echo "--------- repo sync end"
-
-cd ~/system/sepolicy
-git checkout "github/${BUILD_VER}"
-patch -p1 < ~/device/lge/hammerhead/patches/system_sepolicy.patch
-echo "--------sepolicyes patched"
 
 cd ~/kernel/lge/hammerhead
 git checkout "github/cm-14.1"

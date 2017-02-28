@@ -1,0 +1,25 @@
+From fc18176da45cbbbc519aca7929b77bfb8fa0c948 Mon Sep 17 00:00:00 2001
+From: nailyk-fr <nailyk_git@nailyk.fr>
+Date: Sun, 26 Feb 2017 19:27:27 +0100
+Subject: [PATCH] [WIP] msm8974-common: Change policies for shinano camera
+
+Change-Id: I3b7616f5f04d666b6c750e09f2516f3b34d643b7
+---
+
+diff --git a/common/file_contexts b/common/file_contexts
+index b0bb68b..3333950 100644
+--- a/common/file_contexts
++++ b/common/file_contexts
+@@ -36,9 +36,9 @@
+ /dev/ttyHS[0-9]*                                u:object_r:serial_device:s0
+ /dev/ttyGS0                                     u:object_r:gadget_serial_device:s0
+ /dev/usb_ext_chg                                u:object_r:hvdcp_device:s0
+-/dev/media([0-9])+                              u:object_r:video_device:s0
+-/dev/jpeg[0-9]*                                 u:object_r:video_device:s0
+-/dev/v4l-subdev.*                               u:object_r:video_device:s0
++/dev/media([0-9])+                              u:object_r:camera_device:s0
++/dev/jpeg[0-9]*                                 u:object_r:camera_device:s0
++/dev/v4l-subdev.*                               u:object_r:camera_device:s0
+ /dev/vm_bms                                     u:object_r:vm_bms_device:s0
+ /dev/battery_data                               u:object_r:battery_data_device:s0
+ /dev/block/mmcblk1                              u:object_r:sd_device:s0

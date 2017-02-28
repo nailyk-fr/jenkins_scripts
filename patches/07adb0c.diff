@@ -1,0 +1,21 @@
+From 07adb0c5ce69b7cc7dda609f5e4033180a9cf60a Mon Sep 17 00:00:00 2001
+From: nailyk-fr <nailyk_git@nailyk.fr>
+Date: Sun, 26 Feb 2017 19:31:03 +0100
+Subject: [PATCH] Allow tad (Sony) to access block devices
+
+Change-Id: Ibced33ddde3ca0c9f16f7ee21967bfdd4873543d
+---
+
+diff --git a/domain.te b/domain.te
+index a74833c..1117fae 100644
+--- a/domain.te
++++ b/domain.te
+@@ -256,7 +256,7 @@
+ 
+ # Don't allow raw read/write/open access to block_device
+ # Rather force a relabel to a more specific type
+-neverallow { domain -kernel -init -recovery -uncrypt } block_device:blk_file { open read write };
++neverallow { domain -kernel -init -recovery -uncrypt -tad } block_device:blk_file { open read write };
+ 
+ # Don't allow raw read/write/open access to generic devices.
+ # Rather force a relabel to a more specific type.

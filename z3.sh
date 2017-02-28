@@ -12,45 +12,21 @@ echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
-git fetch https://review.lineageos.org/LineageOS/android_vendor_cm refs/changes/88/144688/5 && git cherry-pick FETCH_HEAD
 sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
 
-cd ~/kernel/sony/msm8974
+cd ~/device/qcom/sepolicy
 echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
-patch -p1 < ~/scripts/patches/usb_workaround.patch
-patch -p1 < ~/scripts/patches/calls_reboot.patch
+patch -p1 < ~/scripts/patches/fc18176.diff
 
-cd ~/hardware/qcom/display
+cd ~/system/sepolicy
 echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
-patch -p1 < ~/scripts/patches/e452aa1.diff
-patch -p1 < ~/scripts/patches/0962f79.diff
-patch -p1 < ~/scripts/patches/display_server.diff
-
-cd ~/hardware/qcom/audio/default
-echo "-----Patching $PWD"
-git reset --hard
-git clean -fxd :/
-git checkout github/cm-14.1
-patch -p1 < ~/scripts/patches/b4d36dc.diff
-
-cd ~/packages/apps/FMRadio
-echo "-----Patching $PWD"
-git reset --hard
-git clean -fxd :/
-git checkout github/cm-14.1
-#git fetch https://review.lineageos.org/LineageOS/android_packages_apps_FMRadio refs/changes/16/122216/1 && git cherry-pick FETCH_HEAD
-
-cd ~/vendor/sony
-git reset --hard
-git clean -fxd :/
-git checkout github/android-7.0
-patch -p1 < ~/scripts/patches/vendor_sony_codename.patch
+patch -p1 < ~/scripts/patches/07adb0c.diff
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

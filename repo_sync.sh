@@ -11,5 +11,5 @@ else
 fi
 
 cd ~
-repo sync -j 4
+repo sync -j 8
 echo "--------- repo sync end"

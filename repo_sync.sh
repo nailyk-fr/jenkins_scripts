@@ -7,7 +7,7 @@ if [ ! -d "$HOME/.repo/local_manifests" ]; then
 else
   cd ~/.repo/local_manifests
   git fetch origin ${LOCAL_BRANCH}
-  git checkout "origin/${LOCAL_BRANCH}
+  git checkout "origin/${LOCAL_BRANCH}"
 fi
 
 cd ~

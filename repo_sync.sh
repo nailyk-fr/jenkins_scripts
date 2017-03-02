@@ -1,5 +1,5 @@
-BUILD_VER="cm-14.1"
-LOCAL_BRANCH="${BUILD_VER}-stockCM"
+BUILD_VER="cm-13.0"
+LOCAL_BRANCH="${BUILD_VER}_stock"
 
 cd ~/.repo
 if [ ! -d "$HOME/.repo/local_manifests" ]; then

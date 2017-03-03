@@ -15,19 +15,12 @@ git clean -fxd :/
 git checkout github/cm-13.0
 sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
 
-cd ~/device/qcom/sepolicy
+cd ~/vendor/samsung
 echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-13.0
-patch -p1 < ${MYFOLDER}/patches/fc18176.diff
-
-cd ~/system/sepolicy
-echo "-----Patching $PWD"
-git reset --hard
-git clean -fxd :/
-git checkout github/cm-13.0
-patch -p1 < ${MYFOLDER}/patches/07adb0c.diff
+cp ${MYFOLDER}/patches/vendor_omap4-common.mk omap4-common/Android.mk
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

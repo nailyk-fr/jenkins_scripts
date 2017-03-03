@@ -6,6 +6,8 @@ export USE_NINJA=false
 export WITH_SU=true
 MYFOLDER=$PWD
 
+git config --global user.email jenkins@nailyk.fr
+git config --global user.name nailyk-fr         
 echo "---------home set to: $HOME"
 
 cd ~/vendor/cm

@@ -20,7 +20,7 @@ echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-13.0
-cp ${MYFOLDER}/patches/vendor_omap4-common.mk omap4-common/Android.mk
+cp ${MYFOLDER}/scripts/patches/vendor_omap4-common.mk omap4-common/Android.mk
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

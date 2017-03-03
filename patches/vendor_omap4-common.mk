@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+ifeq (TARGET_BOARD_OMAP_CPU,4460)
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := libsrv_um_SGX540_120
 LOCAL_MODULE_OWNER := sony
@@ -10,3 +12,5 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_PREBUILT)
+
+endif

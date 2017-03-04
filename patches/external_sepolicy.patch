@@ -1,5 +1,5 @@
 diff --git a/domain.te b/domain.te
-index cc76ee7..e572097 100644
+index cc76ee7..38037a3 100644
 --- a/domain.te
 +++ b/domain.te
 @@ -272,7 +272,7 @@ neverallow domain init:binder *;
@@ -11,4 +11,13 @@ index cc76ee7..e572097 100644
  
  # Don't allow raw read/write/open access to generic devices.
  # Rather force a relabel to a more specific type.
+@@ -345,7 +345,7 @@ neverallow domain default_android_service:service_manager add;
+ 
+ # Require that domains explicitly label unknown properties, and do not allow
+ # anyone but init to modify unknown properties.
+-neverallow { domain -init } default_prop:property_service set;
++neverallow { domain -init -iddd } default_prop:property_service set;
+ 
+ neverallow { domain -init -recovery -system_server } frp_block_device:blk_file rw_file_perms;
+ 
 

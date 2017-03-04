@@ -11,5 +11,6 @@ else
 fi
 
 cd ~
+rm ~/.repo/local_manifests/roomservice.xml
 repo sync -j 8 --force-sync
 echo "--------- repo sync end"

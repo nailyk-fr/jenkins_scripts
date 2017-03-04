@@ -20,14 +20,14 @@ echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-13.0
-patch -p1 < ${MYFOLDER}/patches/fc18176.diff
+#patch -p1 < ${MYFOLDER}/patches/fc18176.diff
 
-cd ~/system/sepolicy
+cd ~/external/sepolicy
 echo "-----Patching $PWD"
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-13.0
-patch -p1 < ${MYFOLDER}/patches/07adb0c.diff
+patch -p1 < ${MYFOLDER}/patches/external_sepolicy.patch
 
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

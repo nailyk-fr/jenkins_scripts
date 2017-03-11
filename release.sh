@@ -8,7 +8,7 @@ if [ ! -d "$HOME/../releases/cm-14.1" ]; then
 fi
 
 if [ -d "$HOME/../releases/cm-14.1" ]; then 
-	cp -n $HOME/out/target/product/$1/lineage-*.zip* $HOME/../releases/cm-14.1
+	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "lineage-*.zip" -exec cp {} $HOME/../releases/cm-14.1 \;
 else
 	false
 fi

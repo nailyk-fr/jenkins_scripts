@@ -26,5 +26,11 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
+cd ~/bootable/recovery
+echo "-----Cleaning $PWD"
+git reset --hard
+git clean -fxd :/
+git checkout github/android-7.1
+
 cd ~/
 

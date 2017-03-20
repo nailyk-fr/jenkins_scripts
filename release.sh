@@ -7,7 +7,7 @@ fi
 
 if [ -d "$HOME/../releases/cm-14.1" ]; then 
 	echo copy lineage
-	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "lineage-*.zip*" -print -exec cp --no-clobber {} $HOME/../releases/cm-14.1 \;
+	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "lineage-*.zip*" -print -exec cp --update {} $HOME/../releases/cm-14.1 \;
 else
 	false
 fi

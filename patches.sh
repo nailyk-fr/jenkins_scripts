@@ -45,4 +45,7 @@ do
   repopick -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 $i
 done
 
+# Pending nfc patch
+repopick 161917
+
 echo "-----Patching done --------------"

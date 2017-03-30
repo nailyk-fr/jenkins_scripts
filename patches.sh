@@ -18,6 +18,10 @@ sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
 cd ~/
 
 source ./build/envsetup.sh
+
+echo "-----Patching vendor"
+repopick -g https://gerrit.nailyk.fr -P vendor/sony 72
+
 echo "-----Patching device/sony/shinano-common"
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 18
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 19

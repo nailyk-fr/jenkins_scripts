@@ -44,6 +44,8 @@ for i in {47..68}
 do
   repopick -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 $i
 done
+repopick -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 73
+repopick -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 74
 
 # Pending nfc patch
 repopick 161917

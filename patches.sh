@@ -30,6 +30,7 @@ repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 21
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 22
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 28
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 69
+repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 70
 
 echo "-----Patching device/sony/z3"
 repopick -g https://gerrit.nailyk.fr -P device/sony/z3 17

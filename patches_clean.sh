@@ -37,6 +37,21 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
+cd ~/device/sony/z3c
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/device/sony/sirius
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/device/sony/castor_windy
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
 cd ~/device/sony/shinano-common
 git reset --hard
 git clean -fxd :/

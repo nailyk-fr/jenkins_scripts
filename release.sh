@@ -21,10 +21,10 @@ if [ -d "$HOME/../releases/twrp" ]; then
 		echo copy twrp
 		filename="twrp_$(basename $folder)_$(date +"%Y-%m-%d")"
 		if [ -e "$folder/recovery.img" ]; then
-			eval cp -v --no-clobber $folder/recovery.img $HOME/../releases/twrp/$filename.img
+			eval cp --verbose --update $folder/recovery.img $HOME/../releases/twrp/$filename.img
 		fi
 		if [ -e "$folder/recovery-updater-signed.zip" ]; then
-			eval cp -v --no-clobber $folder/recovery-updater-signed.zip $HOME/../releases/twrp/$filename.zip
+			eval cp --verbose --update $folder/recovery-updater-signed.zip $HOME/../releases/twrp/$filename.zip
 		fi
 	done
 else

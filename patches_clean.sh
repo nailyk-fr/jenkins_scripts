@@ -35,22 +35,22 @@ git checkout github/android-7.1
 cd ~/device/sony/z3
 git reset --hard
 git clean -fxd :/
-git checkout github/cm-14.1
+git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/z3c
 git reset --hard
 git clean -fxd :/
-git checkout github/cm-14.1
+git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/sirius
 git reset --hard
 git clean -fxd :/
-git checkout github/cm-14.1
+git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/castor_windy
 git reset --hard
 git clean -fxd :/
-git checkout github/cm-14.1
+git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/shinano-common
 git reset --hard

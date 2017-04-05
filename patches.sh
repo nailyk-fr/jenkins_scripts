@@ -26,9 +26,15 @@ git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/69/2
 git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/09/22509/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/68/22368/1 && git cherry-pick FETCH_HEAD
 
+echo "-----Patching device/sony/msm8974-common"
+repopick -g https://gerrit.nailyk.fr -P device/sony/msm8974-common 123
+
 echo "-----Patching device/sony/shinano-common"
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 69
 repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 70
+repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 124
+repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 125
+repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 126
 
 echo "-----Patching device/sony/z3c"
 repopick -g https://gerrit.nailyk.fr -P device/sony/z3c 80

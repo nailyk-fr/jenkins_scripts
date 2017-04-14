@@ -58,7 +58,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3c"  -g https://gerrit.nailyk.fr -P device/sony/z3c
+repopick -Q "status:open+project:android_device_sony_z3c"  -g https://gerrit.nailyk.fr -P device/sony/z3c --exclude "80,148"
 
 echo "-----Patching kernel/sony/msm8974"
 cd ~/kernel/sony/msm8974

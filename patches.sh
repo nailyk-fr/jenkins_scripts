@@ -72,4 +72,12 @@ repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit
 # Pending nfc patch
 repopick 161917
 
+
+echo "-----Patching vendor"
+cd ~/vendor/sony
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+ repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony
+
 echo "-----Patching done --------------"

@@ -21,12 +21,7 @@ source ./build/envsetup.sh
 
 cd ~/bootable/recovery
 echo "-----Patching $PWD"
-git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/96/22096/3 && git cherry-pick FETCH_HEAD
-git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/69/22369/1 && git cherry-pick FETCH_HEAD
-git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/09/22509/1 && git cherry-pick FETCH_HEAD
-git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/68/22368/1 && git cherry-pick FETCH_HEAD
-cd ~/
-repopick -g https://gerrit.omnirom.org -t mr2-custom-fonts -P bootable/recovery
+git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/35/23635/1 && git cherry-pick FETCH_HEAD
 
 echo "-----Patching device/sony/msm8974-common"
 cd ~/device/sony/msm8974-common

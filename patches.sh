@@ -63,7 +63,7 @@ cd ~/kernel/sony/msm8974
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 --exclude "240,241"
+repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 --exclude "240,241,558"
 
 # Pending nfc patch
 repopick 161917

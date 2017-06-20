@@ -42,6 +42,11 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
+cd ~/device/sony/z3dual
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1_twrp
+
 cd ~/device/sony/sirius
 git reset --hard
 git clean -fxd :/

@@ -35,7 +35,7 @@ cd ~/device/sony/shinano-common
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196"
+repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196,594"
 # Need to be pick manually, always merge conflicts
 #repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
 
@@ -74,7 +74,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual
+repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual --exclude "582"
 
 
 # Pending nfc patch

@@ -18,7 +18,7 @@ export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 echo "--------jack args $ANDROID_JACK_VM_ARGS"
 echo "-----Trigger build from $PWD"
 source ./build/envsetup.sh
-breakfast z3c
+breakfast leo
 make recovery-zip -j6
 
 #kill jack when done to prevent error on other builds

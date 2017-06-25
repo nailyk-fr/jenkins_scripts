@@ -11,81 +11,48 @@ git config --global user.name "nailyk-fr"
 
 echo "---------home set to: $HOME"
 
-cd ~/vendor/cm
+cd ~/vendor/omni
 echo "-----Patching $PWD"
-sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
+sed -i 's,HOMEMADE,nailyk,g' config/version.mk
+sed -i 's,HOMEMADE,nailyk,g' config/common.mk
 
 cd ~/
 
 source ./build/envsetup.sh
 
-cd ~/bootable/recovery
-echo "-----Patching $PWD"
-git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/96/22096/9 && git cherry-pick FETCH_HEAD
-
 echo "-----Patching device/sony/msm8974-common"
 cd ~/device/sony/msm8974-common
-git fetch github cm-14.1
-git checkout github/cm-14.1
+git fetch choose android-7.1
+git checkout choose/android-7.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_msm8974-common"  -g https://gerrit.nailyk.fr -P device/sony/msm8974-common
+$MYFOLDER/repopick -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common
 
 echo "-----Patching device/sony/shinano-common"
 cd ~/device/sony/shinano-common
-git fetch github cm-14.1
-git checkout github/cm-14.1
+git fetch choose android-7.1
+git checkout choose/android-7.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196,594"
-# Need to be pick manually, always merge conflicts
-#repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
+$MYFOLDER/repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common
 
-echo "-----Patching device/sony/z3"
-cd ~/device/sony/z3
-git fetch github cm-14.1
-git fetch github cm-14.1_twrp
-git checkout github/cm-14.1_twrp
-git merge --no-commit github/cm-14.1
-git commit --message="Merge cm-14.1" --allow-empty
+echo "-----Patching device/sony/leo"
+cd ~/device/sony/leo
+git fetch choose android-7.1
+git checkout choose/android-7.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3"  -g https://gerrit.nailyk.fr -P device/sony/z3 --exclude "565"
-
-echo "-----Patching device/sony/z3c"
-cd ~/device/sony/z3c
-git fetch github cm-14.1
-git fetch github cm-14.1_twrp
-git checkout github/cm-14.1_twrp
-git merge --no-commit github/cm-14.1
-git commit --message="Merge cm-14.1" --allow-empty
-cd ~/
-repopick -Q "status:open+project:android_device_sony_z3c"  -g https://gerrit.nailyk.fr -P device/sony/z3c
+$MYFOLDER/repopick -Q "status:open+project:android_device_sony_leo"  -g https://review.choose-a.name -P device/sony/leo
 
 echo "-----Patching kernel/sony/msm8974"
 cd ~/kernel/sony/msm8974
-git fetch github cm-14.1
-git checkout github/cm-14.1
+git fetch choose android-7.1
+git checkout choose/android-7.1
 cd ~/
-repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 --exclude "558"
-
-echo "-----Patching device/sony/z3dual"
-cd ~/device/sony/z3dual
-git fetch github cm-14.1
-git fetch github cm-14.1_twrp
-git checkout github/cm-14.1_twrp
-git merge --no-commit github/cm-14.1
-git commit --message="Merge cm-14.1" --allow-empty
-cd ~/
-repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual --exclude "582"
-
-
-# Pending nfc patch
-repopick 161917
-
+$MYFOLDER/repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974
 
 echo "-----Patching vendor"
 cd ~/vendor/sony
-git fetch github cm-14.1
-git checkout github/cm-14.1
+git fetch choosea android-7.1
+git checkout choosea/android-7.1
 cd ~/
- repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony
+$MYFOLDER/repopick -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
 
 echo "-----Patching done --------------"

@@ -2,8 +2,8 @@
 
 echo cleanup of releases started
 
-if [ -d "$HOME/../releases/cm-14.1" ]; then
-	find $HOME/../releases/cm-14.1 -depth -xdev -type f -mtime +30 -delete -print
+if [ -d "$HOME/../releases/omni" ]; then
+	find $HOME/../releases/omni -depth -xdev -type f -mtime +30 -delete -print
 	echo Releases deleted
 fi
 

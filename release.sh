@@ -1,13 +1,13 @@
 #!/bin/bash
 
 
-if [ ! -d "$HOME/../releases/cm-14.1" ]; then 
-	mkdir -p $HOME/../releases/cm-14.1
+if [ ! -d "$HOME/../releases/omni" ]; then 
+	mkdir -p $HOME/../releases/omni
 fi
 
-if [ -d "$HOME/../releases/cm-14.1" ]; then 
-	echo copy lineage
-	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "lineage-*.zip*" -exec cp --verbose --update {} $HOME/../releases/cm-14.1 \;
+if [ -d "$HOME/../releases/omni" ]; then 
+	echo copy omni
+	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "omni-*.zip*" -exec cp --verbose --update {} $HOME/../releases/android-7.1 \;
 else
 	false
 fi

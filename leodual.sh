@@ -18,8 +18,8 @@ export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 echo "--------jack args $ANDROID_JACK_VM_ARGS"
 echo "-----Trigger build from $PWD"
 source ./build/envsetup.sh
-breakfast z3dual
-make bootimage -j6
+breakfast leodual
+mka bacon
 
 #kill jack when done to prevent error on other builds
 ./prebuilts/sdk/tools/jack-admin kill-server || true

@@ -75,7 +75,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual
+repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual --exclude "582"
 
 
 # Pending nfc patch

@@ -35,7 +35,8 @@ cd ~/device/sony/shinano-common
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196,577"
+#repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196,577"
+for i in `echo 481 482 483 484 626 593 583 621 577 576`; do repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common $i ; done
 # Need to be pick manually, always merge conflicts
 #repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
 

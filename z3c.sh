@@ -10,7 +10,7 @@ echo "---------patching"
 ./${MYFOLDER}/patches.sh
 
 cd ~/
-export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 
 ./prebuilts/sdk/tools/jack-admin kill-server || true

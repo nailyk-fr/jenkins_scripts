@@ -28,14 +28,14 @@ cd ~/device/sony/msm8974-common
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_msm8974-common"  -g https://gerrit.nailyk.fr -P device/sony/msm8974-common
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common
 
 echo "-----Patching device/sony/shinano-common"
 cd ~/device/sony/shinano-common
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_device_sony_shinano-common"  -g https://gerrit.nailyk.fr -P device/sony/shinano-common --exclude "196,593"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "179443,179440"
 # Need to be pick manually, always merge conflicts
 #repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
 
@@ -57,7 +57,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3c"  -g https://gerrit.nailyk.fr -P device/sony/z3c
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c
 
 echo "-----Patching kernel/sony/msm8974"
 cd ~/kernel/sony/msm8974

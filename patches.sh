@@ -6,12 +6,7 @@ export USE_NINJA=false
 export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
 
-#https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux#5947802
-RED='\e[0;31m'
-GREEN='\e[0;32m'
-BLUE='\e[0;34m'
-YELLOW='\e[1;33m'
-NC='\e[0m' # No Color
+source $MYFOLDER/colors.sh
 
 git config --global user.email "jenkins@nailyk.fr"
 git config --global user.name "nailyk-fr"

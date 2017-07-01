@@ -1,4 +1,4 @@
-BUILD_VER="cm-14.1"
+BUILD_VER="android-7.1"
 LOCAL_BRANCH="${BUILD_VER}-stockCM"
 
 cd ~/.repo

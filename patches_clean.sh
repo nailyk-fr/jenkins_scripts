@@ -4,73 +4,84 @@ export USER=jenkins
 export LANG=C
 export USE_NINJA=false
 export WITH_SU=true
-MYFOLDER=$PWD/scripts
+MYFOLDER="$(dirname "$(realpath "$0")")"
 
-echo "---------home set to: $HOME"
+source $MYFOLDER/colors.sh
+
+echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
 cd ~/vendor/cm
-echo "-----Cleaning $PWD"
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/device/qcom/sepolicy
-echo "-----Cleaning $PWD"
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/system/sepolicy
-echo "-----Cleaning $PWD"
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/bootable/recovery
-echo "-----Cleaning $PWD"
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/android-7.1
 
 cd ~/device/sony/z3
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/z3c
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/z3dual
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/sirius
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/castor_windy
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
 
 cd ~/device/sony/shinano-common
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/device/sony/msm8974-common
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/kernel/sony/msm8974
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/
 
+echo -e ${GREEN}"-----Cleaning done $PWD"${NC}

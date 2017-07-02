@@ -10,7 +10,14 @@ source $MYFOLDER/colors.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
+
 cd ~/vendor/cm
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

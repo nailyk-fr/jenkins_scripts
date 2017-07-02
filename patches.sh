@@ -26,15 +26,15 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/96/22096/9 && git cherry-pick FETCH_HEAD
 cd ~/
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/msm8974-common
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/shinano-common
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
@@ -42,18 +42,18 @@ repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_sh
 # Need to be pick manually, always merge conflicts
 #repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/z3
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git fetch github cm-14.1_twrp
 git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project::LineageOS/android_device_sony_z3" -P device/sony/z3
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3" -P device/sony/z3
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/z3c
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git fetch github cm-14.1_twrp
 git checkout github/cm-14.1_twrp
@@ -62,15 +62,15 @@ git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/kernel/sony/msm8974
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
 repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 --exclude "558"
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/z3dual
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git fetch github cm-14.1_twrp
 git checkout github/cm-14.1_twrp
@@ -84,11 +84,11 @@ repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3
 repopick 161917
 
 
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/vendor/sony
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
- repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony
+repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

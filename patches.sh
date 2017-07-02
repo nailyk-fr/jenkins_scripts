@@ -50,7 +50,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3"  -g https://gerrit.nailyk.fr -P device/sony/z3 --exclude "565"
+repopick -Q "status:open+branch:cm-14.1+project::LineageOS/android_device_sony_z3" -P device/sony/z3
 
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/device/sony/z3c
@@ -77,7 +77,7 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+project:android_device_sony_z3dual"  -g https://gerrit.nailyk.fr -P device/sony/z3dual --exclude "582"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3dual" -P device/sony/z3dual
 
 
 # Pending nfc patch

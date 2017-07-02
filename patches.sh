@@ -67,7 +67,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:android_kernel_sony_msm8974"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8974 --exclude "558"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
 
 cd ~/device/sony/z3dual
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

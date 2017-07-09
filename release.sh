@@ -8,7 +8,7 @@ if [ ! -d "$HOME/../releases/cm-12.1" ]; then
 fi
 
 if [ -d "$HOME/../releases/cm-12.1" ]; then 
-	cp -n $HOME/out/target/product/$1/cm-*.zip* $HOME/../releases/cm-12.1
+	cp -n $HOME/out/target/product/$1/lineage-*.zip* $HOME/../releases/cm-12.1
 else
 	false
 fi

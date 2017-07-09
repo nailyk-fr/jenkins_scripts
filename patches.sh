@@ -89,6 +89,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 git fetch ssh://nailyk-fr@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/66/666/7 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk-fr@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/92/892/1 && git cherry-pick FETCH_HEAD
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 

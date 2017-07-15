@@ -69,7 +69,6 @@ cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_kernel_sony_msm8974 refs/changes/59/180459/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_kernel_sony_msm8974 refs/changes/49/181049/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_kernel_sony_msm8974 refs/changes/50/181050/1 && git cherry-pick FETCH_HEAD
 cd ~/

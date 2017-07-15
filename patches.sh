@@ -37,9 +37,11 @@ cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_device_sony_shinano-common refs/changes/64/181164/1 && git cherry-pick FETCH_HEAD
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "179444,179443"
+cd ~/device/sony/shinano-common
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_device_sony_shinano-common refs/changes/64/181164/1 && git cherry-pick FETCH_HEAD
+
 # Need to be pick manually, always merge conflicts
 #repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
 

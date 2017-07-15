@@ -41,7 +41,7 @@ cd ~/device/sony/shinano-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "599"
 
 echo -e ${YELLOW}"-----Patching device/sony/leo"${NC}
 cd ~/device/sony/leo
@@ -63,5 +63,12 @@ git fetch choosea android-7.1
 git checkout choosea/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
+
+cd ~/hardware/sony/timekeep
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P hardware/sony/timekeep 24380
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

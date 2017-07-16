@@ -89,6 +89,19 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
+cd ~/system/core
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/system/vold
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+
 cd ~/
 
 echo -e ${GREEN}"-----Cleaning done $PWD"${NC}

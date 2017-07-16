@@ -97,4 +97,19 @@ git fetch ssh://nailyk-fr@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/ch
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 
+cd ~/system/vold
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/41/181241/2 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/37/181237/2 && git cherry-pick FETCH_HEAD
+cd ~/
+
+cd ~/system/core
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_core refs/changes/36/181236/1 && git cherry-pick FETCH_HEAD
+cd ~/
+
 echo -e ${GREEN}"-----Patching done --------------"${NC}

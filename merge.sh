@@ -2,7 +2,7 @@ MYFOLDER="$(dirname "$(realpath "$0")")"
 source $MYFOLDER/colors.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
-echo -e ${GREEN}"Lets merge LineageOS $HOME"${NC}
+echo -e ${GREEN}"Lets merge LineageOS"${NC}
 
 cd ~/device/sony/z3dual
 echo -e ${YELLOW}"-----Merging $PWD"${NC}

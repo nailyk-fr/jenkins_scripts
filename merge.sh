@@ -1,3 +1,5 @@
+#!/bin/bash
+
 MYFOLDER="$(dirname "$(realpath "$0")")"
 source $MYFOLDER/colors.sh
 

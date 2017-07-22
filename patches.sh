@@ -101,6 +101,9 @@ cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/41/181241/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/37/181237/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/83/172183/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/system/core

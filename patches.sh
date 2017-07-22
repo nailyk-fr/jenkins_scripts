@@ -31,14 +31,14 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common --exclude "179539,179539,181183"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common --exclude "179539"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "179443,180159,181579,181545,181583"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "180159,181579,181545,181583"
 repopick -P device/sony/shinano-common 181579
 repopick -P device/sony/shinano-common 181545
 cd ~/device/sony/shinano-common
@@ -64,14 +64,12 @@ git checkout github/cm-14.1_twrp
 git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c --exclude "181664"
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_kernel_sony_msm8974 refs/changes/49/181049/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_kernel_sony_msm8974 refs/changes/50/181050/1 && git cherry-pick FETCH_HEAD
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
 

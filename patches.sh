@@ -7,15 +7,13 @@ export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
 
 source $MYFOLDER/colors.sh
-
-git config --global user.email "jenkins@nailyk.fr"
-git config --global user.name "nailyk-fr"
+source $MYFOLDER/config.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
 cd ~/vendor/cm
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
+sed -i 's,UNOFFICIAL,${PICKLINEAGE},g' config/common.mk
 
 cd ~/
 
@@ -92,8 +90,8 @@ cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk-fr@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/66/666/7 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/92/892/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKNAILYK}@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/66/666/7 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKNAILYK}@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/92/892/1 && git cherry-pick FETCH_HEAD
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 
@@ -101,16 +99,16 @@ cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/41/181241/3 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/37/181237/3 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/83/172183/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKLINEAGE}@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/41/181241/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKLINEAGE}@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/37/181237/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKLINEAGE}@review.lineageos.org:29418/LineageOS/android_system_vold refs/changes/83/172183/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/system/core
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
-git fetch ssh://nailyk@review.lineageos.org:29418/LineageOS/android_system_core refs/changes/36/181236/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKLINEAGE}@review.lineageos.org:29418/LineageOS/android_system_core refs/changes/36/181236/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

@@ -7,9 +7,7 @@ export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
 
 source $MYFOLDER/colors.sh
-
-git config --global user.email "jenkins@nailyk.fr"
-git config --global user.name "nailyk-fr"
+source $MYFOLDER/config.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
@@ -126,8 +124,7 @@ cd ~/
 
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,HOMEMADE,nailyk,g' config/version.mk
-sed -i 's,HOMEMADE,nailyk,g' config/common.mk
-
+sed -i 's,HOMEMADE,${PICKOFFICIAL},g' config/version.mk
+sed -i 's,HOMEMADE,${PICKOFFICIAL},g' config/common.mk
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

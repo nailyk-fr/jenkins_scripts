@@ -41,9 +41,6 @@ repopick -P device/sony/shinano-common 181579
 repopick -P device/sony/shinano-common 181545
 cd ~/device/sony/shinano-common
 
-# Need to be pick manually, always merge conflicts
-#repopick -g https://gerrit.nailyk.fr -P device/sony/shinano-common 196
-
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
@@ -82,10 +79,6 @@ cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
 
 
-# Pending nfc patch
-repopick 161917
-
-
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
@@ -94,17 +87,5 @@ git fetch ssh://${PICKNAILYK}@gerrit.nailyk.fr:29418/proprietary_vendor_sony ref
 git fetch ssh://${PICKNAILYK}@gerrit.nailyk.fr:29418/proprietary_vendor_sony refs/changes/92/892/1 && git cherry-pick FETCH_HEAD
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
-
-cd ~/system/vold
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch github cm-14.1
-git checkout github/cm-14.1
-cd ~/
-
-cd ~/system/core
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch github cm-14.1
-git checkout github/cm-14.1
-cd ~/
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

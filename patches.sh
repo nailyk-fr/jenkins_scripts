@@ -64,13 +64,6 @@ git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c --exclude "181664"
 
-cd ~/kernel/sony/msm8974
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch github cm-14.1
-git checkout github/cm-14.1
-cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
-
 cd ~/device/sony/z3dual
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
@@ -80,6 +73,13 @@ git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3dual" -P device/sony/z3dual
+
+cd ~/kernel/sony/msm8974
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
 
 
 # Pending nfc patch

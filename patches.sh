@@ -29,14 +29,14 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common --exclude "179539,181547,181579,181581,181577"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_msm8974-common" -P device/sony/msm8974-common --exclude "179539,181547,181581,181577,181578"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "180159,181579,181545,181583,181545,181579"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_shinano-common" -P device/sony/shinano-common --exclude "180159,181579,181545,181583,181545,181579,181879,181937"
 repopick -P device/sony/shinano-common 181579
 repopick -P device/sony/shinano-common 181545
 cd ~/device/sony/shinano-common

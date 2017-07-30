@@ -17,6 +17,18 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
+cd ~/vendor/samsung
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/vendor/ti
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -40,6 +52,16 @@ echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/android-7.1
+
+cd ~/device/samsung/maguro
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/device/samsung/tuna
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -84,6 +106,12 @@ git clean -fxd :/
 git checkout github/cm-14.1
 
 cd ~/kernel/sony/msm8974
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
+
+cd ~/kernel/samsung/tuna
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

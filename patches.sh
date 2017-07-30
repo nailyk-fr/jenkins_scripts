@@ -71,6 +71,24 @@ git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3dual" -P device/sony/z3dual
 
+cd ~/device/samsung/tuna
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+#git fetch github cm-14.1_twrp
+git checkout github/cm-14.1
+#git checkout github/cm-14.1_twrp
+cd ~/
+repopick -Q "status:open+project:android_device_samsung_tuna" -g https://gerrit.nailyk.fr -P device/samsung/tuna
+
+cd ~/device/samsung/maguro
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+#git fetch github cm-14.1_twrp
+git checkout github/cm-14.1
+#git checkout github/cm-14.1_twrp
+cd ~/
+repopick -Q "status:open+project:android_device_samsung_maguro" -g https://gerrit.nailyk.fr -P device/samsung/maguro
+
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
@@ -78,6 +96,12 @@ git checkout github/cm-14.1
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_sony_msm8974" -P kernel/sony/msm8974
 
+cd ~/kernel/samsung/tuna
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_samsung_tuna" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -88,4 +112,23 @@ git fetch ssh://${PICKNAILYK}@gerrit.nailyk.fr:29418/proprietary_vendor_sony ref
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 
+cd ~/vendor/samsung
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+repopick -Q "status:open+project:proprietary_vendor_samsung" -g https://gerrit.nailyk.fr -P vendor/samsung
+
+cd ~/vendor/ti
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+repopick -Q "status:open+project:proprietary_vendor_ti" -g https://gerrit.nailyk.fr -P vendor/ti
+
+echo -e ${GREEN}"-----Grabing global patches"${NC}
+repopick 182472
+
 echo -e ${GREEN}"-----Patching done --------------"${NC}
+
+

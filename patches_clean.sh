@@ -27,7 +27,7 @@ cd ~/vendor/ti
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/cm-14.1
+git checkout github/master
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

@@ -121,8 +121,8 @@ repopick -Q "status:open+project:proprietary_vendor_samsung" -g https://gerrit.n
 
 cd ~/vendor/ti
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch github cm-14.1
-git checkout github/cm-14.1
+git fetch github master
+git checkout github/master
 cd ~/
 repopick -Q "status:open+project:proprietary_vendor_ti" -g https://gerrit.nailyk.fr -P vendor/ti
 

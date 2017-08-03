@@ -27,7 +27,7 @@ cd ~/device/sony/common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525,532,533,534,535,536,537,538,539,540,541,542,543,544"
 
 echo -e ${YELLOW}"-----Patching device/sony/msm8974-common"${NC}
 cd ~/device/sony/msm8974-common
@@ -35,6 +35,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common
+cd ~/device/sony/msm8974-common && rm boot/custombootimg.mk
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
@@ -49,13 +50,16 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo"  -g https://review.choose-a.name -P device/sony/leo
+cd ~/device/sony/leo
+git cherry-pick 424b142
+git cherry-pick b5aae33
 
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974
+$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "670"
 
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony

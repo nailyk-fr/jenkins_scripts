@@ -13,6 +13,10 @@ git config --global user.name "nailyk-fr"
 
 echo -e ${GREEN}"---------home set to: $HOME"{NC}
 
+echo -e ${YELLOW}"-----Picking system wide commits"${NC}
+cd ~/
+repopick 24611
+
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 sed -i 's,HOMEMADE,nailyk,g' config/version.mk
@@ -35,7 +39,6 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common
-cd ~/device/sony/msm8974-common && rm boot/custombootimg.mk
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
@@ -50,9 +53,6 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo"  -g https://review.choose-a.name -P device/sony/leo
-cd ~/device/sony/leo
-git cherry-pick 424b142
-git cherry-pick b5aae33
 
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974
@@ -64,7 +64,8 @@ $MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g h
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch choosea android-7.1
-git checkout choosea/android-7.1
+git fetch github android-7.1
+git checkout github/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P vendor/sony 200 -f

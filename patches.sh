@@ -13,18 +13,13 @@ git config --global user.name "nailyk-fr"
 
 echo -e ${GREEN}"---------home set to: $HOME"{NC}
 
-echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 cd ~/
-repopick 24611
-
-cd ~/vendor/omni
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,HOMEMADE,nailyk,g' config/version.mk
-sed -i 's,HOMEMADE,nailyk,g' config/common.mk
-
-cd ~/
-
 source ./build/envsetup.sh
+echo -e ${YELLOW}"-----Picking system wide commits"${NC}
+repopick 24611
+repopick 22096
+repopick 22565
+
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common
@@ -67,7 +62,7 @@ git fetch choosea android-7.1
 git fetch github android-7.1
 git checkout github/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
+#$MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P vendor/sony 200 -f
 
 cd ~/hardware/sony/timekeep
@@ -76,5 +71,12 @@ git fetch omnirom android-7.1
 git checkout omnirom/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P hardware/sony/timekeep 24380
+
+
+cd ~/vendor/omni
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+sed -i 's,HOMEMADE,nailyk,g' config/version.mk
+sed -i 's,HOMEMADE,nailyk,g' config/common.mk
+
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

@@ -58,6 +58,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-7.1
 
+cd ~/device/sony/sepolicy
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout choose/android-7.1
+
 cd ~/device/sony/leo
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

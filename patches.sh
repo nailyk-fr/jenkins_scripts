@@ -71,6 +71,13 @@ git merge lineage/cm-14.1 --no-edit
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "670"
 
+cd ~/device/sony/sepolicy
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch choose android-7.1
+git checkout choose/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sepolicy"  -g https://review.choose-a.name -P device/sony/sepolicy
+
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch choosea android-7.1

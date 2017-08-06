@@ -79,6 +79,7 @@ git checkout github/android-7.1
 cd ~/
 #$MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P vendor/sony 200 -f
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P vendor/sony 757
 
 cd ~/hardware/sony/timekeep
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

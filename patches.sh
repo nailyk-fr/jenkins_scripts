@@ -16,6 +16,7 @@ echo -e ${GREEN}"---------home set to: $HOME"{NC}
 cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
+repopick -t theme_me_up_scotty
 repopick 24611
 repopick 22096
 repopick 22565
@@ -26,21 +27,32 @@ cd ~/device/sony/common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525,532,533,534,535,536,537,538,539,540,541,542,543,544"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
 
 echo -e ${YELLOW}"-----Patching device/sony/msm8974-common"${NC}
 cd ~/device/sony/msm8974-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "258,672,761,762,763,754"
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 761
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 762
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 763
+cd ~/device/sony/msm8974-common
+git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/72/672/2 && git cherry-pick FETCH_HEAD
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "599"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "599,737,744,748,733"
+#revert cpuquiet
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 733
+#rework init.power
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 744
+#add back init.recovery
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 748
 
 echo -e ${YELLOW}"-----Patching device/sony/leo"${NC}
 cd ~/device/sony/leo

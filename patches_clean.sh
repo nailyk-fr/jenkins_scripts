@@ -16,6 +16,24 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-7.1
 
+cd ~/packages/apps/Messaging
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
+cd ~/frameworks/base
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
+cd ~/packages/apps/Phonograph
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

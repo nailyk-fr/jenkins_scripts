@@ -273,6 +273,7 @@ if __name__ == '__main__':
             patchset = int(patchset)
 
         review = next((x for x in reviews if x['number'] == change), None)
+        print('attempting to pick %d' % change)
         if review is None:
             print('Change %d not found, skipping' % change)
             continue

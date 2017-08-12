@@ -63,7 +63,6 @@ cd ~/
 repopick -Q "status:open+project:proprietary_vendor_ti+branch:cm-13.0" -g https://gerrit.nailyk.fr -P vendor/ti
 
 echo -e ${GREEN}"-----Grabing global patches"${NC}
-repopick 182472
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}
 

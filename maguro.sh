@@ -36,4 +36,4 @@ breakfast maguro
 mka bacon
 
 #kill jack when done to prevent error on other builds
-./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin kill-server || true

@@ -10,19 +10,6 @@ git config --global user.email jenkins@nailyk.fr
 git config --global user.name nailyk-fr         
 echo "---------home set to: $HOME"
 
-cd ~/vendor/cm
-echo "-----Patching $PWD"
-git reset --hard
-git clean -fxd :/
-git checkout github/cm-13.0
-sed -i 's,UNOFFICIAL,nailyk,g' config/common.mk
-
-cd ~/hardware/ti/omap4
-echo "-----Patching $PWD"
-git reset --hard
-git clean -fxd :/
-git checkout github/cm-13.0
-
 cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"

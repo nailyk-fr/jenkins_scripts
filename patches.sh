@@ -81,7 +81,7 @@ git fetch github cm-14.1
 git checkout github/cm-14.1
 #git checkout github/cm-14.1_twrp
 cd ~/
-repopick -Q "status:open+project:android_device_samsung_tuna" -g https://gerrit.nailyk.fr -P device/samsung/tuna
+repopick -Q "status:open+project:android_device_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/samsung/tuna
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -90,7 +90,7 @@ git fetch github cm-14.1
 git checkout github/cm-14.1
 #git checkout github/cm-14.1_twrp
 cd ~/
-repopick -Q "status:open+project:android_device_samsung_maguro" -g https://gerrit.nailyk.fr -P device/samsung/maguro
+repopick -Q "status:open+project:android_device_samsung_maguro+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/samsung/maguro
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -104,7 +104,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_samsung_tuna" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -120,14 +120,14 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+project:proprietary_vendor_samsung" -g https://gerrit.nailyk.fr -P vendor/samsung
+repopick -Q "status:open+project:proprietary_vendor_samsung+branch:cm-14.1" -g https://gerrit.nailyk.fr -P vendor/samsung
 
 cd ~/vendor/ti
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github master
 git checkout github/master
 cd ~/
-repopick -Q "status:open+project:proprietary_vendor_ti" -g https://gerrit.nailyk.fr -P vendor/ti
+repopick -Q "status:open+project:proprietary_vendor_ti+branch:cm-14.1" -g https://gerrit.nailyk.fr -P vendor/ti
 
 echo -e ${GREEN}"-----Grabing global patches"${NC}
 repopick 182472

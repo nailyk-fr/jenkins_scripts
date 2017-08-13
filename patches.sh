@@ -104,7 +104,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_kernel_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
+repopick -Q "status:open+branch:cm-14.1+project:android_kernel_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -16,7 +16,7 @@ echo "--------jack args $ANDROID_JACK_VM_ARGS"
 echo "-----Trigger build from $PWD"
 source ./build/envsetup.sh
 breakfast leodual
-mka recovery-zip
+mka recoveryimage
 
 #kill jack when done to prevent error on other builds
 ./prebuilts/sdk/tools/jack-admin kill-server || true

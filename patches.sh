@@ -71,12 +71,32 @@ git merge lineage/cm-14.1 --no-edit
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "670"
 
+cd ~/kernel/ti/omap4
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_ti_omap4+branch:android-7.1"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
+
 cd ~/device/sony/sepolicy
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sepolicy"  -g https://review.choose-a.name -P device/sony/sepolicy
+
+cd ~/device/samsung/maguro
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_maguro+branch:android-7.1"  -g https://gerrit.omnirom.org -P device/samsung/maguro
+
+cd ~/device/samsung/tuna
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_tuna+branch:android-7.1"  -g https://gerrit.omnirom.org -P device/samsung/tuna
 
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony

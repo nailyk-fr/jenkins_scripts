@@ -94,6 +94,18 @@ git checkout choose/android-7.1
 #git clean -fxd :/
 #git checkout github/android-7.1
 
+cd ~/device/samsung/maguro
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
+cd ~/device/samsung/tuna
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -111,6 +123,12 @@ echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout choose/android-7.1
+
+cd ~/kernel/ti/omap4
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
 
 cd ~/
 

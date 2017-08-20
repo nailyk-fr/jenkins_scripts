@@ -65,9 +65,9 @@ $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo"  -g https
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974
 git fetch choose android-7.1
-git fetch lineage cm-14.1
+#git fetch lineage cm-14.1
 git checkout choose/android-7.1
-git merge lineage/cm-14.1 --no-edit
+#git merge lineage/cm-14.1 --no-edit
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "670"
 

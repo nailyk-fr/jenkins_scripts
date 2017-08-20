@@ -89,8 +89,8 @@ $MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_tuna+branch
 
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
-git fetch choosea android-7.1
-git checkout choose/android-7.1
+git fetch github android-7.1
+git checkout github/android-7.1
 cd ~/
 #$MYFOLDER/repopick.py -Q "status:open+project:DonkeyCoyote/proprietary_vendor_sony" -g https://review.choose-a.name -P vendor/sony
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P vendor/sony 757

@@ -20,6 +20,7 @@ repopick -t theme_me_up_scotty
 repopick 24611
 repopick 22096
 repopick 22565
+repopick 24669
 
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}

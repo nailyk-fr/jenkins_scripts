@@ -58,7 +58,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 #git merge lineage/cm-14.1 --no-edit
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974
+$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "786,787"
 
 cd ~/kernel/ti/omap4
 git fetch omnirom android-7.1

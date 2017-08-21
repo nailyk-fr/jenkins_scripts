@@ -110,7 +110,7 @@ cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github regen_z3dual
 git checkout github/regen_z3dual
-git fetch http://gerrit.nailyk.fr/proprietary_vendor_sony refs/changes/92/892/1 && git cherry-pick FETCH_HEAD
+git fetch http://gerrit.nailyk.fr/proprietary_vendor_sony refs/changes/77/977/1 && git cherry-pick FETCH_HEAD
 cd ~/
 #repopick -Q "status:open+project:proprietary_vendor_sony" -g https://gerrit.nailyk.fr -P vendor/sony --exclude "888"
 

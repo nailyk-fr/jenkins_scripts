@@ -22,6 +22,7 @@ source ./build/envsetup.sh
 cd ~/bootable/recovery
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/96/22096/9 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_bootable_recovery refs/changes/69/24669/4 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/msm8974-common

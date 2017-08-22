@@ -58,6 +58,7 @@ git fetch github cm-14.1_twrp
 git checkout github/cm-14.1_twrp
 cd ~/
 repopick -Q "status:open+project:android_device_sony_amami+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/sony/amami
+repopick -Q "status:open+project:android_device_sony_amami+branch:cm-14.1_twrp" -g https://gerrit.nailyk.fr -P device/sony/amami
 
 cd ~/device/sony/honami
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -65,6 +66,7 @@ git fetch github cm-14.1_twrp
 git checkout github/cm-14.1_twrp
 cd ~/
 repopick -Q "status:open+project:android_device_sony_honami+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/sony/honami
+repopick -Q "status:open+project:android_device_sony_honami+branch:cm-14.1_twrp" -g https://gerrit.nailyk.fr -P device/sony/honami
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -75,6 +77,7 @@ git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3" -P device/sony/z3
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3_twrp" -P device/sony/z3
 
 cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -85,6 +88,7 @@ git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c"  -P device/sony/z3c --exclude "181664"
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3c_twrp"  -P device/sony/z3c
 
 cd ~/device/sony/z3dual
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -95,6 +99,7 @@ git merge --no-commit github/cm-14.1
 git commit --message="Merge cm-14.1" --allow-empty
 cd ~/
 repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3dual" -P device/sony/z3dual
+repopick -Q "status:open+branch:cm-14.1+project:LineageOS/android_device_sony_z3dual_twrp" -P device/sony/z3dual
 
 cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

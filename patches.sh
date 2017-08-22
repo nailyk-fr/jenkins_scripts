@@ -45,6 +45,27 @@ repopick -P device/sony/shinano-common 181579
 repopick -P device/sony/shinano-common 181545
 cd ~/device/sony/shinano-common
 
+cd ~/device/sony/rhine-common
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1
+git checkout github/cm-14.1
+cd ~/
+repopick -Q "status:open+project:android_device_sony_rhine-common+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/sony/rhine-common
+
+cd ~/device/sony/amami
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1_twrp
+git checkout github/cm-14.1_twrp
+cd ~/
+repopick -Q "status:open+project:android_device_sony_amami+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/sony/amami
+
+cd ~/device/sony/honami
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github cm-14.1_twrp
+git checkout github/cm-14.1_twrp
+cd ~/
+repopick -Q "status:open+project:android_device_sony_honami+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/sony/honami
+
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1

@@ -65,6 +65,18 @@ git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1
 
+cd ~/device/sony/amami
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1_twrp
+
+cd ~/device/sony/honami
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1_twrp
+
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -94,6 +106,12 @@ echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/cm-14.1_twrp
+
+cd ~/device/sony/rhine-common
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/cm-14.1
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

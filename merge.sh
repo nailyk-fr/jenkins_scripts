@@ -19,7 +19,7 @@ DEVPATHS="~/device/sony/z3dual:cm-14.1_twrp \
 # merge
 F_MERGE(){
   MERGPATH=$1
-  [ ! -d "$MERGPATH" ] && echo "ERROR: cannot cd into path specified ($MERGPATH)" && exit 3
+  [ ! -d "$MERGPATH" ] && echo "ERROR: cannot find path specified ($MERGPATH)" && exit 3
   cd $MERGPATH
   BRANCH="$2"
   echo -e ${YELLOW}"-----Merging $PWD"${NC}

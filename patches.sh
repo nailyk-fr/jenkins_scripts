@@ -21,7 +21,7 @@ repopick 24611
 repopick 22096
 repopick 22565
 repopick 24669
-
+repopick 25015
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common

@@ -17,11 +17,11 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick -t theme_me_up_scotty
-repopick 24611
-repopick 22096
-repopick 22565
-repopick 24669
-repopick 25015
+repopick 24611 # vendor/omni: omni: Tools: Add dtbToolCM
+repopick 22096 # twrp Fix for LineageOS build
+repopick 22565 # twrp Adopted Storage: Add support for mixed mode sdcards
+repopick 24669 # twrp disable twrp app
+repopick 25015 # twrp OTA encrypted workaround
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common

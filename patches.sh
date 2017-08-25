@@ -28,7 +28,7 @@ cd ~/device/sony/common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525,788"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
 
 echo -e ${YELLOW}"-----Patching device/sony/msm8974-common"${NC}
 cd ~/device/sony/msm8974-common
@@ -36,8 +36,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/58/258/8 && git cherry-pick FETCH_HEAD
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 761 762 -f
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788,797"
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
@@ -45,7 +44,6 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 759 760 -f
 
 echo -e ${YELLOW}"-----Patching device/sony/leo"${NC}
 cd ~/device/sony/leo

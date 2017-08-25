@@ -28,7 +28,7 @@ cd ~/device/sony/common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525,788"
 
 echo -e ${YELLOW}"-----Patching device/sony/msm8974-common"${NC}
 cd ~/device/sony/msm8974-common

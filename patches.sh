@@ -11,7 +11,7 @@ source $MYFOLDER/colors.sh
 git config --global user.email "jenkins@nailyk.fr"
 git config --global user.name "nailyk-fr"
 
-echo -e ${GREEN}"---------home set to: $HOME"{NC}
+echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
 cd ~/
 source ./build/envsetup.sh

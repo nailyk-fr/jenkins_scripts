@@ -22,8 +22,14 @@ repopick 22096 # twrp Fix for LineageOS build
 repopick 22565 # twrp Adopted Storage: Add support for mixed mode sdcards
 repopick 24669 # twrp disable twrp app
 repopick 25015 # twrp OTA encrypted workaround
+
+cd ~/hardware/qcom/power
 # qcom/power D2TW
+git reset --hard
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
 git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_power refs/changes/92/25192/2 && git cherry-pick FETCH_HEAD 
+cd ~/
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common

@@ -6,42 +6,31 @@ source $MYFOLDER/colors.sh
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 echo -e ${GREEN}"Lets merge LineageOS"${NC}
 
-cd ~/device/sony/z3dual
-echo -e ${YELLOW}"-----Merging $PWD"${NC}
-git fetch gerrit cm-14.1_twrp
-git fetch lineage cm-14.1
-git checkout gerrit/cm-14.1_twrp
-git merge lineage/cm-14.1 --no-edit
-git push gerrit HEAD:cm-14.1_twrp
+# list of device paths + branch to fetch/checkout
+# the order specified here is the order being processed
+# format: FULLPATH:BRANCH (e.g.: /home/foo/bar:master)
+DEVPATHS="~/device/sony/z3dual:cm-14.1_twrp \
+          ~/device/sony/z3:cm-14.1_twrp \
+          ~/device/sony/z3c:cm-14.1_twrp \
+          ~/device/sony/shinano-common:cm-14.1 \
+          ~/device/sony/msm8974-common:cm-14.1 \
+          "
 
-cd ~/device/sony/z3
-echo -e ${YELLOW}"-----Merging $PWD"${NC}
-git fetch gerrit cm-14.1_twrp
-git fetch lineage cm-14.1
-git checkout gerrit/cm-14.1_twrp
-git merge lineage/cm-14.1 --no-edit
-git push gerrit HEAD:cm-14.1_twrp
+# merge
+F_MERGE(){
+  MERGPATH=$1
+  [ ! -d "$MERGPATH" ] && echo "ERROR: cannot find path specified ($MERGPATH)" && exit 3
+  cd $MERGPATH
+  BRANCH="$2"
+  echo -e ${YELLOW}"-----Merging $PWD"${NC}
+  git fetch gerrit $BRANCH
+  git fetch lineage cm-14.1
+  git checkout gerrit/${BRANCH}
+  git merge lineage/cm-14.1 --no-edit
+  git push gerrit HEAD:${BRANCH}
+}
 
-cd ~/device/sony/z3c
-echo -e ${YELLOW}"-----Merging $PWD"${NC}
-git fetch gerrit cm-14.1_twrp
-git fetch lineage cm-14.1
-git checkout gerrit/cm-14.1_twrp
-git merge lineage/cm-14.1 --no-edit
-git push gerrit HEAD:cm-14.1_twrp
-
-cd ~/device/sony/shinano-common
-echo -e ${YELLOW}"-----Merging $PWD"${NC}
-git fetch gerrit cm-14.1
-git fetch lineage cm-14.1
-git checkout gerrit/cm-14.1
-git merge lineage/cm-14.1 --no-edit
-git push gerrit HEAD:cm-14.1
-
-cd ~/device/sony/msm8974-common
-echo -e ${YELLOW}"-----Merging $PWD"${NC}
-git fetch gerrit cm-14.1
-git fetch lineage cm-14.1
-git checkout gerrit/cm-14.1
-git merge lineage/cm-14.1 --no-edit
-git push gerrit HEAD:cm-14.1
+# do a merge for any defined path
+for merge in $DEVPATHS;do
+  F_MERGE "${merge/:*/}" "${merge/*:/}"
+done

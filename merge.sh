@@ -9,11 +9,11 @@ echo -e ${GREEN}"Lets merge LineageOS"${NC}
 # list of device paths + branch to fetch/checkout
 # the order specified here is the order being processed
 # format: FULLPATH:BRANCH (e.g.: /home/foo/bar:master)
-DEVPATHS="~/device/sony/z3dual:cm-14.1_twrp \
-          ~/device/sony/z3:cm-14.1_twrp \
-          ~/device/sony/z3c:cm-14.1_twrp \
-          ~/device/sony/shinano-common:cm-14.1 \
-          ~/device/sony/msm8974-common:cm-14.1 \
+DEVPATHS="$HOME/device/sony/z3dual:cm-14.1_twrp \
+          $HOME/device/sony/z3:cm-14.1_twrp \
+          $HOME/device/sony/z3c:cm-14.1_twrp \
+          $HOME/device/sony/shinano-common:cm-14.1 \
+          $HOME/device/sony/msm8974-common:cm-14.1 \
           "
 
 # merge

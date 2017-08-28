@@ -22,6 +22,8 @@ repopick 22096 # twrp Fix for LineageOS build
 repopick 22565 # twrp Adopted Storage: Add support for mixed mode sdcards
 repopick 24669 # twrp disable twrp app
 repopick 25015 # twrp OTA encrypted workaround
+# qcom/power D2TW
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_power refs/changes/92/25192/2 && git cherry-pick FETCH_HEAD 
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common
@@ -36,7 +38,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/58/258/8 && git cherry-pick FETCH_HEAD
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788,797"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788,797,816"
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common

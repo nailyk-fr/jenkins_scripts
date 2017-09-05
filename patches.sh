@@ -28,7 +28,6 @@ cd ~/hardware/qcom/power
 git reset --hard
 git fetch omnirom android-7.1
 git checkout omnirom/android-7.1
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_power refs/changes/92/25192/2 && git cherry-pick FETCH_HEAD 
 cd ~/
 
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
@@ -43,7 +42,7 @@ cd ~/device/sony/msm8974-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788,816,847"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788"
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common

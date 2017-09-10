@@ -14,121 +14,121 @@ cd ~/vendor/omni
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/packages/apps/Messaging
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/frameworks/base
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/packages/apps/Phonograph
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choosea/android-7.1
+git checkout choosea/android-8.0
 
 cd ~/device/qcom/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/system/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/bootable/recovery
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/device/sony/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-7.1
+git checkout choose/android-8.0
 
 cd ~/device/sony/leo
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-7.1
+git checkout choose/android-8.0
 
 #cd ~/device/sony/aries
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 #git reset --hard
 #git clean -fxd :/
-#git checkout github/android-7.1
+#git checkout github/android-8.0
 
 #cd ~/device/sony/leodual
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 #git reset --hard
 #git clean -fxd :/
-#git checkout github/android-7.1
+#git checkout github/android-8.0
 
 #cd ~/device/sony/sirius
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 #git reset --hard
 #git clean -fxd :/
-#git checkout github/android-7.1
+#git checkout github/android-8.0
 
 #cd ~/device/sony/castor_windy
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 #git reset --hard
 #git clean -fxd :/
-#git checkout github/android-7.1
+#git checkout github/android-8.0
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-7.1
+git checkout choose/android-8.0
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-7.1
+git checkout choose/android-8.0
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-7.1
+git checkout choose/android-8.0
 
 cd ~/kernel/ti/omap4
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-7.1
+git checkout omnirom/android-8.0
 
 cd ~/
 

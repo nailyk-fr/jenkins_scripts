@@ -35,28 +35,28 @@ cd ~/device/sony/common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common+android-7.1"  -g https://review.choose-a.name -P device/sony/common --exclude "525"
 
 echo -e ${YELLOW}"-----Patching device/sony/msm8974-common"${NC}
 cd ~/device/sony/msm8974-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+android-7.1"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788"
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common"  -g https://review.choose-a.name -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common+android-7.1"  -g https://review.choose-a.name -P device/sony/shinano-common
 
 echo -e ${YELLOW}"-----Patching device/sony/leo"${NC}
 cd ~/device/sony/leo
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo"  -g https://review.choose-a.name -P device/sony/leo
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo+android-7.1"  -g https://review.choose-a.name -P device/sony/leo
 
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974
@@ -65,7 +65,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 #git merge lineage/cm-14.1 --no-edit
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "786,787"
+$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974+android-7.1"  -g https://review.choose-a.name -P kernel/sony/msm8974 --exclude "786,787"
 
 cd ~/kernel/ti/omap4
 git fetch omnirom android-7.1
@@ -78,7 +78,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sepolicy"  -g https://review.choose-a.name -P device/sony/sepolicy
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sepolicy+android-7.1"  -g https://review.choose-a.name -P device/sony/sepolicy
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

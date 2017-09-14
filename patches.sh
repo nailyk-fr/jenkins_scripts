@@ -44,7 +44,9 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "1017"
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 1017
+
 
 cd ~/device/sony/leo
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

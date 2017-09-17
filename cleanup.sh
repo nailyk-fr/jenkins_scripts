@@ -7,6 +7,10 @@ if [ -d "$HOME/../releases/omni" ]; then
 	echo Releases deleted
 fi
 
+if [ -d "$HOME/out/soong" ]; then
+	rm -rfv $HOME/out/soong
+fi
+
 if [ -d "$HOME/out/target/product" ]; then
 	rm -rfv $HOME/out/target/product
 fi

@@ -25,13 +25,6 @@ git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
 
-cd ~/device/sony/common
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
-cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/common
-
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0

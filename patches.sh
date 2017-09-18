@@ -30,10 +30,10 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "1040"
-cd ~/device/sony/msm8974-common
-git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/40/1040/1 && git cherry-pick FETCH_HEAD
-cd ~/
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 913
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 914
+echo -e ${RED}"klsjdfhksdhf"${NC}
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/msm8974-common
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

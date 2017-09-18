@@ -70,11 +70,11 @@ git reset --hard
 git clean -fxd :/
 git checkout choose/android-7.1
 
-#cd ~/device/sony/aries
-#echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-#git reset --hard
-#git clean -fxd :/
-#git checkout github/android-7.1
+cd ~/device/sony/aries
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout choose/android-7.1
 
 #cd ~/device/sony/leodual
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

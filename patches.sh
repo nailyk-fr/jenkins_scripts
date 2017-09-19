@@ -16,6 +16,9 @@ echo -e ${GREEN}"---------home set to: $HOME"${NC}
 cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
+repopick 25843 # don't bootloader-reboot on panic
+repopick 25847 # adb legacy
+repopick 25848 # adb sepolicy
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

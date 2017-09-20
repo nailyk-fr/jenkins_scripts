@@ -40,10 +40,11 @@ echo -e ${RED}"power"${NC}
 #power: 
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 922 923 1048 1049 1050
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "913,914,1039,1040,1041,922,923,1048,1049,1050,1013,1071"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "913,914,1039,1040,1041,922,923,1048,1049,1050,1013,1071,1072"
 #filesystem
 echo -e ${RED}"FS users"${NC}
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 1071
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 1072
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

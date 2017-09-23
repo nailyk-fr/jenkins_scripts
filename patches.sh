@@ -22,6 +22,7 @@ repopick 22096 # twrp Fix for LineageOS build
 repopick 22565 # twrp Adopted Storage: Add support for mixed mode sdcards
 repopick 24669 # twrp disable twrp app
 repopick 25015 # twrp OTA encrypted workaround
+repopick 25938 # twrp dont unsecure twrp
 
 cd ~/hardware/qcom/power
 # qcom/power D2TW

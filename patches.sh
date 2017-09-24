@@ -31,6 +31,14 @@ git fetch omnirom android-7.1
 git checkout omnirom/android-7.1
 cd ~/
 
+cd ~/system/sepolicy
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_system_sepolicy refs/changes/54/25954/2 && git cherry-pick FETCH_HEAD
+cd /~
+
 echo -e ${YELLOW}"-----Patching device/sony/common"${NC}
 cd ~/device/sony/common
 git fetch choose android-7.1

@@ -63,6 +63,13 @@ git checkout choose/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/leo
 
+cd ~/device/sony/aries
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch choose android-8.0
+git checkout choose/android-8.0
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/aries
+
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0

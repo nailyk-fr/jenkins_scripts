@@ -110,7 +110,9 @@ $MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_tuna+branch
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
+git fetch github android-7.1
 git checkout github/android-8.0
+git cherry-pick 9f0f05e9ccfd5a126924530ca0466ce157178eae
 cd ~/
 
 cd ~/hardware/sony/timekeep

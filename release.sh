@@ -19,7 +19,7 @@ fi
 if [ -d "$HOME/../releases/twrp" ]; then
 	for folder in `find $HOME/out/target/product -maxdepth 1 -type d`; do
 		echo copy twrp
-		filename="twrp_$(basename $folder)_$(date +"%Y-%m-%d")"
+		filename="twrp_$(basename $folder)_O_$(date +"%Y-%m-%d")"
 		if [ -e "$folder/recovery.img" ]; then
 			eval cp --verbose --update $folder/recovery.img $HOME/../releases/twrp/$filename.img
 		fi

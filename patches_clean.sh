@@ -10,6 +10,12 @@ source $MYFOLDER/colors.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
+cd ~/system/core
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
+
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -70,11 +76,11 @@ git reset --hard
 git clean -fxd :/
 git checkout choose/android-8.0
 
-#cd ~/device/sony/aries
-#echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-#git reset --hard
-#git clean -fxd :/
-#git checkout github/android-8.0
+cd ~/device/sony/aries
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout choose/android-8.0
 
 #cd ~/device/sony/leodual
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

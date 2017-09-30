@@ -19,6 +19,7 @@ repopick 25847 # adb legacy
 repopick 25848 # adb sepolicy
 repopick -t oreolo-caf  # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
+repopick 26076 # force grep filename hide on sepolicy commands
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

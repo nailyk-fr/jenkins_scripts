@@ -18,7 +18,7 @@ repopick 25843 # don't bootloader-reboot on panic
 repopick 25847 # adb legacy
 repopick 25848 # adb sepolicy
 repopick -t oreolo-caf  # sepolicy rework
-reopick 26073 # warning instead of error on CLANG disabled
+repopick 26073 # warning instead of error on CLANG disabled
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

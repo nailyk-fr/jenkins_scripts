@@ -41,7 +41,7 @@ echo -e ${RED}"power"${NC}
 #power: 
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 922 923 1048 1049 1050
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "913,914,1039,1040,1041,922,923,1048,1049,1050,1013,1071,1072,1095,969,970,967"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "913,914,1039,1040,1041,922,923,1048,1049,1050,1013,1071,1072,1095,969,970,967"
 #filesystem
 echo -e ${RED}"FS users"${NC}
 cd ~/device/sony/msm8974-common
@@ -53,7 +53,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "1017,1072,1101,996"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "1017,1072,1101,996"
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 1072
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 1101
 
@@ -63,14 +63,14 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/leo
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_leo+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/leo
 
 cd ~/device/sony/aries
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/aries
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_aries+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/aries
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -79,35 +79,35 @@ git fetch choose android-8.0
 git checkout choose/android-8.0
 #git merge lineage/cm-14.1 --no-edit
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_sony_msm8974+branch:android-8.0"  -g https://review.choose-a.name -P kernel/sony/msm8974
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.0)"  -g https://review.choose-a.name -P kernel/sony/msm8974
 
 cd ~/kernel/ti/omap4
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_kernel_ti_omap4+branch:android-8.0"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_ti_omap4+branch:android-8.0)"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
 
 cd ~/device/sony/sepolicy
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sepolicy+branch:android-8.0"  -g https://review.choose-a.name -P device/sony/sepolicy
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_sepolicy+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/sepolicy
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_maguro+branch:android-8.0"  -g https://gerrit.omnirom.org -P device/samsung/maguro
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_maguro+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/samsung/maguro
 
 cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_samsung_tuna+branch:android-8.0"  -g https://gerrit.omnirom.org -P device/samsung/tuna
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_tuna+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/samsung/tuna
 
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony

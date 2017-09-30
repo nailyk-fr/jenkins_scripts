@@ -126,7 +126,7 @@ cd ~/
 
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,HOMEMADE,${PICKOFFICIAL},g' config/version.mk
-sed -i 's,HOMEMADE,${PICKOFFICIAL},g' config/common.mk
+sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/version.mk
+sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/common.mk
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}

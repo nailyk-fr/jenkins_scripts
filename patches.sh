@@ -34,18 +34,9 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-echo -e ${RED}"omni.dependencies"${NC}
-#omni.dependencies: 
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 913 914 1039 1040 1041
-echo -e ${RED}"power"${NC}
-#power: 
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-common 922 923 1048 1049 1050
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "913,914,1039,1040,1041,922,923,1048,1049,1050,1013,1071,1072,1095,969,970,967"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common
 #filesystem
-echo -e ${RED}"FS users"${NC}
-cd ~/device/sony/msm8974-common
-git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/71/1071/4 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/shinano-common
@@ -53,10 +44,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude "1017,1072,1101,996"
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 1072
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/shinano-common 1101
-
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common
 
 cd ~/device/sony/leo
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

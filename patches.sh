@@ -51,7 +51,7 @@ cd ~/device/sony/msm8974-common
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+android-7.1"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "788,819"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_msm8974-common+android-7.1"  -g https://review.choose-a.name -P device/sony/msm8974-common
 
 echo -e ${YELLOW}"-----Patching device/sony/shinano-common"${NC}
 cd ~/device/sony/shinano-common
@@ -73,7 +73,7 @@ git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/aries 1065
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+android-7.1"  -g https://review.choose-a.name -P device/sony/aries --exclude "1065"
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+android-7.1"  -g https://review.choose-a.name -P device/sony/aries
 
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974

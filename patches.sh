@@ -17,7 +17,7 @@ echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick 25843 # don't bootloader-reboot on panic
 repopick 25847 # adb legacy
 repopick 25848 # adb sepolicy
-repopick -t oreolo-caf --exclude "25660" # sepolicy rework
+repopick -t oreolo-caf # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
 repopick 26076 # force grep filename hide on sepolicy commands
 

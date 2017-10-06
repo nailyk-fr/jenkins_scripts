@@ -17,7 +17,7 @@ echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick 25843 # don't bootloader-reboot on panic
 repopick 25847 # adb legacy
 repopick 25848 # adb sepolicy
-repopick -t oreolo-caf  # sepolicy rework
+repopick -t oreolo-caf --exclude "25660" # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
 repopick 26076 # force grep filename hide on sepolicy commands
 
@@ -36,7 +36,12 @@ git checkout choose/android-8.0
 cd ~/
 echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common
-#filesystem
+echo -e ${RED}"keita protect:"${NC}
+git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/36/1136/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/44/1144/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/45/1145/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/46/1146/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/47/1147/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/shinano-common

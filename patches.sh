@@ -38,14 +38,14 @@ echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common
 cd ~/device/sony/msm8974-common
 echo -e ${RED}"keita protect:"${NC}
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/36/1136/3 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/44/1144/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/45/1145/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/46/1146/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/47/1147/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/36/1136/3 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/44/1144/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/45/1145/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/46/1146/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/47/1147/1 && git cherry-pick FETCH_HEAD
 
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/54/1154/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/57/1157/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/54/1154/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/57/1157/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/shinano-common

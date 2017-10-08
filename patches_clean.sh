@@ -16,6 +16,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-7.1
 
+cd ~/packages/apps/OpenDelta
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-7.1
+
 cd ~/build
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

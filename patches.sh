@@ -24,6 +24,15 @@ repopick 24669 # twrp disable twrp app
 repopick 25015 # twrp OTA encrypted workaround
 repopick 25938 # twrp dont unsecure twrp
 
+cd ~/packages/apps/OpenDelta
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-7.1
+git checkout omnirom/android-7.1
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/19/26219/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/20/26220/1 && git cherry-pick FETCH_HEAD
+cd ~/
+
 cd ~/hardware/qcom/power
 # qcom/power D2TW
 git reset --hard

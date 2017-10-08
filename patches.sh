@@ -44,7 +44,6 @@ git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/46/1146/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/47/1147/1 && git cherry-pick FETCH_HEAD
 
-git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/54/1154/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/57/1157/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
@@ -57,6 +56,7 @@ $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(st
 cd ~/device/sony/shinano-common
 git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/77/977/9 && git cherry-pick FETCH_HEAD
 git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/01/1101/13 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/54/1154/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/leo

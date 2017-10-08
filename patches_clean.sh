@@ -28,6 +28,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.0
 
+cd ~/packages/apps/OpenDelta
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
+
 cd ~/packages/apps/Messaging
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

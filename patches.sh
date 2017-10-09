@@ -69,20 +69,20 @@ git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common+android-7.1"  -g https://review.choose-a.name -P device/sony/shinano-common
 
-echo -e ${YELLOW}"-----Patching device/sony/leo"${NC}
-cd ~/device/sony/leo
+echo -e ${YELLOW}"-----Patching device/sony/z3"${NC}
+cd ~/device/sony/z3
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_leo+android-7.1"  -g https://review.choose-a.name -P device/sony/leo
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_z3+android-7.1"  -g https://review.choose-a.name -P device/sony/z3
 
-echo -e ${YELLOW}"-----Patching device/sony/aries"${NC}
-cd ~/device/sony/aries
+echo -e ${YELLOW}"-----Patching device/sony/z3c"${NC}
+cd ~/device/sony/z3c
 git fetch choose android-7.1
 git checkout choose/android-7.1
 cd ~/
-$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/aries 1065
-$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+android-7.1"  -g https://review.choose-a.name -P device/sony/aries
+$MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/z3c 1065
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_z3c+android-7.1"  -g https://review.choose-a.name -P device/sony/z3c
 
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974

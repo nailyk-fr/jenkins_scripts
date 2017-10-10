@@ -46,7 +46,6 @@ git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm
 
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/57/1157/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/71/1171/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/72/1172/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/73/1173/1 && git cherry-pick FETCH_HEAD
 cd ~/
 

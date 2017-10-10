@@ -71,15 +71,15 @@ $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_shinano-common
 
 echo -e ${YELLOW}"-----Patching device/sony/z3"${NC}
 cd ~/device/sony/z3
-git fetch choose android-7.1
-git checkout choose/android-7.1
+git fetch choose android-7.1_z3
+git checkout choose/android-7.1_z3
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_z3+android-7.1"  -g https://review.choose-a.name -P device/sony/z3
 
 echo -e ${YELLOW}"-----Patching device/sony/z3c"${NC}
 cd ~/device/sony/z3c
-git fetch choose android-7.1
-git checkout choose/android-7.1
+git fetch choose android-7.1_z3c
+git checkout choose/android-7.1_z3c
 cd ~/
 $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/z3c 1065
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_z3c+android-7.1"  -g https://review.choose-a.name -P device/sony/z3c

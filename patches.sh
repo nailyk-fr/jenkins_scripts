@@ -75,7 +75,7 @@ git fetch choose android-7.1_z3
 git checkout choose/android-7.1_z3
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_z3+android-7.1"  -g https://review.choose-a.name -P device/sony/z3
-cd ~/device/sony/leo
+cd ~/device/sony/z3
 git fetch ssh://nailyk-fr@review.choose-a.name:29418/android_device_sony_leo refs/changes/79/1179/2 && git cherry-pick FETCH_HEAD
 
 echo -e ${YELLOW}"-----Patching device/sony/z3c"${NC}

@@ -22,9 +22,11 @@ if [ -d "$HOME/../releases/twrp" ]; then
 		filename="twrp_$(basename $folder)_$(date +"%Y-%m-%d")"
 		if [ -e "$folder/recovery.img" ]; then
 			eval cp --verbose --update $folder/recovery.img $HOME/../releases/twrp/$filename.img
+			echo "addDescription \"md5: $(md5sum $HOME/../releases/twrp/$filename.img | awk '{ print $1 }')\" $filename.img" >> $HOME/../releases/twrp/.htaccess
 		fi
 		if [ -e "$folder/recovery-updater-signed.zip" ]; then
 			eval cp --verbose --update $folder/recovery-updater-signed.zip $HOME/../releases/twrp/$filename.zip
+			echo "addDescription \"md5: $(md5sum $HOME/../releases/twrp/$filename.zip | awk '{ print $1 }')\" $filename.zip" >> $HOME/../releases/twrp/.htaccess
 		fi
 	done
 else

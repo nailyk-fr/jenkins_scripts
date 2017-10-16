@@ -6,16 +6,17 @@ if [ ! -d "$HOME/../releases/twrp" ]; then
 fi
 
 if [ -d "$HOME/../releases/twrp" ]; then
-	for folder in `find $HOME/out/target/product -maxdepth 1 -type d`; do
 		echo copy twrp
-		filename="twrp_$(basename $folder)_STOCK_$(date +"%Y-%m-%d")"
-		if [ -e "$folder/recovery.img" ]; then
-			eval cp --verbose --update $folder/recovery.img $HOME/../releases/twrp/$filename.img
+		filename="twrp_${CODENAME}_STOCK_$(date +"%Y-%m-%d")"
+		echo "eval: $HOME/out/target/product/${CODENAME}/recovery.img"
+		if [ -e "$HOME/out/target/product/${CODENAME}/recovery.img" ]; then
+			eval cp --verbose --update $HOME/out/target/product/${CODENAME}/recovery.img $HOME/../releases/twrp/$filename.img
+			echo copy recovery
 		fi
-		if [ -e "$folder/recovery-updater-signed.zip" ]; then
-			eval cp --verbose --update $folder/recovery-updater-signed.zip $HOME/../releases/twrp/$filename.zip
+		if [ -e "$HOME/out/target/product/${CODENAME}/recovery-updater-signed.zip" ]; then
+			eval cp --verbose --update $HOME/out/target/product/${CODENAME}/recovery-updater-signed.zip $HOME/../releases/twrp/$filename.zip
+			echo copy zip
 		fi
-	done
 else
 	false
 fi

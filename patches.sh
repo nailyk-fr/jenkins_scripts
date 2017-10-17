@@ -33,9 +33,10 @@ cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/27/927/16 && git cherry-pick FETCH_HEAD
 cd ~/
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "1136,1144,1145,1146,1171,1173"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "1136,1144,1145,1146,1171,1173,927"
 cd ~/device/sony/msm8974-common
 echo -e ${RED}"keita protect:"${NC}
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_msm8974-common refs/changes/36/1136/7 && git cherry-pick FETCH_HEAD

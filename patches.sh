@@ -61,6 +61,7 @@ git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/c
 git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/01/1101/16 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/54/1154/2 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/70/1170/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKCUSTOM}@review.choose-a.name:29418/android_device_sony_shinano-common refs/changes/92/1192/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/leo

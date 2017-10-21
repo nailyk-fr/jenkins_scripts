@@ -46,6 +46,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.0
 
+cd ~/frameworks/av
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
+
 cd ~/packages/apps/Phonograph
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

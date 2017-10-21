@@ -21,6 +21,17 @@ repopick -t oreolo-caf # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
 repopick 26076 # force grep filename hide on sepolicy commands
 
+cd ~/frameworks/av
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/61/25861/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/62/25862/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/63/25863/1 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/64/25864/1 && git cherry-pick FETCH_HEAD
+cd ~/
+
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 # qcom/power D2TW

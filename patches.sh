@@ -60,23 +60,25 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude="994,1165"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude="994,1165,1192,1199"
 cd ~/device/sony/shinano-common
 git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/94/994/15 && git cherry-pick FETCH_HEAD
+git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/92/1192/5 && git cherry-pick FETCH_HEAD
+git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/99/1199/1 && git cherry-pick FETCH_HEAD
 
-cd ~/device/sony/leo
+cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_leo+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/leo
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_leo+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/z3
 
-cd ~/device/sony/aries
+cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_aries+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/aries
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_aries+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/z3c
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

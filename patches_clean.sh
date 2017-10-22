@@ -88,13 +88,13 @@ git reset --hard
 git clean -fxd :/
 git checkout choose/android-8.0
 
-cd ~/device/sony/leo
+cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout choose/android-8.0
 
-cd ~/device/sony/aries
+cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

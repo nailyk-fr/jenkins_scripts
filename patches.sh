@@ -31,6 +31,8 @@ git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/61/25861
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/62/25862/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/63/25863/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/64/25864/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/26/26426/1 && git cherry-pick FETCH_HEAD
+git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/25/26425/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/hardware/qcom/power

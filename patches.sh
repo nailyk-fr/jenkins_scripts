@@ -26,6 +26,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
+git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/15/26415/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/61/25861/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/62/25862/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/63/25863/1 && git cherry-pick FETCH_HEAD

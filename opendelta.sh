@@ -29,7 +29,7 @@ echo -e ${GREEN}"---------home set to: $HOME"${NC}
 BIN_JAVA=java
 BIN_MINSIGNAPK=$HOME/packages/apps/OpenDelta/server/minsignapk.jar
 BIN_XDELTA=$MYFOLDER/xdelta3
-BIN_ZIPADJUST=$MYFOLDER/delta/zipadjust
+BIN_ZIPADJUST=$MYFOLDER/zipadjust
 
 FILE_MATCH=omni-*.zip
 PATH_CURRENT=$HOME/out/target/product/$DEVICE
@@ -90,8 +90,8 @@ if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
 	exit 1
 fi
 
-#rm -rf work
-#mkdir work
+rm -rf work
+mkdir work
 #rm -rf out
 #mkdir out
 

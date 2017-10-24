@@ -4,6 +4,11 @@
 
 # Get device either from $DEVICE set by calling script, or first parameter
 
+MYFOLDER="$(dirname "$(realpath "$0")")"
+
+source $MYFOLDER/colors.sh
+source $MYFOLDER/config.sh
+
 if [ "$DEVICE" == "" ]; then
 	if [ "$1" != "" ]; then
 		DEVICE=$1
@@ -17,16 +22,18 @@ fi
 
 # ------ CONFIGURATION ------
 
-HOME=/home/build
+HOME=$HOME
+
+echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
 BIN_JAVA=java
-BIN_MINSIGNAPK=$HOME/delta/minsignapk.jar
-BIN_XDELTA=$HOME/delta/xdelta3
-BIN_ZIPADJUST=$HOME/delta/zipadjust
+BIN_MINSIGNAPK=$HOME/packages/apps/OpenDelta/server/minsignapk.jar
+BIN_XDELTA=$MYFOLDER/xdelta3
+BIN_ZIPADJUST=$MYFOLDER/delta/zipadjust
 
 FILE_MATCH=omni-*.zip
 PATH_CURRENT=$HOME/omni-7.1/out/target/product/$DEVICE
-PATH_LAST=$HOME/delta/last/$DEVICE
+PATH_LAST=$HOME/..releases/ote/$DEVICE
 
 KEY_X509=$HOME/.keys/platform.x509.pem
 KEY_PK8=$HOME/.keys/platform.pk8
@@ -83,10 +90,10 @@ if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
 	exit 1
 fi
 
-rm -rf work
-mkdir work
-rm -rf out
-mkdir out
+#rm -rf work
+#mkdir work
+#rm -rf out
+#mkdir out
 
 $BIN_ZIPADJUST --decompress $PATH_CURRENT/$FILE_CURRENT work/current.zip
 $BIN_ZIPADJUST --decompress $PATH_LAST/$FILE_LAST work/last.zip
@@ -161,15 +168,16 @@ echo "      \"md5_official\": \"$MD5_CURRENT\"" >> $DELTA
 echo "  }" >> $DELTA
 echo "}" >> $DELTA
 
-mkdir publish >/dev/null 2>/dev/null
-mkdir publish/$DEVICE >/dev/null 2>/dev/null
+mkdir publish
+mkdir publish/$DEVICE
 cp out/* publish/$DEVICE/.
 
-rm -rf work
-rm -rf out
+#rm -rf work
+#rm -rf out
 
-rm -rf $PATH_LAST/*
+#rm -rf $PATH_LAST/*
 mkdir -p $PATH_LAST
 cp $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
+
 
 exit 0

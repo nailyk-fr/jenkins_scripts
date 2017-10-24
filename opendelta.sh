@@ -16,7 +16,7 @@ if [ "$DEVICE" == "" ]; then
 fi
 
 if [ "$DEVICE" == "" ]; then
-	echo "Abort: no device set" >&2
+	echo -e ${RED}"Abort: no device set"${NC} >&2
 	exit 1
 fi
 
@@ -32,8 +32,8 @@ BIN_XDELTA=$MYFOLDER/xdelta3
 BIN_ZIPADJUST=$MYFOLDER/delta/zipadjust
 
 FILE_MATCH=omni-*.zip
-PATH_CURRENT=$HOME/omni-7.1/out/target/product/$DEVICE
-PATH_LAST=$HOME/..releases/ote/$DEVICE
+PATH_CURRENT=$HOME/out/target/product/$DEVICE
+PATH_LAST=$HOME/../releases/ote/$DEVICE
 
 KEY_X509=$HOME/.keys/platform.x509.pem
 KEY_PK8=$HOME/.keys/platform.pk8
@@ -74,19 +74,19 @@ FILE_LAST=$(getFileName $(ls -1 $PATH_LAST/$FILE_MATCH))
 FILE_LAST_BASE=$(getFileNameNoExt $FILE_LAST)
 
 if [ "$FILE_CURRENT" == "" ]; then
-	echo "Abort: CURRENT zip not found" >&2
+	echo -e ${RED}"Abort: CURRENT zip not found"${NC} >&2
 	exit 1
 fi
 
 if [ "$FILE_LAST" == "" ]; then
-	echo "Abort: LAST zip not found" >&2
+	echo -e ${RED}"Abort: LAST zip not found"${NC} >&2
 	mkdir -p $PATH_LAST
-	cp $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
+	cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
 	exit 0
 fi
 
 if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
-	echo "Abort: CURRENT and LAST zip have the same name" >&2
+	echo -e ${RED}"Abort: CURRENT and LAST zip have the same name"$[NC} >&2
 	exit 1
 fi
 
@@ -99,12 +99,12 @@ $BIN_ZIPADJUST --decompress $PATH_CURRENT/$FILE_CURRENT work/current.zip
 $BIN_ZIPADJUST --decompress $PATH_LAST/$FILE_LAST work/last.zip
 $BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/current.zip work/current_signed.zip
 if [ $? -ne 0 ]; then
-	echo "Abort: creating signing info for current failed" >&2
+	echo -e ${RED}"Abort: creating signing info for current failed"${NC} >&2
 	exit 1
 fi
 $BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/last.zip work/last_signed.zip
 if [ $? -ne 0 ]; then
-	echo "Abort: creating signing info for last failed" >&2
+	echo -e ${RED}"Abort: creating signing info for last failed"${NC} >&2
 	exit 1
 fi
 SRC_BUFF=$(nextPowerOf2 $(getFileSize work/current.zip));

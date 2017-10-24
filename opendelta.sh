@@ -86,7 +86,7 @@ if [ "$FILE_LAST" == "" ]; then
 fi
 
 if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
-	echo -e ${RED}"Abort: CURRENT and LAST zip have the same name"$[NC} >&2
+	echo -e ${RED}"Abort: CURRENT ($FILE_CURRENT) and LAST ($FILE_LAST) zip have the same name"${NC} >&2
 	exit 1
 fi
 

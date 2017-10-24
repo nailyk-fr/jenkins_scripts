@@ -134,4 +134,8 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/version.mk
 sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/common.mk
 
+cd ~/
+echo -e ${GREEN}"-----coping nailyk CA"${NC}
+cp $MYFOLDER/df9b0574.0 ~/system/ca-certificates/files/df9b0574.0
+
 echo -e ${GREEN}"-----Patching done --------------"${NC}

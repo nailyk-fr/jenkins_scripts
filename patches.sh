@@ -21,19 +21,18 @@ repopick -t oreolo-caf # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
 repopick 26076 # force grep filename hide on sepolicy commands
 repopick 26452 # fmwk/base QCOM_BSP
+repopick 26426 # nuplayer: Avoid crash when codec fails to load
+repopick 26425 # cameraservice: Resolve message vs start/stop preview races
+repopick 26415 # Revert "Camera: Cleanup 'CameraModule' dependend code"
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
-git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/15/26415/1 && git cherry-pick FETCH_HEAD
 #git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/61/25861/1 && git cherry-pick FETCH_HEAD
 #git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/62/25862/1 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/63/25863/4 && git cherry-pick FETCH_HEAD
 git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/64/25864/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/26/26426/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/25/26425/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/hardware/qcom/power

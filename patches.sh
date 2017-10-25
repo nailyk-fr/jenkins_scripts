@@ -47,9 +47,6 @@ cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch choose android-8.0
 git checkout choose/android-8.0
-git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/49/1049/8 && git cherry-pick FETCH_HEAD
-git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/50/1050/8 && git cherry-pick FETCH_HEAD
-git fetch https://review.choose-a.name/android_device_sony_msm8974-common refs/changes/24/1224/2 && git cherry-pick FETCH_HEAD
 cd ~/
 echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "1049,1050,1224"
@@ -61,8 +58,6 @@ git checkout choose/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude="994,995"
 cd ~/device/sony/shinano-common
-git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/94/994/15 && git cherry-pick FETCH_HEAD
-git fetch https://review.choose-a.name/android_device_sony_shinano-common refs/changes/95/995/20 && git cherry-pick FETCH_HEAD
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

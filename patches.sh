@@ -25,15 +25,10 @@ repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 26425 # cameraservice: Resolve message vs start/stop preview races
 repopick 26415 # Revert "Camera: Cleanup 'CameraModule' dependend code"
 
-cd ~/frameworks/av
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git reset --hard
-git fetch omnirom android-8.0
-#git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/61/25861/1 && git cherry-pick FETCH_HEAD
-#git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/62/25862/1 && git cherry-pick FETCH_HEAD
-git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/63/25863/4 && git cherry-pick FETCH_HEAD
-git fetch https://gerrit.omnirom.org/android_frameworks_av refs/changes/64/25864/1 && git cherry-pick FETCH_HEAD
-cd ~/
+repopick 26474 # fmwk/av: Support for legacy camera HALv1 
+repopick 25862 # fmwk/av: Support for legacy camera/encoder buffers 
+repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
+repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -30,6 +30,13 @@ repopick 25862 # fmwk/av: Support for legacy camera/encoder buffers
 repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
 repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
+cd ~/frameworks/av
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.0
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/83/26483/1 && git cherry-pick FETCH_HEAD
+cd ~/
+
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 # qcom/power D2TW

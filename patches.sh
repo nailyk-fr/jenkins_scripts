@@ -25,10 +25,10 @@ repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 26425 # cameraservice: Resolve message vs start/stop preview races
 repopick 26415 # Revert "Camera: Cleanup 'CameraModule' dependend code"
 
-repopick 26474 # fmwk/av: Support for legacy camera HALv1 
-repopick 25862 # fmwk/av: Support for legacy camera/encoder buffers 
-repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
-repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
+#repopick 26474 # fmwk/av: Support for legacy camera HALv1 
+#repopick 25862 # fmwk/av: Support for legacy camera/encoder buffers 
+#repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
+#repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

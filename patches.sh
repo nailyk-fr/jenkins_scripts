@@ -85,7 +85,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.0)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.0)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974 --exclude "26500"
 
 cd ~/kernel/ti/omap4
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

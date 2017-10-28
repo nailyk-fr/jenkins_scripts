@@ -82,12 +82,6 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.0
 
-cd ~/device/sony/sepolicy
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.0
-
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -106,11 +100,11 @@ git checkout omnirom/android-8.0
 #git clean -fxd :/
 #git checkout github/android-8.0
 
-#cd ~/device/sony/sirius
-#echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-#git reset --hard
-#git clean -fxd :/
-#git checkout github/android-8.0
+cd ~/device/sony/z2
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
 
 #cd ~/device/sony/castor_windy
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

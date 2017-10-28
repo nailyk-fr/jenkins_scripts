@@ -48,7 +48,7 @@ git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "26504,26502"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -110,9 +110,7 @@ $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(st
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
-git fetch nailyk android-8.0
-git fetch nailyk unify-8.0
-git checkout nailyk/unify-8.0
+git checkout github/android-8.0
 cd ~/
 
 cd ~/hardware/sony/timekeep

@@ -46,8 +46,8 @@ cd ~/
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 cd ~/
 echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/msm8974-common --exclude "1049,1224,1125"
@@ -55,31 +55,31 @@ $MYFOLDER/repopick.py -g https://review.choose-a.name -P device/sony/msm8974-com
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/shinano-common --exclude="994,995"
 cd ~/device/sony/shinano-common
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_leo+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/z3
 
 cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_aries+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/z3c
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
+git fetch omnirom android-8.0
 #git fetch lineage cm-14.1
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 #git merge lineage/cm-14.1 --no-edit
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.0)"  -g https://review.choose-a.name -P kernel/sony/msm8974
@@ -93,8 +93,8 @@ $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(st
 
 cd ~/device/sony/sepolicy
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch choose android-8.0
-git checkout choose/android-8.0
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_sepolicy+branch:android-8.0)"  -g https://review.choose-a.name -P device/sony/sepolicy
 

@@ -62,7 +62,7 @@ cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choosea/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/device/qcom/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -86,19 +86,19 @@ cd ~/device/sony/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 #cd ~/device/sony/leodual
 #echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -134,19 +134,19 @@ cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout choose/android-8.0
+git checkout omnirom/android-8.0
 
 cd ~/kernel/ti/omap4
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

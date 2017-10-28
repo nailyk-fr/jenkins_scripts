@@ -111,8 +111,8 @@ echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
 git fetch nailyk android-8.0
-git checkout github/android-8.0
-git cherry-pick 67f8cc90af4f0855c0ee26c493d29fe6b46cd0b7
+git fetch nailyk unify-8.0
+git checkout nailyk/unify-8.0
 cd ~/
 
 cd ~/hardware/sony/timekeep

@@ -21,6 +21,7 @@ repopick -t oreolo-caf # sepolicy rework
 repopick 26073 # warning instead of error on CLANG disabled
 repopick 26076 # force grep filename hide on sepolicy commands
 repopick 26452 # fmwk/base QCOM_BSP
+repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 
 cd ~/frameworks/av

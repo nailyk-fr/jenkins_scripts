@@ -113,8 +113,9 @@ $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(st
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
-git fetch github android-7.1
+git fetch nailyk android-8.0
 git checkout github/android-8.0
+git cherry-pick 67f8cc90af4f0855c0ee26c493d29fe6b46cd0b7
 cd ~/
 
 cd ~/hardware/sony/timekeep

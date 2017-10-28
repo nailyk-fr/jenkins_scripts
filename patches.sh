@@ -23,18 +23,16 @@ repopick 26076 # force grep filename hide on sepolicy commands
 repopick 26452 # fmwk/base QCOM_BSP
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 
+cd ~/frameworks/av
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.0
+cd ~/
 repopick 26425 # fmwk/av: cameraservice: Resolve message vs start/stop preview races
 repopick 26415 # fmwk/av: Revert "Camera: Cleanup 'CameraModule' dependend code"
 repopick 26474 # fmwk/av: Support for legacy camera HALv1 
 repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
 repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
-
-cd ~/frameworks/av
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git reset --hard
-git fetch omnirom android-8.0
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_frameworks_av refs/changes/83/26483/1 && git cherry-pick FETCH_HEAD
-cd ~/
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

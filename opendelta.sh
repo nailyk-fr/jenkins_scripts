@@ -33,10 +33,10 @@ BIN_ZIPADJUST=$MYFOLDER/zipadjust
 
 FILE_MATCH=omni-*.zip
 PATH_CURRENT=$HOME/out/target/product/$DEVICE
-PATH_LAST=$HOME/../releases/ota/$DEVICE
+PATH_LAST=$HOME/../releases/ota/publish/$DEVICE
 
-KEY_X509=$HOME/.keys/platform.x509.pem
-KEY_PK8=$HOME/.keys/platform.pk8
+KEY_X509=$HOME/${ROM_KEYS_PATH}/platform.x509.pem
+KEY_PK8=$HOME/${ROM_KEYS_PATH}/platform.pk8
 
 # ------ PROCESS ------
 
@@ -90,47 +90,47 @@ if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
 	exit 1
 fi
 
-rm -rf work
-mkdir work
-#rm -rf out
-#mkdir out
+rm -rf $HOME/../releases/ota/work
+mkdir -p $HOME/../releases/ota/work
+rm -rf $HOME/../releases/ota/out
+mkdir -p $HOME/../releases/ota/out
 
-$BIN_ZIPADJUST --decompress $PATH_CURRENT/$FILE_CURRENT work/current.zip
-$BIN_ZIPADJUST --decompress $PATH_LAST/$FILE_LAST work/last.zip
-$BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/current.zip work/current_signed.zip
+$BIN_ZIPADJUST --decompress $PATH_CURRENT/$FILE_CURRENT $HOME/../releases/ota/work/current.zip
+$BIN_ZIPADJUST --decompress $PATH_LAST/$FILE_LAST $HOME/../releases/ota/work/last.zip
+$BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 $HOME/../releases/ota/work/current.zip $HOME/../releases/ota/work/current_signed.zip
 if [ $? -ne 0 ]; then
 	echo -e ${RED}"Abort: creating signing info for current failed"${NC} >&2
 	exit 1
 fi
-$BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/last.zip work/last_signed.zip
+$BIN_JAVA -Xmx4096m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 $HOME/../releases/ota/work/last.zip $HOME/../releases/ota/work/last_signed.zip
 if [ $? -ne 0 ]; then
 	echo -e ${RED}"Abort: creating signing info for last failed"${NC} >&2
 	exit 1
 fi
-SRC_BUFF=$(nextPowerOf2 $(getFileSize work/current.zip));
-$BIN_XDELTA -B ${SRC_BUFF} -9evfS none -s work/last.zip work/current.zip out/$FILE_LAST_BASE.update
-SRC_BUFF=$(nextPowerOf2 $(getFileSize work/current_signed.zip));
-$BIN_XDELTA -B ${SRC_BUFF} -9evfS none -s work/current.zip work/current_signed.zip out/$FILE_LAST_BASE.sign
+SRC_BUFF=$(nextPowerOf2 $(getFileSize $HOME/../releases/ota/work/current.zip));
+$BIN_XDELTA -B ${SRC_BUFF} -9evfS none -s $HOME/../releases/ota/work/last.zip $HOME/../releases/ota/work/current.zip $HOME/../releases/ota/out/$FILE_LAST_BASE.update
+SRC_BUFF=$(nextPowerOf2 $(getFileSize $HOME/../releases/ota/work/current_signed.zip));
+$BIN_XDELTA -B ${SRC_BUFF} -9evfS none -s $HOME/../releases/ota/work/current.zip $HOME/../releases/ota/work/current_signed.zip $HOME/../releases/ota/out/$FILE_LAST_BASE.sign
 
 MD5_CURRENT=$(getFileMD5 $PATH_CURRENT/$FILE_CURRENT)
-MD5_CURRENT_STORE=$(getFileMD5 work/current.zip)
-MD5_CURRENT_STORE_SIGNED=$(getFileMD5 work/current_signed.zip)
+MD5_CURRENT_STORE=$(getFileMD5 $HOME/../releases/ota/work/current.zip)
+MD5_CURRENT_STORE_SIGNED=$(getFileMD5 $HOME/../releases/ota/work/current_signed.zip)
 MD5_LAST=$(getFileMD5 $PATH_LAST/$FILE_LAST)
-MD5_LAST_STORE=$(getFileMD5 work/last.zip)
-MD5_LAST_STORE_SIGNED=$(getFileMD5 work/last_signed.zip)
-MD5_UPDATE=$(getFileMD5 out/$FILE_LAST_BASE.update)
-MD5_SIGN=$(getFileMD5 out/$FILE_LAST_BASE.sign)
+MD5_LAST_STORE=$(getFileMD5 $HOME/../releases/ota/work/last.zip)
+MD5_LAST_STORE_SIGNED=$(getFileMD5 $HOME/../releases/ota/work/last_signed.zip)
+MD5_UPDATE=$(getFileMD5 $HOME/../releases/ota/out/$FILE_LAST_BASE.update)
+MD5_SIGN=$(getFileMD5 $HOME/../releases/ota/out/$FILE_LAST_BASE.sign)
 
 SIZE_CURRENT=$(getFileSize $PATH_CURRENT/$FILE_CURRENT)
-SIZE_CURRENT_STORE=$(getFileSize work/current.zip)
-SIZE_CURRENT_STORE_SIGNED=$(getFileSize work/current_signed.zip)
+SIZE_CURRENT_STORE=$(getFileSize $HOME/../releases/ota/work/current.zip)
+SIZE_CURRENT_STORE_SIGNED=$(getFileSize $HOME/../releases/ota/work/current_signed.zip)
 SIZE_LAST=$(getFileSize $PATH_LAST/$FILE_LAST)
-SIZE_LAST_STORE=$(getFileSize work/last.zip)
-SIZE_LAST_STORE_SIGNED=$(getFileSize work/last_signed.zip)
-SIZE_UPDATE=$(getFileSize out/$FILE_LAST_BASE.update)
-SIZE_SIGN=$(getFileSize out/$FILE_LAST_BASE.sign)
+SIZE_LAST_STORE=$(getFileSize $HOME/../releases/ota/work/last.zip)
+SIZE_LAST_STORE_SIGNED=$(getFileSize $HOME/../releases/ota/work/last_signed.zip)
+SIZE_UPDATE=$(getFileSize $HOME/../releases/ota/out/$FILE_LAST_BASE.update)
+SIZE_SIGN=$(getFileSize $HOME/../releases/ota/out/$FILE_LAST_BASE.sign)
 
-DELTA=out/$FILE_LAST_BASE.delta
+DELTA=~/../releases/ota/out/$FILE_LAST_BASE.delta
 
 echo "{" > $DELTA
 echo "  \"version\": 1," >> $DELTA
@@ -168,12 +168,11 @@ echo "      \"md5_official\": \"$MD5_CURRENT\"" >> $DELTA
 echo "  }" >> $DELTA
 echo "}" >> $DELTA
 
-mkdir publish
-mkdir publish/$DEVICE
-cp out/* publish/$DEVICE/.
+mkdir -p $HOME/../releases/ota/publish/$DEVICE
+cp $HOME/../releases/ota/out/* $HOME/../releases/ota/publish/$DEVICE/.
 
-#rm -rf work
-#rm -rf out
+rm -rf $HOME/../releases/work
+rm -rf $HOME/../releases/out
 
 #rm -rf $PATH_LAST/*
 mkdir -p $PATH_LAST

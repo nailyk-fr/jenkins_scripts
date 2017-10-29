@@ -33,7 +33,7 @@ BIN_ZIPADJUST=$MYFOLDER/zipadjust
 
 FILE_MATCH=omni-*.zip
 PATH_CURRENT=$HOME/out/target/product/$DEVICE
-PATH_LAST=$HOME/../releases/ote/$DEVICE
+PATH_LAST=$HOME/../releases/ota/$DEVICE
 
 KEY_X509=$HOME/.keys/platform.x509.pem
 KEY_PK8=$HOME/.keys/platform.pk8

@@ -69,8 +69,8 @@ nextPowerOf2() {
     echo $v;
 }
 
-FILE_CURRENT=$(getFileName $(find $PATH_CURRENT -maxdepth 1 -type f -iname "$FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " )
-FILE_LAST=$(getFileName $(find $PATH_LAST -maxdepth 1 -type f -iname " $FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " )
+FILE_CURRENT=$(getFileName $(find $PATH_CURRENT -maxdepth 1 -type f -iname "$FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " ))
+FILE_LAST=$(getFileName $(find $PATH_LAST -maxdepth 1 -type f -iname "$FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " ))
 FILE_LAST_BASE=$(getFileNameNoExt $FILE_LAST)
 
 if [ "$FILE_CURRENT" == "" ]; then

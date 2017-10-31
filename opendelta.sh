@@ -69,8 +69,8 @@ nextPowerOf2() {
     echo $v;
 }
 
-FILE_CURRENT=$(getFileName $(ls -1 $PATH_CURRENT/$FILE_MATCH))
-FILE_LAST=$(getFileName $(ls -1 $PATH_LAST/$FILE_MATCH))
+FILE_CURRENT=$(getFileName $(find $PATH_CURRENT -maxdepth 1 -type f -iname "$FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " )
+FILE_LAST=$(getFileName $(find $PATH_LAST -maxdepth 1 -type f -iname " $FILE_MATCH" -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" " )
 FILE_LAST_BASE=$(getFileNameNoExt $FILE_LAST)
 
 if [ "$FILE_CURRENT" == "" ]; then
@@ -171,12 +171,16 @@ echo "}" >> $DELTA
 mkdir -p $HOME/../releases/ota/publish/$DEVICE
 cp $HOME/../releases/ota/out/* $HOME/../releases/ota/publish/$DEVICE/.
 
-rm -rf $HOME/../releases/work
-rm -rf $HOME/../releases/out
+rm -rf $HOME/../releases/ota/work
+rm -rf $HOME/../releases/ota/out
 
 #rm -rf $PATH_LAST/*
 mkdir -p $PATH_LAST
-cp $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
+cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
+echo "Generate md5sum file"
+echo "${MD5_CURRENT} ${FILE_CURRENT}" > ${PATH_CURRENT}/${FILE_CURRENT}.md5sum
 
+
+echo "Everything done"
 
 exit 0

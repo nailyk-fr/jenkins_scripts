@@ -108,7 +108,7 @@ git fetch github cm-14.1
 git checkout github/cm-14.1
 #git checkout github/cm-14.1_twrp
 cd ~/
-repopick -Q "status:open+project:android_device_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/samsung/tuna
+repopick -Q "status:open+project:android_device_samsung_tuna+branch:cm-14.1" -P device/samsung/tuna
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -117,7 +117,7 @@ git fetch github cm-14.1
 git checkout github/cm-14.1
 #git checkout github/cm-14.1_twrp
 cd ~/
-repopick -Q "status:open+project:android_device_samsung_maguro+branch:cm-14.1" -g https://gerrit.nailyk.fr -P device/samsung/maguro
+repopick -Q "status:open+project:android_device_samsung_maguro+branch:cm-14.1" -P device/samsung/maguro
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -131,7 +131,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch github cm-14.1
 git checkout github/cm-14.1
 cd ~/
-repopick -Q "status:open+branch:cm-14.1+project:android_kernel_samsung_tuna+branch:cm-14.1" -g https://gerrit.nailyk.fr -P kernel/samsung/tuna
+repopick -Q "status:open+branch:cm-14.1+project:android_kernel_samsung_tuna+branch:cm-14.1" -P kernel/samsung/tuna
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

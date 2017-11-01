@@ -85,6 +85,13 @@ git checkout choose/android-7.1
 cd ~/
 $MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_aries+android-7.1"  -g https://review.choose-a.name -P device/sony/z3c
 
+echo -e ${YELLOW}"-----Patching device/sony/sirius"${NC}
+cd ~/device/sony/sirius
+git fetch choose android-7.1
+git checkout choose/android-7.1
+cd ~/
+$MYFOLDER/repopick.py -Q "status:open+project:android_device_sony_sirius+android-7.1"  -g https://review.choose-a.name -P device/sony/sirius
+
 echo -e ${YELLOW}"-----Patching kernel/sony/msm8974"${NC}
 cd ~/kernel/sony/msm8974
 git fetch choose android-7.1

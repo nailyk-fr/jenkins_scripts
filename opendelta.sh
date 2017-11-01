@@ -187,7 +187,7 @@ echo "copy FILE_CURRENT"
 cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
 MD5FILE=${PATH_LAST}/${FILE_CURRENT}
 echo "Generate md5sum file $MD5FILE"
-echo "${MD5_CURRENT} ${FILE_CURRENT}" > ${MD5FILE}.md5sum
+echo "${MD5_CURRENT}  ${FILE_CURRENT}" > ${MD5FILE}.md5sum
 
 
 echo "Everything done"

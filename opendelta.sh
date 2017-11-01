@@ -175,6 +175,7 @@ echo "  }" >> $DELTA
 echo "}" >> $DELTA
 
 mkdir -p $HOME/../releases/ota/publish/$DEVICE
+echo "copying generated files"
 cp -v $HOME/../releases/ota/out/* $HOME/../releases/ota/publish/$DEVICE/
 
 rm -rf $HOME/../releases/ota/work
@@ -182,10 +183,11 @@ rm -rf $HOME/../releases/ota/out
 
 #rm -rf $PATH_LAST/*
 mkdir -p $PATH_LAST
+echo "copy FILE_CURRENT"
+cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
 MD5FILE=${PATH_LAST}/${FILE_CURRENT}
 echo "Generate md5sum file $MD5FILE"
 echo "${MD5_CURRENT} ${FILE_CURRENT}" > ${MD5FILE}.md5sum
-cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
 
 
 echo "Everything done"

@@ -90,6 +90,10 @@ if [ "$FILE_LAST" == "$FILE_CURRENT" ]; then
 	exit 1
 fi
 
+echo "Detected LAST: $FILE_LAST"
+echo "Detected CURRENT: $FILE_CURRENT"
+echo "FILE_LAST_BASE: $FILE_LAST_BASE"
+
 rm -rf $HOME/../releases/ota/work
 mkdir -p $HOME/../releases/ota/work
 rm -rf $HOME/../releases/ota/out
@@ -132,6 +136,8 @@ SIZE_SIGN=$(getFileSize $HOME/../releases/ota/out/$FILE_LAST_BASE.sign)
 
 DELTA=~/../releases/ota/out/$FILE_LAST_BASE.delta
 
+echo "DELTA file: $DELTA"
+
 echo "{" > $DELTA
 echo "  \"version\": 1," >> $DELTA
 echo "  \"in\": {" >> $DELTA
@@ -169,16 +175,17 @@ echo "  }" >> $DELTA
 echo "}" >> $DELTA
 
 mkdir -p $HOME/../releases/ota/publish/$DEVICE
-cp $HOME/../releases/ota/out/* $HOME/../releases/ota/publish/$DEVICE/.
+cp -v $HOME/../releases/ota/out/* $HOME/../releases/ota/publish/$DEVICE/
 
 rm -rf $HOME/../releases/ota/work
 rm -rf $HOME/../releases/ota/out
 
 #rm -rf $PATH_LAST/*
 mkdir -p $PATH_LAST
+MD5FILE=${PATH_LAST}/${FILE_CURRENT}.md5sum
+echo "Generate md5sum file $MD5FILE"
+echo "${MD5_CURRENT} ${FILE_CURRENT}" > $MD5FILE
 cp -v $PATH_CURRENT/$FILE_CURRENT $PATH_LAST/$FILE_CURRENT
-echo "Generate md5sum file"
-echo "${MD5_CURRENT} ${FILE_CURRENT}" > ${PATH_CURRENT}/${FILE_CURRENT}.md5sum
 
 
 echo "Everything done"

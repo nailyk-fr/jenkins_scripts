@@ -24,7 +24,6 @@ repopick 26452 # fmwk/base QCOM_BSP
 repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 24669 # twrp: disable app
-repopick 25862 # fmwk/av: libstagefright: Support for legacy camera/encoder buffers
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

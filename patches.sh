@@ -24,6 +24,7 @@ repopick 26452 # fmwk/base QCOM_BSP
 repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 24669 # twrp: disable app
+repopick 26651 # Omniclock: add fallback
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

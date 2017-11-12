@@ -123,6 +123,9 @@ echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
 git checkout github/android-8.0
+git branch -D PR79
+git fetch github pull/79/head:PR79
+git checkout PR79
 cd ~/
 
 cd ~/hardware/sony/timekeep

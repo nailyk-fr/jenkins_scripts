@@ -122,10 +122,9 @@ $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(st
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.0
-git checkout github/android-8.0
-git branch -D PR79
-git fetch github pull/79/head:PR79
-git checkout PR79
+git fetch nailyk android-8.0
+git checkout nailyk/android-8.0
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.0)"  -g https://gerrit.nailyk.fr -P vendor/sony
 cd ~/
 
 cd ~/hardware/sony/timekeep

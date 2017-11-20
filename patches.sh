@@ -60,7 +60,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common --exclude="26965"
 cd ~/device/sony/shinano-common
 
 cd ~/device/sony/z3

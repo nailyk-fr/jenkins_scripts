@@ -40,6 +40,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.0
 
+cd ~/packages/apps/OmniClock
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
+
 cd ~/hardware/interfaces
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

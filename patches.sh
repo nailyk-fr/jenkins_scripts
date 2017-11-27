@@ -39,6 +39,14 @@ git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_O
 git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/21/26521/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
+cd ~/packages/apps/Dialer
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_packages_apps_Dialer refs/changes/80/27080/2 && git cherry-pick FETCH_HEAD
+cd ~/
+
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 # qcom/power D2TW

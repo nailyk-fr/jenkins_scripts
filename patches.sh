@@ -33,8 +33,8 @@ repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom android-7.1
-git checkout omnirom/android-7.1
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/20/26520/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/21/26521/1 && git cherry-pick FETCH_HEAD
 cd ~/

@@ -62,9 +62,7 @@ git checkout omnirom/android-8.0
 cd ~/
 echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude="26557"
-cd ~/device/sony/msm8974-common
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_device_sony_msm8974-common refs/changes/76/27076/2 && git cherry-pick FETCH_HEAD
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_device_sony_msm8974-common refs/changes/77/27077/1 && git cherry-pick FETCH_HEAD
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/sony/msm8974-common 26893
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -130,8 +128,7 @@ git fetch nailyk android-8.0
 git checkout nailyk/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.0)"  -g https://gerrit.nailyk.fr -P vendor/sony
-cd ~/vendor/sony
-git fetch http://gerrit.nailyk.fr/omni_vendor_sony refs/changes/79/1079/1 && git cherry-pick FETCH_HEAD
+$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P vendor/sony 1079
 
 cd ~/hardware/sony/timekeep
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

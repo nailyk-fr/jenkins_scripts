@@ -18,7 +18,6 @@ repopick 25843 # don't bootloader-reboot on panic
 repopick -t oreolo-caf # sepolicy rework
 repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
-repopick 27114 # build/make Fix copying of files to recovery/root
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

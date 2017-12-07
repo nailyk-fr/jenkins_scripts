@@ -1,5 +1,5 @@
 BUILD_VER="android-8.0"
-LOCAL_BRANCH="${BUILD_VER}-stockCM"
+LOCAL_BRANCH="${BUILD_VER}"
 
 cd ~/.repo
 if [ ! -d "$HOME/.repo/local_manifests" ]; then

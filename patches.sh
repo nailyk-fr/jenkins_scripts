@@ -20,6 +20,7 @@ repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 26916 # upstream> usb and power hidl 1.1 
 repopick 27296 # guard qcom/dataservice makefile
+repopick 27269 # Tether HAL
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -19,6 +19,7 @@ repopick -t oreolo-caf # sepolicy rework
 repopick 26476 # mkshrc colors
 repopick 26426 # nuplayer: Avoid crash when codec fails to load
 repopick 26916 # upstream> usb and power hidl 1.1 
+repopick 27296 # guard qcom/dataservice makefile
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -110,6 +110,13 @@ git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.0)" --exclude "25378"
 
+cd ~/device/oneplus/oneplus5t
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
+cd ~/
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.0)"
+
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0

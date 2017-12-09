@@ -136,6 +136,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.0
 
+cd ~/device/oneplus/oneplus5
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.0
+
 cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

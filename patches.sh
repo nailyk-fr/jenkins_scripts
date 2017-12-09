@@ -28,9 +28,6 @@ git reset --hard
 git fetch omnirom android-8.0
 cd ~/
 repopick 26425 # fmwk/av: cameraservice: Resolve message vs start/stop preview races
-repopick 26415 # fmwk/av: Revert "Camera: Cleanup 'CameraModule' dependend code"
-repopick 26474 # fmwk/av: Support for legacy camera HALv1 
-repopick 25863 # fmwk/av: Fix legacy HAL1 after merge of android-7.1.0_r7 
 repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
 cd ~/packages/apps/OpenDelta
@@ -75,6 +72,7 @@ git checkout omnirom/android-8.0
 cd ~/
 echo -e ${RED}"full pick"${NC}
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude="27118,27119"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/sony/msm8974-common 27037 27038 27039 27040 27041 27042 27043 27044 27046 27047 27048 27045
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -82,7 +80,7 @@ git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
-cd ~/device/sony/shinano-common
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/sony/shinano-common 27036
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -140,7 +138,7 @@ git fetch nailyk android-8.0
 git checkout nailyk/android-8.0
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.0)"  -g https://gerrit.nailyk.fr -P vendor/sony
-$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P vendor/sony 1079
+$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P vendor/sony 1079 1080
 
 cd ~/hardware/sony/timekeep
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

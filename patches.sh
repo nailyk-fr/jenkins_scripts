@@ -55,7 +55,7 @@ git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
 
-cd ~/hardware/qcom/power
+cd ~/hardware/qcom/gps
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git clean -fxd :/

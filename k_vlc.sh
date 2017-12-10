@@ -11,7 +11,7 @@ export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 cd ~/apps/vlc-android
 
 export ANDROID_SDK=/var/jenkins_home/SDK
-export ANDROID_NDK=/var/jenkins_home/NDK/android-ndk-r13b
+export ANDROID_NDK=/var/jenkins_home/NDK/android-ndk-r14b
 
 echo "--------------- compile armeabi-v7a"
 sh ./compile.sh -a armeabi-v7a --signrelease

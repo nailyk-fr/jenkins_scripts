@@ -22,6 +22,7 @@ repopick 26916 # upstream> usb and power hidl 1.1
 repopick 27296 # guard qcom/dataservice makefile
 repopick 27269 # Tether HAL
 repopick 27339 # qcom/sepolicy sdcard
+repopick 25666 # hidl: Camed HAL extension: Added support in HIDL for Extended FD. 
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -107,7 +108,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.0)" --exclude "25378"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.0)" --exclude "25378,27322"
 
 cd ~/device/oneplus/oneplus5t
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

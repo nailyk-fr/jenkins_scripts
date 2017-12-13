@@ -32,6 +32,12 @@ cd ~/
 repopick 26425 # fmwk/av: cameraservice: Resolve message vs start/stop preview races
 repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
+cd ~/system/vold
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.0
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_system_vold refs/changes/66/27466/1 && git cherry-pick FETCH_HEAD
+
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard

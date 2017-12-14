@@ -18,4 +18,4 @@ sh ./compile.sh -a armeabi-v7a --signrelease
 #echo "--------------- compile release"
 #sh ./compile.sh
 echo "--------------- copy"
-cp ./vlc-android/build/outputs/apk/VLC-Android-*.apk ~/fdroiddata/repo/vlc.apk
+cp ./vlc-android/build/outputs/apk/vanillaARMv7/signedRelease/VLC-Android-*.apk ~/fdroiddata/repo/vlc.apk

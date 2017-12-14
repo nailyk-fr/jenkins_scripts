@@ -22,7 +22,6 @@ repopick 26916 # upstream> usb and power hidl 1.1
 repopick 27296 # guard qcom/dataservice makefile
 repopick 27269 # Tether HAL
 repopick 27339 # qcom/sepolicy sdcard
-repopick 25666 # hidl: Camed HAL extension: Added support in HIDL for Extended FD. 
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

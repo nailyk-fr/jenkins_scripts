@@ -26,7 +26,7 @@ repopick 27339 # qcom/sepolicy sdcard
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom android-8.0
+git fetch omnirom android-8.1
 cd ~/
 repopick 26425 # fmwk/av: cameraservice: Resolve message vs start/stop preview races
 repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
@@ -34,14 +34,14 @@ repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom android-8.0
+git fetch omnirom android-8.1
 git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_system_vold refs/changes/66/27466/1 && git cherry-pick FETCH_HEAD
 
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/20/26520/1 && git cherry-pick FETCH_HEAD
 git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/21/26521/1 && git cherry-pick FETCH_HEAD
 cd ~/
@@ -49,8 +49,8 @@ cd ~/
 cd ~/packages/apps/Dialer
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_packages_apps_Dialer refs/changes/80/27080/2 && git cherry-pick FETCH_HEAD
 cd ~/
 
@@ -58,118 +58,118 @@ cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 # qcom/power D2TW
 git reset --hard
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
 
 cd ~/hardware/qcom/gps
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 # allow msm8994 use by msm8974
 git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_gps refs/changes/08/27308/1 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude="27118,27119"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude="27118,27119"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/z3
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z3
 
 cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/z3c
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z3c
 
 cd ~/device/sony/z2
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/sony/z2
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z2
 
 cd ~/device/oneplus/oneplus5
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.0)" --exclude "25378,27322"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.1)" --exclude "25378,27322"
 
 cd ~/device/oneplus/oneplus5t
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.0)"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)"
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.0)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974 --exclude "26500"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974 --exclude "26500"
 
 cd ~/kernel/oneplus/msm8998
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.0)" 
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
 
 cd ~/kernel/ti/omap4
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_ti_omap4+branch:android-8.0)"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_ti_omap4+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
 
 cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_maguro+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/samsung/maguro
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_maguro+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/samsung/maguro
 
 cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_tuna+branch:android-8.0)"  -g https://gerrit.omnirom.org -P device/samsung/tuna
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_tuna+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/samsung/tuna
 
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
-git fetch github android-8.0
-git fetch nailyk android-8.0
-git checkout nailyk/android-8.0
+git fetch github android-8.1
+git fetch nailyk android-8.1
+git checkout nailyk/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.0)"  -g https://gerrit.nailyk.fr -P vendor/sony
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
 $MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P vendor/sony 1079
 
 cd ~/hardware/sony/timekeep
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
 
 

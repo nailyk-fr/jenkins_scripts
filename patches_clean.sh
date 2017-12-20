@@ -88,6 +88,12 @@ git reset --hard
 git clean -fxd :/
 git checkout github/android-8.1
 
+cd ~/vendor/qcom/opensource/dataservices
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/android-8.1
+
 cd ~/device/qcom/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

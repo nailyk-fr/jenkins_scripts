@@ -38,7 +38,7 @@ cd ~/packages/apps/Messaging
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-8.1
+git checkout aosp/android-8.1
 
 cd ~/packages/apps/Dialer
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -86,7 +86,7 @@ cd ~/vendor/sony
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/android-8.1
+git checkout github/android-8.1
 
 cd ~/device/qcom/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

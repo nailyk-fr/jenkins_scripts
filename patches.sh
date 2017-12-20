@@ -16,9 +16,7 @@ source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick 27635 # mkshrc colors
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
-repopick 26916 # upstream> usb and power hidl 1.1 
 repopick 27637 # guard qcom/dataservice makefile
-repopick 27269 # Tether HAL
 repopick 27638 # qcom/sepolicy sdcard
 
 cd ~/frameworks/av

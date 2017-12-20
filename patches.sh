@@ -29,7 +29,8 @@ cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_system_vold refs/changes/66/27466/1 && git cherry-pick FETCH_HEAD
+cd ~/
+repopick 27641 # Disable sdcard_posix context force 
 
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -14,22 +14,18 @@ echo -e ${GREEN}"---------home set to: $HOME"${NC}
 cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-repopick 25843 # don't bootloader-reboot on panic
-repopick -t oreolo-caf # sepolicy rework
-repopick 26476 # mkshrc colors
-repopick 26426 # nuplayer: Avoid crash when codec fails to load
+repopick 27635 # mkshrc colors
+repopick 27636 # nuplayer: Avoid crash when codec fails to load
 repopick 26916 # upstream> usb and power hidl 1.1 
-repopick 27296 # guard qcom/dataservice makefile
+repopick 27637 # guard qcom/dataservice makefile
 repopick 27269 # Tether HAL
-repopick 27339 # qcom/sepolicy sdcard
+repopick 27638 # qcom/sepolicy sdcard
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
 cd ~/
-repopick 26425 # fmwk/av: cameraservice: Resolve message vs start/stop preview races
-repopick 25864 # fmwk/av: Don't pass NULL args on setCallbacks call 
 
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -42,16 +38,15 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
-git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/20/26520/1 && git cherry-pick FETCH_HEAD
-git fetch ssh://${PICKOFFICIAL}@gerrit.omnirom.org:29418/android_packages_apps_OpenDelta refs/changes/21/26521/1 && git cherry-pick FETCH_HEAD
 cd ~/
+repopick 27639
+repopick 27640
 
 cd ~/packages/apps/Dialer
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_packages_apps_Dialer refs/changes/80/27080/2 && git cherry-pick FETCH_HEAD
 cd ~/
 
 cd ~/hardware/qcom/power
@@ -66,8 +61,8 @@ cd ~/hardware/qcom/gps
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
+git fetch omnirom android-8.0
+git checkout omnirom/android-8.0
 # allow msm8994 use by msm8974
 git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_gps refs/changes/08/27308/1 && git cherry-pick FETCH_HEAD
 cd ~/
@@ -78,7 +73,7 @@ git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude="27118,27119"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -113,7 +108,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.1)" --exclude "25378,27322"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.1)"
 
 cd ~/device/oneplus/oneplus5t
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -164,7 +159,6 @@ git fetch nailyk android-8.1
 git checkout nailyk/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
-$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P vendor/sony 1079
 
 cd ~/hardware/sony/timekeep
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

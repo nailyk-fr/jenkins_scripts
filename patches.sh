@@ -18,6 +18,7 @@ repopick 27635 # mkshrc colors
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 repopick 27637 # guard qcom/dataservice makefile
 repopick 27638 # qcom/sepolicy sdcard
+repopick 27485 # media-caf8974: fix compilation
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

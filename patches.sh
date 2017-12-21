@@ -19,6 +19,9 @@ repopick 27636 # nuplayer: Avoid crash when codec fails to load
 repopick 27637 # guard qcom/dataservice makefile
 repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
+repopick 27693 # twrp: Cleanup flags
+repopick 27694 # twrp: Remove APP
+
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

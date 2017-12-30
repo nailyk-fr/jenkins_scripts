@@ -15,7 +15,7 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
-repopick 27638 # qcom/sepolicy sdcard
+#repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP

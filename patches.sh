@@ -67,9 +67,10 @@ git reset --hard
 git clean -fxd :/
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
-# allow msm8994 use by msm8974
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_hardware_qcom_gps refs/changes/08/27308/1 && git cherry-pick FETCH_HEAD
 cd ~/
+repopick 27308 # allow msm8994 use by msm8974
+repopick 27479 # cleaning
+repopick 27480 # missing include
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

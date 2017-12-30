@@ -17,13 +17,12 @@ echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27635 # mkshrc colors
 repopick 27653 # mkshrc colors v2
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
-repopick 27637 # guard qcom/dataservice makefile
 repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
-repopick 27891 # add omni/vendor/build/core/certs.mk include
 repopick 27890 # add omni/vendor/build/core/certs.mk file
+repopick 27891 # add omni/vendor/build/core/certs.mk include
 
 
 cd ~/frameworks/av
@@ -36,6 +35,7 @@ cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
 repopick 27641 # Disable sdcard_posix context force 
 
@@ -70,9 +70,8 @@ git clean -fxd :/
 git fetch omnirom android-8.0
 git checkout omnirom/android-8.0
 cd ~/
-repopick 27308 # allow msm8994 use by msm8974
-repopick 27479 # cleaning
-repopick 27480 # missing include
+repopick 27479 # Remove unused conditional
+repopick 27480 # Add missing RPC include
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
@@ -138,27 +137,6 @@ git checkout omnirom/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
 
-cd ~/kernel/ti/omap4
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_ti_omap4+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/tuna
-
-cd ~/device/samsung/maguro
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_maguro+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/samsung/maguro
-
-cd ~/device/samsung/tuna
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_tuna+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/samsung/tuna
-
 echo -e ${YELLOW}"-----Patching vendor"${NC}
 cd ~/vendor/sony
 git fetch github android-8.1
@@ -172,7 +150,6 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-
 
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

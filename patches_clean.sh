@@ -136,25 +136,7 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-#cd ~/device/sony/leodual
-#echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-#git reset --hard
-#git clean -fxd :/
-#git checkout github/android-8.1
-
 cd ~/device/sony/z2
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
-#cd ~/device/sony/castor_windy
-#echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-#git reset --hard
-#git clean -fxd :/
-#git checkout github/android-8.1
-
-cd ~/device/samsung/maguro
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
@@ -167,12 +149,6 @@ git clean -fxd :/
 git checkout omnirom/android-8.1
 
 cd ~/device/oneplus/oneplus5t
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
-cd ~/device/samsung/tuna
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
@@ -191,6 +167,12 @@ git clean -fxd :/
 git checkout omnirom/android-8.1
 
 cd ~/kernel/sony/msm8974
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/kernel/oneplus/msm8998
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

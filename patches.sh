@@ -14,8 +14,6 @@ echo -e ${GREEN}"---------home set to: $HOME"${NC}
 cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-#repopick 27635 # mkshrc colors
-repopick 27653 # mkshrc colors v2
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation

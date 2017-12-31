@@ -14,7 +14,6 @@ echo -e ${GREEN}"---------home set to: $HOME"${NC}
 cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-repopick 27636 # nuplayer: Avoid crash when codec fails to load
 #repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
 repopick 27693 # twrp: Cleanup flags
@@ -27,7 +26,9 @@ cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
+repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

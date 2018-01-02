@@ -16,6 +16,9 @@ source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
+# media-caf-8974 audio changes: 
+for i in {27929..27944..1} ; do repopick $i ; done
+
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 27890 # add omni/vendor/build/core/certs.mk file

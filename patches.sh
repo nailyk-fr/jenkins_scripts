@@ -16,9 +16,6 @@ source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27638 # qcom/sepolicy sdcard
 repopick 27485 # media-caf8974: fix compilation
-# media-caf-8974 audio changes: 
-for i in {27929..27944..1} ; do repopick $i ; done
-
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 27890 # add omni/vendor/build/core/certs.mk file
@@ -74,6 +71,15 @@ git checkout omnirom/android-8.0
 cd ~/
 repopick 27479 # Remove unused conditional
 repopick 27480 # Add missing RPC include
+
+cd ~/hardware/qcom/audio-caf-msm8974
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_qcom_audio-caf-msm8974+branch:android-8.1)" -g https://gerrit.omnirom.org -P hardware/qcom/audio-caf-msm8974 --exclude "27937"
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

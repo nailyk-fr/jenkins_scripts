@@ -21,7 +21,6 @@ repopick 27694 # twrp: Remove APP
 repopick 27890 # add omni/vendor/build/core/certs.mk file
 repopick 27891 # add omni/vendor/build/core/certs.mk include
 repopick 28155 # sony/location Guard makefiles
-repopick -t dialer-disable-proximity
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

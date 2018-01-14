@@ -15,8 +15,8 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27638 # qcom/sepolicy sdcard
-repopick 27693 # twrp: Cleanup flags
-repopick 27694 # twrp: Remove APP
+#repopick 27693 # twrp: Cleanup flags
+#repopick 27694 # twrp: Remove APP
 repopick -t dialer-disable-proximity
 
 cd ~/frameworks/av

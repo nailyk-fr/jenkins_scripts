@@ -63,11 +63,11 @@ cd ~/hardware/qcom/gps
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git fetch omnirom android-8.0
-git checkout omnirom/android-8.0
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
 cd ~/
-repopick 27479 # Remove unused conditional
-repopick 27480 # Add missing RPC include
+repopick 28620 # Remove unused conditional
+repopick 28621 # Add missing RPC include
 
 cd ~/hardware/qcom/audio-caf-msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

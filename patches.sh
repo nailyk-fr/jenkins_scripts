@@ -49,7 +49,6 @@ git reset --hard
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-repopick 28161 # Add option to disable proximity sensor
 
 cd ~/hardware/qcom/power
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

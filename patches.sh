@@ -17,6 +17,7 @@ echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27638 # qcom/sepolicy sdcard
 #repopick 27693 # twrp: Cleanup flags
 #repopick 27694 # twrp: Remove APP
+repopick 28672 # Guard hw/qcom/gps Makefile
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -126,12 +126,6 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-cd ~/system/sepolicy
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
 cd ~/bootable/recovery
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

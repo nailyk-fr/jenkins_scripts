@@ -28,6 +28,13 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/system/vold
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git fetch omnirom android-8.1
+git checkout omnirom/android-8.1
+cd ~/
+
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

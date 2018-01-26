@@ -26,14 +26,6 @@ git checkout omnirom/android-8.1
 cd ~/
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
-cd ~/system/vold
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git reset --hard
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
-repopick 27641 # Disable sdcard_posix context force 
-
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
@@ -149,12 +141,6 @@ git fetch nailyk android-8.1
 git checkout nailyk/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
-
-cd ~/hardware/sony/timekeep
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
 
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

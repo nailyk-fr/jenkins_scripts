@@ -20,6 +20,7 @@ echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 28056 # twrp: toybox: Fix build for android 8.1
 #repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
 repopick -t sdcard_fs_posix
+repopick 28825 # hw/sony/location shinano&rhine
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

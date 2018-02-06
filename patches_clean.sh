@@ -132,12 +132,6 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-cd ~/external/ant-wireless/ant_native
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

@@ -77,8 +77,13 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-
 cd ~/hardware/qcom/audio-caf-msm8974
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/hardware/sony/macaddrsetup
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

@@ -24,6 +24,7 @@ repopick 28825 # hw/sony/location shinano&rhine
 repopick 29015 # fmwk/base secdiscard workaround
 repopick 29023 # libcutils: enable verbose
 repopick 29038 # macaddrsetup: add guard
+repopick 29052 # Settings: do no crash while no custom led
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

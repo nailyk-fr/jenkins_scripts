@@ -26,6 +26,9 @@ repopick 29023 # libcutils: enable verbose
 repopick 29038 # macaddrsetup: add guard
 repopick 29052 # Settings: do no crash while no custom led
 
+repopick 29290 # qcom/sepolicy m7 workaround
+repopick 29291 # display/8974 allow 8960
+
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
@@ -78,6 +81,20 @@ git checkout omnirom/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_qcom_audio-caf-msm8974+branch:android-8.1)" -g https://gerrit.omnirom.org -P hardware/qcom/audio-caf-msm8974
 
+cd ~/device/htc/m7
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/htc/m7
+
+cd ~/device/htc/m7-common
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7-common+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/htc/m7-common
+
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
@@ -128,6 +145,13 @@ git checkout omnirom/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)"
 
+cd ~/kernel/htc/msm8960
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_htc_msm8960+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P kernel/htc/msm8960
+
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
@@ -149,6 +173,13 @@ git fetch nailyk android-8.1
 git checkout nailyk/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
+
+echo -e ${YELLOW}"-----Patching HTC vendor"${NC}
+cd ~/vendor/htc
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:proprietary_vendor_htc+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/htc
 
 cd ~/vendor/omni
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

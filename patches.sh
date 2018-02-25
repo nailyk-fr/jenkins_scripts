@@ -26,6 +26,8 @@ repopick 29023 # libcutils: enable verbose
 repopick 29038 # macaddrsetup: add guard
 repopick 29052 # Settings: do no crash while no custom led
 
+repopick -t unifiednlp # fmwk/base & vendor/omni
+
 repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override

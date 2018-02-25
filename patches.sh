@@ -33,13 +33,6 @@ repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
 
 repopick -t oreo-cambuffer-workaround # fmwk/av
-
-cd ~/frameworks/av
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git reset --hard
-git fetch omnirom android-8.1
-git checkout omnirom/android-8.1
-cd ~/
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
 cd ~/packages/apps/OpenDelta

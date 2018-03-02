@@ -83,6 +83,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/hardware/libhardware
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
 cd ~/hardware/qcom/media-caf-msm8974
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

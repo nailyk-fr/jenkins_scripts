@@ -35,6 +35,8 @@ repopick 29294 # msm8960: Allow liblight override
 repopick -t oreo-cambuffer-workaround # fmwk/av
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
+repopick 29411 # Add audio amplifier HAL
+
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard

@@ -79,7 +79,7 @@ git clean -fxd :/
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_qcom_audio-caf-msm8974+branch:android-8.1)" -g https://gerrit.omnirom.org -P hardware/qcom/audio-caf-msm8974
+#$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_qcom_audio-caf-msm8974+branch:android-8.1)" -g https://gerrit.omnirom.org -P hardware/qcom/audio-caf-msm8974
 
 cd ~/device/htc/m7
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

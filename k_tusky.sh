@@ -17,4 +17,4 @@ APP_BUILD_SCRIPT=$PWD/app/src/main/jni/Android.mk \
 ./gradlew assembleRelease
 ./gradlew --stop || true
 killall aapt || true
-cp app/build/outputs/apk/debug/app-debug.apk ~/fdroiddata/repo/Tusky.apk
+cp app/build/outputs/apk/release/app-release.apk ~/fdroiddata/repo/Tusky.apk

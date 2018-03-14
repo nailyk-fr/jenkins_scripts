@@ -15,10 +15,10 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 #repopick 27638 # qcom/sepolicy sdcard
-#repopick 27693 # twrp: Cleanup flags
-#repopick 27694 # twrp: Remove APP
-#repopick 28056 # twrp: toybox: Fix build for android 8.1
-#repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
+repopick 27693 # twrp: Cleanup flags
+repopick 27694 # twrp: Remove APP
+repopick 28056 # twrp: toybox: Fix build for android 8.1
+repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
 repopick -t sdcard_fs_posix
 repopick 28825 # hw/sony/location shinano&rhine
 repopick 29015 # fmwk/base secdiscard workaround

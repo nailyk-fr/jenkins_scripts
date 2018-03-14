@@ -136,6 +136,22 @@ git checkout omnirom/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z2 --exclude "27554"
 
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kanuti .o0o. .o0o..o0o..o0o."${NC}
+
+cd ~/device/sony/kanuti
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_kanuti+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/sony/kanuti
+
+cd ~/device/sony/m4aqua
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git fetch github android-8.1
+git checkout github/android-8.1
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_m4aqua+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/sony/m4aqua
+
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching oneplus .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/device/oneplus/oneplus5
@@ -174,6 +190,13 @@ git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
+
+#cd ~/kernel/sony/msm
+#echo -e ${YELLOW}"-----Patching $PWD"${NC}
+#git fetch github android-8.1
+#git checkout github/android-8.1
+#cd ~/
+#$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P kernel/sony/msm8  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm+branch:android-8.1)" 
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
 

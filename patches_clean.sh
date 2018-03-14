@@ -209,11 +209,29 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/device/sony/m4aqua
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/android-8.1
+
+cd ~/device/sony/kanuti
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/android-8.1
+
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
+
+cd ~/kernel/sony/msm
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/android-8.1
 
 cd ~/kernel/htc/msm8960
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

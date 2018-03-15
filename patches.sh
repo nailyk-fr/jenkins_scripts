@@ -20,6 +20,7 @@ repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 28056 # twrp: toybox: Fix build for android 8.1
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
+repopick 28233 # twrp: fix ziputil build
 repopick -t sdcard_fs_posix
 repopick 28825 # hw/sony/location shinano&rhine
 repopick 29015 # fmwk/base secdiscard workaround

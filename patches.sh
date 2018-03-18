@@ -15,18 +15,10 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-#repopick 27638 # qcom/sepolicy sdcard
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 28056 # twrp: toybox: Fix build for android 8.1
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
-repopick 28233 # twrp: fix ziputil build
-repopick -t sdcard_fs_posix
-repopick 28825 # hw/sony/location shinano&rhine
-repopick 29015 # fmwk/base secdiscard workaround
-repopick 29023 # libcutils: enable verbose
-repopick 29038 # macaddrsetup: add guard
-repopick 29052 # Settings: do no crash while no custom led
 
 repopick -t unifiednlp # fmwk/base & vendor/omni
 
@@ -35,7 +27,6 @@ repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
 
 repopick -t legacy-cam-8.1 # fmwk/av
-repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
 repopick 29411 # Add audio amplifier HAL
 
@@ -70,9 +61,6 @@ git clean -fxd :/
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-repopick 28672 # Guard hw/qcom/gps Makefile
-repopick 28620 # Remove unused conditional
-repopick 28621 # Add missing RPC include
 repopick 29660 # Allow msm8916
 
 cd ~/hardware/qcom/audio-caf-msm8974
@@ -136,7 +124,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z2 --exclude "27554"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z2
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kanuti .o0o. .o0o..o0o..o0o."${NC}
 
@@ -184,7 +172,7 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974 --exclude "26500"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
 
 cd ~/kernel/oneplus/msm8998
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

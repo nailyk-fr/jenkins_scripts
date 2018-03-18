@@ -73,6 +73,7 @@ cd ~/
 repopick 28672 # Guard hw/qcom/gps Makefile
 repopick 28620 # Remove unused conditional
 repopick 28621 # Add missing RPC include
+repopick 29660 # Allow msm8916
 
 cd ~/hardware/qcom/audio-caf-msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

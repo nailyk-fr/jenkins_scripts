@@ -34,7 +34,7 @@ repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
 
-repopick -t oreo-cambuffer-workaround # fmwk/av
+repopick -t legacy-cam-8.1 # fmwk/av
 repopick 27636 # nuplayer: Avoid crash when codec fails to load
 
 repopick 29411 # Add audio amplifier HAL
@@ -108,7 +108,7 @@ git fetch omnirom android-8.1
 git checkout omnirom/android-8.1
 cd ~/
 echo -e ${RED}"full pick"${NC}
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163,29654,29655,29656,29657,29625,29624"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

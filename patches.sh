@@ -19,6 +19,7 @@ repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 28056 # twrp: toybox: Fix build for android 8.1
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
+repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)
 
 repopick -t unifiednlp # fmwk/base & vendor/omni
 

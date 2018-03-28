@@ -31,6 +31,12 @@ repopick -t legacy-cam-8.1 # fmwk/av
 
 repopick 29411 # Add audio amplifier HAL
 
+cd ~/build/make
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+# pick rsync recovery patch
+git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_build refs/changes/95/29895/2 && git cherry-pick FETCH_HEAD
+cd ~/
+
 cd ~/packages/apps/OpenDelta
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/

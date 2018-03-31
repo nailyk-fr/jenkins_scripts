@@ -1,9 +1,11 @@
 
-
 export USER=jenkins
+MYFOLDER="$(dirname "$(realpath "$0")")"
 
+source $MYFOLDER/colors.sh
 
 cd ~/apps/android-vts/
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
 git fetch origin master
@@ -31,6 +33,7 @@ android {
 
 
 cd ~/apps/mGerrit/
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
 git fetch origin master
@@ -110,6 +113,7 @@ rm app/src/main/res/values/arrays.xml.orig || true
 
 
 cd ~/apps/Tusky/
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
 git fetch origin master
@@ -137,6 +141,7 @@ android {
 
 
 cd ~/apps/OpenLauncher/
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
 git fetch origin master
@@ -163,6 +168,7 @@ android {
 }" >> app/build.gradle
 
 cd ~/apps/vlc-android/
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
 git fetch origin master

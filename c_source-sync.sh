@@ -167,6 +167,34 @@ android {
     }
 }" >> app/build.gradle
 
+
+cd ~/apps/Osmand
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+git reset --hard
+git clean -fxd :/
+git fetch origin master
+git checkout origin/master
+wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
+cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
+echo "
+android {
+    signingConfigs {
+       release {
+           storeFile file(RELEASE_STORE_FILE)
+           storePassword RELEASE_STORE_PASSWORD
+           keyAlias RELEASE_KEY_ALIAS
+           keyPassword RELEASE_KEY_PASSWORD
+       }
+    }
+
+    buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+    }
+}" >> app/build.gradle
+
+
 cd ~/apps/vlc-android/
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard

@@ -109,7 +109,7 @@ $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -
 cd ~/device/oneplus/oneplus5t
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)" --exclude "28861"
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 

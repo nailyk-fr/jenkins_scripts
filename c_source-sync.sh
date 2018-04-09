@@ -199,8 +199,8 @@ cd ~/apps/vlc-android/
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard
 git clean -fxd :/
-git fetch origin 3.0.x
-git checkout origin/3.0.x
+git fetch origin master
+git checkout origin/master
 cp "/var/jenkins_home/workspace/F-Droid/.signing_vlc" gradle.properties
 wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 

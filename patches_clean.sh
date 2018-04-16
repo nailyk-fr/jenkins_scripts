@@ -221,6 +221,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/device/sony/common-init
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
 cd ~/device/sony/m4aqua
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

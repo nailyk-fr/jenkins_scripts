@@ -29,6 +29,8 @@ repopick 29294 # msm8960: Allow liblight override
 
 repopick -t legacy-cam-8.1 # fmwk/av
 
+repopick -t extract_elf_ramdisk_LZMA 
+
 repopick 29411 # Add audio amplifier HAL
 
 cd ~/build/make

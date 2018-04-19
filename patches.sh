@@ -17,11 +17,8 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
-repopick 28056 # twrp: toybox: Fix build for android 8.1
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
 repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)
-
-repopick -t unifiednlp # fmwk/base & vendor/omni
 
 repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960
@@ -30,8 +27,6 @@ repopick 29294 # msm8960: Allow liblight override
 repopick -t legacy-cam-8.1 # fmwk/av
 
 repopick -t extract_elf_ramdisk_LZMA 
-
-repopick 29411 # Add audio amplifier HAL
 
 cd ~/build/make
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

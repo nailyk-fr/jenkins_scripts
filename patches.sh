@@ -15,7 +15,6 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
 repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)

@@ -17,4 +17,4 @@ APP_BUILD_SCRIPT=$PWD/app/src/main/jni/Android.mk \
 ./gradlew assembleRelease
 ./gradlew --stop || true
 killall aapt || true
-cp app/build/outputs/apk/app-release.apk ~/fdroiddata/repo/AndroidVTS.apk
+cp -v app/build/outputs/apk/app-release.apk ~/fdroiddata/repo/AndroidVTS.apk

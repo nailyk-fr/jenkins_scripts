@@ -4,6 +4,9 @@ MYFOLDER="$(dirname "$(realpath "$0")")"
 
 source $MYFOLDER/colors.sh
 
+if [ ! -d "$HOME/apps" ]; then
+  mkdir ~/apps
+fi
 cd ~/apps/android-vts/
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
 git reset --hard

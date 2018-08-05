@@ -1,10 +1,10 @@
 export HOME=/var/jenkins_home/workspace/F-Droid/
 echo "--------- home set"
 
-echo -e ${GREEN}"--------------------- preparing env "${NC}
+echo ${GREEN}"--------------------- preparing env "${NC}
 
 MYFOLDER="$(dirname "$(realpath "$0")")"
-source $MYFOLDER/colors.sh
+. $MYFOLDER/colors.sh
 
 export PATH=/var/jenkins_home/workspace/F-Droid/fdroidserver:$PATH
 
@@ -19,7 +19,7 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 
 
-echo -e ${GREEN}"--------------------- patching sources "${NC}
+echo ${GREEN}"--------------------- patching sources "${NC}
 
 # Inside the auto triggered script. So workspace is the root folder of the git clone
 cd ${WORKSPACE}
@@ -43,7 +43,7 @@ android {
     }
 }" >> app/build.gradle
 
-echo -e ${GREEN}"--------------------- building "${NC}
+echo ${GREEN}"--------------------- building "${NC}
 
 APP_PROJECT_PATH=$PWD/app/src/main \
 NDK_PROJECT_PATH=$PWD/app/src/main \
@@ -56,7 +56,7 @@ cp -v app/build/outputs/apk/green/release/app-green-release.apk ~/fdroiddata/rep
 
 
 
-echo -e ${GREEN}"--------------------- release "${NC}
+echo ${GREEN}"--------------------- release "${NC}
 
 cd ~/fdroidserver
  . env/bin/activate

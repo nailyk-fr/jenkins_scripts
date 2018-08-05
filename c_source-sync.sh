@@ -2,21 +2,21 @@
 export USER=jenkins
 MYFOLDER="$(dirname "$(realpath "$0")")"
 
-source $MYFOLDER/colors.sh
+. $MYFOLDER/colors.sh
 
 if [ ! -d "$HOME/apps" ]; then
   mkdir ~/apps
 fi
 
 if [ ! -d "$HOME/apps/android-vts/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/android-vts/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/android-vts/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://github.com/AndroidVTS/android-vts -b master android-vts
   cd ~/apps/android-vts/
 else 
   cd ~/apps/android-vts/
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master
@@ -44,14 +44,14 @@ android {
 }" >> app/build.gradle
 
 if [ ! -d "$HOME/apps/mGerrit/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/mGerrit/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/mGerrit/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://github.com/JBirdVegas/external_jbirdvegas_mGerrit -b master mGerrit
   cd ~/apps/mGerrit/
 else 
   cd ~/apps/mGerrit/
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master
@@ -131,14 +131,14 @@ index 7de304f..adcd575 100644
 rm app/src/main/res/values/arrays.xml.orig || true
 
 if [ ! -d "$HOME/apps/Tusky/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/Tusky/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/Tusky/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://github.com/tuskyapp/Tusky -b master Tusky
   cd ~/apps/Tusky/
 else 
   cd ~/apps/Tusky/
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master
@@ -166,14 +166,14 @@ android {
 }" >> app/build.gradle
 
 if [ ! -d "$HOME/apps/OpenLauncher/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/OpenLauncher/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/OpenLauncher/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://github.com/OpenLauncherTeam/openlauncher -b master OpenLauncher
   cd ~/apps/OpenLauncher/
 else 
   cd ~/apps/OpenLauncher/
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master
@@ -202,14 +202,14 @@ android {
 
 
 if [ ! -d "$HOME/apps/Osmand/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/Osmand/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/Osmand/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://github.com/osmandapp/Osmand -b master Osmand
   cd ~/apps/Osmand/
 else 
   cd ~/apps/Osmand
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master
@@ -237,14 +237,14 @@ android {
 }" >> app/build.gradle
 
 if [ ! -d "$HOME/apps/vlc-android/.git" ]; then
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/vlc-android/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
-  echo -e ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/vlc-android/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
+  echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
   git clone https://code.videolan.org/videolan/vlc-android -b master vlc-android
   cd ~/apps/vlc-android/
 else 
   cd ~/apps/vlc-android/
-  echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
+  echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
   git fetch origin master

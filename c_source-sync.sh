@@ -240,7 +240,7 @@ if [ ! -d "$HOME/apps/vlc-android/.git" ]; then
   echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/vlc-android/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
   echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
-  git clone https://code.videolan.org/videolan/vlc-android -b master vlc-android
+  git clone https://code.videolan.org/videolan/vlc-android -b master vlc-android --recurse-submodules
   cd ~/apps/vlc-android/
 else 
   cd ~/apps/vlc-android/

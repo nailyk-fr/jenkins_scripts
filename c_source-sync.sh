@@ -251,7 +251,7 @@ else
   git checkout origin/master
 fi
 
-cp "/var/jenkins_home/workspace/F-Droid/.signing_vlc" gradle.properties
+cp "/var/jenkins_home/workspace/F-Droid/.signing" gradle.properties
 wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 
 cd ~/apps/vlc-android/vlc

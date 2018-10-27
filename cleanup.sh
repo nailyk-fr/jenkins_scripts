@@ -8,7 +8,7 @@ if [ -d "$HOME/../releases/omni" ]; then
 fi
 
 if [ -d "$HOME/../releases/twrp" ]; then
-	for file in $(find $HOME/../releases/twrp -depth -xdev -type f -mtime +20 -print)
+	for file in $(find $HOME/../releases/twrp -depth -xdev -not -name ".htaccess" -type f -mtime +20 -print)
 	do
 		if [ -f $HOME/../releases/twrp/.htaccess ] ; then
 			short_name=$(basename ${file})

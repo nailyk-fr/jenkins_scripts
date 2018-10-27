@@ -7,6 +7,11 @@ if [ -d "$HOME/../releases/omni" ]; then
 	echo Releases deleted
 fi
 
+if [ -d "$HOME/../releases/twrp" ]; then
+    find $HOME/../releases/twrp -depth -xdev -type f -mtime +20 -delete -print
+    echo TWRP releases deleted
+fi
+
 if [ -d "$HOME/out/soong" ]; then
 	rm -rfv $HOME/out/soong
 fi

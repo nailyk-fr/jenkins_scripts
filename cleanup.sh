@@ -20,9 +20,9 @@ if [ -d "$HOME/../releases/twrp" ]; then
 fi
 
 if [ -d "$HOME/out/soong" ]; then
-	rm -rfv $HOME/out/soong
+	rm -rf $HOME/out/soong
 fi
 
 if [ -d "$HOME/out/target/product" ]; then
-	rm -rfv $HOME/out/target/product
+	rm -rf $HOME/out/target/product
 fi

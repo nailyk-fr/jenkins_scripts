@@ -19,8 +19,15 @@ repopick 27693 # twrp: Cleanup flags
 repopick 27694 # twrp: Remove APP
 repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
 repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)
+repopick 32479
 repopick 32480 # twrp: fix vndk for arm32
+repopick 32481
+repopick 32482
+repopick 32483
 repopick 32636 # twrp: fix dosfstools on arm32
+repopick 32647
+repopick 32648
+repopick 32714
 
 repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960

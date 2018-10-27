@@ -8,8 +8,15 @@ if [ -d "$HOME/../releases/omni" ]; then
 fi
 
 if [ -d "$HOME/../releases/twrp" ]; then
-    find $HOME/../releases/twrp -depth -xdev -type f -mtime +20 -delete -print
-    echo TWRP releases deleted
+	for file in $(find $HOME/../releases/twrp -depth -xdev -type f -mtime +20 -print)
+	do
+		if [ -f $HOME/../releases/twrp/.htaccess ] ; then
+			short_name=$(basename ${file})
+			sed -i '/${short_name}/d' $HOME/../releases/twrp/.htaccess
+		fi
+		rm -fv ${file}
+	done
+	echo TWRP releases deleted
 fi
 
 if [ -d "$HOME/out/soong" ]; then

@@ -33,6 +33,7 @@ repopick 32714
 repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
+repopick 32756 # display-8974: use libhwui instead of libskia
 
 repopick -t legacy-cam-8.1 # fmwk/av
 

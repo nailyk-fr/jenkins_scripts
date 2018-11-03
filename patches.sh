@@ -5,6 +5,7 @@ export LANG=C
 export USE_NINJA=false
 export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
+BRANCH="android-9.0"
 
 source $MYFOLDER/colors.sh
 source $MYFOLDER/config.sh
@@ -59,97 +60,97 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching HTC .o0o. .o0o..o0o..o0o."${NC}
 cd ~/device/htc/m7
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/htc/m7
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/htc/m7
 
 cd ~/device/htc/m7-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7-common+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/htc/m7-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:device_htc_m7-common+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/htc/m7-common
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching shinano .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/device/sony/msm8974-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163,29654,29655,29656,29657,29625,29624"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163,29654,29655,29656,29657,29625,29624"
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
 
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z3
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3
 
 cd ~/device/sony/z3c
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z3c
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3c
 
 cd ~/device/sony/z2
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:android-8.1)"  -g https://gerrit.omnirom.org -P device/sony/z2
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z2
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kanuti .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/device/sony/kanuti
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_kanuti+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/sony/kanuti
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_kanuti+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/kanuti
 
 cd ~/device/sony/m4aqua
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_m4aqua+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P device/sony/m4aqua
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_m4aqua+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/m4aqua
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching oneplus .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/device/oneplus/oneplus5
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:android-8.1)" --exclude "27415,29465"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5 -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5+branch:${BRANCH})" --exclude "27415,29465"
 
 cd ~/device/oneplus/oneplus5t
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)" --exclude "28861"
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:${BRANCH})" --exclude "28861"
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/kernel/htc/msm8960
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_htc_msm8960+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P kernel/htc/msm8960
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_htc_msm8960+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P kernel/htc/msm8960
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
 
 cd ~/kernel/oneplus/msm8998
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:${BRANCH})" 
 
 #cd ~/kernel/sony/msm
 #echo -e ${YELLOW}"-----Patching $PWD"${NC}
 #cd ~/
-#$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P kernel/sony/msm8  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm+branch:android-8.1)" 
+#$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P kernel/sony/msm8  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm+branch:${BRANCH})" 
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P vendor/sony
 
 cd ~/vendor/htc
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:proprietary_vendor_htc+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/htc
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:proprietary_vendor_htc+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P vendor/htc
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 

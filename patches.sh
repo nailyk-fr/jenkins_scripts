@@ -24,6 +24,8 @@ repopick 29290 # qcom/sepolicy m7 workaround
 repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
 
+repopick 32808 # Fix download provider missing SqlSelection type
+
 repopick -t legacy-cam-8.1 # fmwk/av
 
 repopick -t extract_elf_ramdisk_LZMA 

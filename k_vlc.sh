@@ -1,6 +1,6 @@
 export ANDROID_HOME=/var/jenkins_home/SDK
 export GRADLE_USER_HOME=$HOME
-export NDK_PROJECT_PATH=/var/jenkins_home/NDK/android-ndk-r13b
+export NDK_PROJECT_PATH=/var/jenkins_home/NDK/android-ndk-r18b
 
 export LANG=C
 unset _JAVA_OPTIONS
@@ -11,7 +11,7 @@ export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 cd ~/apps/vlc-android
 
 export ANDROID_SDK=/var/jenkins_home/SDK
-export ANDROID_NDK=/var/jenkins_home/NDK/android-ndk-r14b
+export ANDROID_NDK=/var/jenkins_home/android-ndk-r18b
 
 echo "--------------- compile armeabi-v7a"
 sed -i 's/STOREALIAS="vlc"/STOREALIAS="fdroid"/g' ./compile.sh

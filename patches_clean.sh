@@ -34,12 +34,6 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-cd ~/vendor/htc
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
@@ -167,12 +161,6 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-cd ~/device/htc/m7
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
 cd ~/device/sony/z3
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -190,24 +178,6 @@ echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
-
-cd ~/device/oneplus/oneplus5
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
-cd ~/device/oneplus/oneplus5t
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
-cd ~/device/htc/m7-common
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
 
 cd ~/device/sony/shinano-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -227,37 +197,7 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
-cd ~/device/sony/m4aqua
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
-cd ~/device/sony/kanuti
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
 cd ~/kernel/sony/msm8974
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/android-8.1
-
-cd ~/kernel/sony/msm
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
-cd ~/kernel/htc/msm8960
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/android-8.1
-
-cd ~/kernel/oneplus/msm8998
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

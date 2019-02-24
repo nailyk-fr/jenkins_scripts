@@ -35,6 +35,9 @@ repopick 29291 # display/8974 allow 8960
 repopick 29294 # msm8960: Allow liblight override
 repopick 32756 # display-8974: use libhwui instead of libskia
 
+repopick 32817 # twrp: remove unused variable
+repopick 32819 # twrp: Fix missing dependencie
+
 repopick -t legacy-cam-8.1 # fmwk/av
 
 repopick -t extract_elf_ramdisk_LZMA 

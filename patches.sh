@@ -77,12 +77,32 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z2
 
-echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kanuti .o0o. .o0o..o0o..o0o."${NC}
+cd ~/device/sony/yoshino
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_yoshino+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/yoshino
+
+cd ~/device/sony/lilac
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_lilac+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/lilac
+
+cd ~/device/sony/common-treble
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_common-treble+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/common-treble
+
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/kernel/sony/msm8974
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
+
+cd ~/kernel/sony/msm8998
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8998+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8998
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
 

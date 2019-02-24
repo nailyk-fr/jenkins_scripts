@@ -205,5 +205,29 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/${BRANCH}
 
+cd ~/device/sony/yoshino
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/${BRANCH}
+
+cd ~/device/sony/lilac
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/${BRANCH}
+
+cd ~/device/sony/common-treble
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/${BRANCH}
+
+cd ~/kernel/sony/msm8998
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/${BRANCH}
+
 cd ~/
 

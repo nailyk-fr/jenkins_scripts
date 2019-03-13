@@ -26,3 +26,5 @@ fi
 if [ -d "$HOME/out/target/product" ]; then
 	rm -rf $HOME/out/target/product
 fi
+
+

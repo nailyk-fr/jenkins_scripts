@@ -96,12 +96,6 @@ git reset --hard
 git clean -fxd :/
 git checkout github/${BRANCH}
 
-cd ~/packages/apps/Phonograph
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
 cd ~/vendor/samsung
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

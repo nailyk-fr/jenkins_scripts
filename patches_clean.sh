@@ -64,25 +64,25 @@ cd ~/hardware/samsung_slsi-cm/exynos
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/hardware/samsung_slsi-cm/exynos5
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/hardware/samsung_slsi-cm/exynos7870
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/hardware/samsung_slsi-cm/openmax
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/frameworks/base
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -106,7 +106,7 @@ cd ~/vendor/samsung
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/system/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
@@ -124,19 +124,19 @@ cd ~/device/samsung/exynos7870-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/device/samsung/j5y17lte
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/kernel/samsung/exynos7870
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout carbon-fusion/${BRANCH}
 
 cd ~/
 

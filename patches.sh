@@ -8,7 +8,7 @@ export LANG=C
 export USE_NINJA=false
 export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
-BRANCH="android-9.0"
+BRANCH="lineage-19.1"
 
 source $MYFOLDER/colors.sh
 source $MYFOLDER/config.sh
@@ -23,79 +23,34 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 
 echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
-# pick twrp fixes
-repopick -t omni-fix
+V_URI=https://review.lineageos.org
 
-# Fix for audio-caf-8998 A2DP
-repopick 33985
-
-# fmradio.v4l2: Fix unused variable
-repopick 34084
-
-# fm: Silent warnings
-repopick 34085
-
-V_URI=https://gerrit.omnirom.org
-
-V_REPO=android_device_sony_msm8974-common
-V_PATH=device/sony/msm8974-common
+V_REPO=android_device_sony_voyager
+V_PATH=device/sony/voyager
 pick_repo
 
-
-V_REPO=android_device_sony_shinano-common
-V_PATH=device/sony/shinano-common
-pick_repo
-
-V_REPO=android_device_sony_z3
-V_PATH=device/sony/z3
-pick_repo
-
-V_REPO=android_device_sony_z3c
-V_PATH=device/sony/z3c
-pick_repo
-
-V_REPO=android_device_sony_z2
-V_PATH=device/sony/z2
-pick_repo
-
-V_REPO=android_kernel_sony_msm8974
-V_PATH=kernel/sony/msm8974
+V_REPO=android_device_sony_bahamut
+V_PATH=device/sony/bahamut
 pick_repo
 
 ########### custom gerrit
 
 V_URI=https://gerrit.nailyk.fr
 
-V_REPO=android_device_sony_yoshino
-V_PATH=device/sony/yoshino
+V_REPO=android_device_sony_voyager
+V_PATH=device/sony/voyager
 pick_repo
 
-V_REPO=android_device_sony_lilac
-V_PATH=device/sony/lilac
-pick_repo
-
-
-V_REPO=android_device_sony_common-treble
-V_PATH=device/sony/common-treble
-pick_repo
-
-V_REPO=android_kernel_sony_msm8998
-V_PATH=kernel/sony/msm8998
-pick_repo
-
-echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
-
-V_REPO=omni_vendor_sony
-V_PATH=vendor/sony
+V_REPO=android_device_sony_bahamut
+V_PATH=device/sony/bahamut
 pick_repo
 
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 
-cd ~/vendor/omni
+cd ~/vendor/lineage
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/version.mk
-sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/common.mk
+sed -i 's,UNOFFICIAL,'${PICKOFFICIAL}',g' config/common.mk
 
 cd ~/
 echo -e ${GREEN}"-----coping nailyk CA"${NC}

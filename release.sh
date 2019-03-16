@@ -1,13 +1,13 @@
 #!/bin/bash
 
 
-if [ ! -d "$HOME/../releases/omni" ]; then 
-	mkdir -p $HOME/../releases/omni
+if [ ! -d "$HOME/../releases/lineage" ]; then 
+	mkdir -p $HOME/../releases/lineage
 fi
 
-if [ -d "$HOME/../releases/omni" ]; then 
-	echo copy omni
-	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "omni-*.zip*" -exec cp --verbose --update {} $HOME/../releases/omni \;
+if [ -d "$HOME/../releases/lineage" ]; then 
+	echo copy lineage
+	find $HOME/out/target/product -maxdepth 2 -mindepth 2 -iname "lineage-*.zip*" -exec cp --verbose --update {} $HOME/../releases/lineage \;
 else
 	false
 fi

@@ -1,4 +1,4 @@
-BUILD_VER="android-8.1"
+BUILD_VER="lineage-15.1"
 LOCAL_BRANCH="${BUILD_VER}"
 
 cd ~/.repo

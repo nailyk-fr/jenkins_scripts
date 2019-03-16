@@ -5,7 +5,7 @@ export LANG=C
 export USE_NINJA=false
 export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
-BRANCH="android-9.0"
+BRANCH="lineage-15.1"
 
 source $MYFOLDER/colors.sh
 source $MYFOLDER/config.sh
@@ -16,107 +16,56 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-repopick 27693 # twrp: Cleanup flags
-repopick 27694 # twrp: Remove APP
-repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
-repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)
-repopick 32479
-repopick 32480 # twrp: fix vndk for arm32
-repopick 32481
-repopick 32482
-repopick 32483
-repopick 32636 # twrp: fix dosfstools on arm32
-repopick 32647
-repopick 32648
-repopick 32714
 
-repopick 29290 # qcom/sepolicy m7 workaround
-repopick 29291 # display/8974 allow 8960
-repopick 29294 # msm8960: Allow liblight override
-repopick 32756 # display-8974: use libhwui instead of libskia
-
-repopick 32817 # twrp: remove unused variable
-repopick 32819 # twrp: Fix missing dependencie
-
-repopick -t extract_elf_ramdisk_LZMA 
-
-cd ~/build/make
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-# pick rsync recovery patch
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_build refs/changes/95/29895/2 && git cherry-pick FETCH_HEAD
-cd ~/
-
-cd ~/packages/apps/OpenDelta
+cd ~/hardware/samsung_slsi-cm/exynos
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-repopick 27639
-repopick 27640
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos
 
-cd ~/device/sony/msm8974-common
+cd ~/hardware/samsung_slsi-cm/exynos5
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163,29654,29655,29656,29657,29625,29624"
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos5+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos5
 
-cd ~/device/sony/shinano-common
+cd ~/hardware/samsung_slsi-cm/exynos7870
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos7870+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos7870
 
-cd ~/device/sony/z3
+cd ~/hardware/samsung_slsi-cm/openmax
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_openmax+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/openmax
 
-cd ~/device/sony/z3c
+cd ~/device/samsung/exynos7870-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3c
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_exynos7870-common+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/samsung/exynos7870-common
 
-cd ~/device/sony/z2
+cd ~/device/samsung/j5y17lte
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z2
-
-cd ~/device/sony/yoshino
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_yoshino+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/yoshino
-
-cd ~/device/sony/lilac
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_lilac+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/lilac
-
-cd ~/device/sony/common-treble
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_common-treble+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/common-treble
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_j5y17lte+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/samsung/j5y17lte
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 
-cd ~/kernel/sony/msm8974
+cd ~/kernel/samsung/exynos7870
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
-
-cd ~/kernel/sony/msm8998
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8998+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8998
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_exynos7870+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P kernel/samsung/exynos7870
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
 
-cd ~/vendor/sony
+cd ~/vendor/samsung
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P vendor/sony
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_vendor_samsung+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P vendor/samsung
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 
-cd ~/vendor/omni
+cd ~/vendor/lineage
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/version.mk
-sed -i 's,HOMEMADE,'${PICKOFFICIAL}',g' config/common.mk
+sed -i 's,UNOFFICIAL,'${PICKOFFICIAL}',g' config/common.mk
 
 cd ~/
 echo -e ${GREEN}"-----coping nailyk CA"${NC}

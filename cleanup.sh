@@ -2,8 +2,8 @@
 
 echo cleanup of releases started
 
-if [ -d "$HOME/../releases/omni" ]; then
-	find $HOME/../releases/omni -depth -xdev -type f -mtime +40 -delete -print
+if [ -d "$HOME/../releases/lineage" ]; then
+	find $HOME/../releases/linegae -depth -xdev -type f -mtime +40 -delete -print
 	echo Releases deleted
 fi
 

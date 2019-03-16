@@ -8,7 +8,7 @@ MYFOLDER="$(dirname "$(realpath "$0")")"
 
 source $MYFOLDER/colors.sh
 
-BRANCH=android-9.0
+BRANCH=lineage-15.1
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
@@ -16,214 +16,123 @@ cd ~/system/core
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/build/soong
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/build/make
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/vendor/omni
+cd ~/vendor/lineage
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
-git fetch omnirom ${BRANCH}
-git checkout omnirom/${BRANCH}
-cd ~/
-
-cd ~/packages/apps/OpenDelta
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/packages/apps/Messaging
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout aosp/${BRANCH}
-
-cd ~/packages/apps/Dialer
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/packages/apps/OmniClock
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/packages/apps/Settings
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/external/mksh
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git fetch github ${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/hardware/interfaces
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/hardware/libhardware
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/hardware/qcom/gps
+cd ~/hardware/samsung
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/hardware/qcom/media-caf-msm8974
+cd ~/hardware/samsung_slsi-cm/exynos
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/hardware/qcom/audio-caf-msm8974
+cd ~/hardware/samsung_slsi-cm/exynos5
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/hardware/sony/macaddrsetup
+cd ~/hardware/samsung_slsi-cm/exynos7870
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
+
+cd ~/hardware/samsung_slsi-cm/openmax
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/${BRANCH}
 
 cd ~/frameworks/base
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/frameworks/av
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/packages/apps/Phonograph
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/vendor/sony
+cd ~/vendor/samsung
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/${BRANCH}
-
-cd ~/vendor/qcom/opensource/dataservices
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/device/qcom/sepolicy
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
 
 cd ~/system/sepolicy
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
 cd ~/bootable/recovery
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout omnirom/${BRANCH}
+git checkout github/${BRANCH}
 
-cd ~/device/sony/z3
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/z3c
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/z2
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/shinano-common
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/msm8974-common
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/common-init
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/kernel/sony/msm8974
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/yoshino
+cd ~/device/samsung/exynos7870-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/${BRANCH}
 
-cd ~/device/sony/lilac
+cd ~/device/samsung/j5y17lte
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
 git checkout github/${BRANCH}
 
-cd ~/device/sony/common-treble
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/kernel/sony/msm8998
+cd ~/kernel/samsung/exynos7870
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

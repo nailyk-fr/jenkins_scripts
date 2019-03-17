@@ -112,7 +112,7 @@ cd ~/bootable/recovery
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/
-git checkout github/${BRANCH}
+git checkout github/android-8.1
 
 cd ~/device/samsung/exynos7870-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}

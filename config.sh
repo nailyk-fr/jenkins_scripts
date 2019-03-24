@@ -1,8 +1,9 @@
 #!/bin/bash
 
-export PICKOFFICIAL="nailyk"
-export PICKCUSTOM="nailyk-fr"
+PICKOFFICIAL="nailyk"
+PICKCUSTOM="nailyk-fr"
 
 git config --global user.email "jenkins@nailyk.fr"
 git config --global user.name "${PICKCUSTOM}"
+
 

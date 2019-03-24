@@ -8,7 +8,7 @@ MYFOLDER="$(dirname "$(realpath "$0")")"
 BRANCH="lineage-15.1"
 
 source $MYFOLDER/colors.sh
-$MYFOLDER/config.sh
+source $MYFOLDER/config.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 

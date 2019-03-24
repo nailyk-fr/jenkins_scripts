@@ -17,6 +17,19 @@ source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 
+cd ~/build/make
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+git reset --hard
+git checkout github/${BRANCH}
+git revert 784fbae86ac177f820777d47c2fe8b121c6960ab -n
+git commit -m "revert 784fbae8"
+
+cd ~/bionic
+git reset --hard
+git checkout github/${BRANCH}
+git revert 2de89a8d9d552f7bc4cd68f23c1a22b0715fd9c1 -n
+git commit -m "revert 2de89a8d"
+
 cd ~/hardware/samsung_slsi-cm/exynos
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/

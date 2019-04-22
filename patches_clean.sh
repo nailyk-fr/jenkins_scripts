@@ -7,227 +7,34 @@ export WITH_SU=true
 MYFOLDER="$(dirname "$(realpath "$0")")"
 
 source $MYFOLDER/colors.sh
+source $MYFOLDER/functions.sh
 
 BRANCH=android-9.0
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 
-cd ~/system/core
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+cleanup_wrapper () {
 
-cd ~/build/soong
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+  V_REPO=$2
+  V_PATH=~/${1}
 
-cd ~/build/make
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+  cleanup_repo
 
-cd ~/vendor/omni
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+  # Ensure variable does not persist
+  unset V_REPO
+  unset V_REPO
 
-cd ~/system/vold
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-git reset --hard
-git fetch omnirom ${BRANCH}
-git checkout omnirom/${BRANCH}
-cd ~/
+}
 
-cd ~/packages/apps/OpenDelta
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
 
-cd ~/packages/apps/Messaging
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout aosp/${BRANCH}
+for a_repo in system/core build/soong build/make vendor/omni system/vold packages/apps/OpenDelta packages/apps/Messaging packages/apps/Dialer packages/apps/OmniClock packages/apps/Settings external/mksh hardware/interfaces hardware/libhardware hardware/qcom/gps hardware/qcom/media-caf-msm8974 hardware/qcom/audio-caf-msm8974 hardware/sony/macaddrsetup frameworks/base bootable/recovery frameworks/av system/sepolicy device/sony/shinano-common device/sony/msm8974-common device/sony/common-init kernel/sony/msm8974 device/qcom/sepolicy packages/apps/Phonograph device/sony/z3 device/sony/z3c device/sony/z2
+do 
+  cleanup_wrapper ${a_repo} omnirom/${BRANCH}
+done
 
-cd ~/packages/apps/Dialer
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
+for a_repo in vendor/sony vendor/qcom/opensource/dataservices device/sony/yoshino device/sony/lilac device/sony/common-treble kernel/sony/msm8998
+do
+  cleanup_wrapper ${a_repo} github/${BRANCH}
+done
 
-cd ~/packages/apps/OmniClock
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/packages/apps/Settings
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/external/mksh
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/interfaces
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/libhardware
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/qcom/gps
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/qcom/media-caf-msm8974
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/qcom/audio-caf-msm8974
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/hardware/sony/macaddrsetup
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/frameworks/base
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/frameworks/av
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/packages/apps/Phonograph
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/vendor/sony
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/vendor/qcom/opensource/dataservices
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/device/qcom/sepolicy
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/system/sepolicy
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/bootable/recovery
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/z3
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/z3c
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/z2
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/shinano-common
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/msm8974-common
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/common-init
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/kernel/sony/msm8974
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout omnirom/${BRANCH}
-
-cd ~/device/sony/yoshino
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/device/sony/lilac
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/device/sony/common-treble
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/kernel/sony/msm8998
-echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
-git reset --hard
-git clean -fxd :/
-git checkout github/${BRANCH}
-
-cd ~/
 

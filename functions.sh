@@ -46,7 +46,7 @@ pick_custom () {
   if [[ ${V_PATH:-} ]]
   then
     COMMAND="${COMMAND} -P ${V_PATH}"
-    echo -e "${GREEN}----- Patching ${V_PATH}"
+    echo -e "${GREEN}----- Patching ${V_PATH}${NC}"
   fi
 
   if [[ ${V_URI:-} ]]
@@ -63,7 +63,7 @@ pick_custom () {
   then
     if [[ ${V_PSET:-} ]]
     then
-      COMMAND="${COMMAND} \"${V_PSET}\""
+      COMMAND="${COMMAND} ${V_PSET}"
     else
       echo -e "${YELLOW} Nothing to do, skipping${NC}"
       return 1
@@ -71,6 +71,7 @@ pick_custom () {
   fi
 
   echo $MYFOLDER/repopick.py ${COMMAND}
+  $($MYFOLDER/repopick.py ${COMMAND})
 
   # do not clean up V_URI
   V_QUERY=""

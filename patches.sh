@@ -1,5 +1,8 @@
 #!/bin/bash
 
+V_OLDHOME=$HOME
+HOME=$PWD
+
 export USER=jenkins
 export LANG=C
 export USE_NINJA=false
@@ -20,7 +23,7 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 
 echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
-V_PSET="27639,27640"
+V_PSET="27639 27640"
 pick_custom
 
 
@@ -91,3 +94,6 @@ echo -e ${GREEN}"-----coping nailyk CA"${NC}
 cp $MYFOLDER/df9b0574.0 ~/system/ca-certificates/files/df9b0574.0
 
 echo -e ${GREEN}"-----Patching done --------------"${NC}
+
+
+HOME=$V_OLDHOME

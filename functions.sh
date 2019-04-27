@@ -56,14 +56,14 @@ pick_custom () {
 
   if [[ ${V_EXCLUDE:-} ]]
   then
-    COMMAND="${COMMAND} --exclude ${V_EXCLUDE}"
+    COMMAND="${COMMAND} --exclude \"${V_EXCLUDE}\""
   fi
 
   if [[ ! ${COMMAND:-} ]]
   then
     if [[ ${V_PSET:-} ]]
     then
-      COMMAND="${COMMAND} ${V_PSET}"
+      COMMAND="${COMMAND} \"${V_PSET}\""
     else
       echo -e "${YELLOW} Nothing to do, skipping${NC}"
       return 1

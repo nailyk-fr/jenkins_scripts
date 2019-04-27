@@ -59,7 +59,7 @@ V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common
 V_PATH=device/sony/msm8974-common
-V_EXCLUDE="\"28083\""
+V_EXCLUDE="28083"
 pick_repo
 
 

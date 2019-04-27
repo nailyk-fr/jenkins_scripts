@@ -72,15 +72,19 @@ pick_custom () {
 
   echo $MYFOLDER/repopick.py ${COMMAND}
 
+  # do not clean up V_URI
   V_QUERY=""
-  V_QUERY=""
+  V_PATH=""
   V_EXCLUDE=""
   V_PSET=""
+  COMMAND=""
 
+  # do not clean up V_URI
   unset V_QUERY
   unset V_PATH
   unset V_EXCLUDE
   unset V_PSET
+  unset COMMAND
 
 }
 

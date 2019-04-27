@@ -9,8 +9,10 @@ BRANCH="android-9.0"
 
 source $MYFOLDER/colors.sh
 source $MYFOLDER/config.sh
+source $MYFOLDER/functions.sh
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
+
 
 cd ~/
 source ./build/envsetup.sh
@@ -52,64 +54,62 @@ cd ~/
 repopick 27639
 repopick 27640
 
-cd ~/device/sony/msm8974-common
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_msm8974-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/msm8974-common --exclude "28083,28163,29654,29655,29656,29657,29625,29624"
 
-cd ~/device/sony/shinano-common
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_shinano-common+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/shinano-common
+V_URI=https://gerrit.omnirom.org
 
-cd ~/device/sony/z3
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3
+V_REPO=android_device_sony_msm8974-common
+V_PATH=device/sony/msm8974-common
+V_EXCLUDE="\"28083\""
+pick_repo
 
-cd ~/device/sony/z3c
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z3c+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z3c
 
-cd ~/device/sony/z2
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_z2+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P device/sony/z2
+V_REPO=android_device_sony_shinano-common
+V_PATH=device/sony/shinano-common
+pick_repo
 
-cd ~/device/sony/yoshino
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_yoshino+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/yoshino
+V_REPO=android_device_sony_z3
+V_PATH=device/sony/z3
+pick_repo
 
-cd ~/device/sony/lilac
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_lilac+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/lilac
+V_REPO=android_device_sony_z3c
+V_PATH=device/sony/z3c
+pick_repo
 
-cd ~/device/sony/common-treble
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_sony_common-treble+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P device/sony/common-treble
+V_REPO=android_device_sony_z2
+V_PATH=device/sony/z2
+pick_repo
 
-echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
+V_REPO=android_kernel_sony_msm8974
+V_PATH=kernel/sony/msm8974
+pick_repo
 
-cd ~/kernel/sony/msm8974
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8974+branch:${BRANCH})"  -g https://gerrit.omnirom.org -P kernel/sony/msm8974
+########### custom gerrit
 
-cd ~/kernel/sony/msm8998
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_sony_msm8998+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P kernel/sony/msm8998
+V_URI=https://gerrit.nailyk.fr
+
+V_REPO=android_device_sony_yoshino
+V_PATH=device/sony/yoshino
+pick_repo
+
+V_REPO=android_device_sony_lilac
+V_PATH=device/sony/lilac
+pick_repo
+
+
+V_REPO=android_device_sony_common-treble
+V_PATH=device/sony/common-treble
+pick_repo
+
+V_REPO=android_kernel_sony_msm8998
+V_PATH=kernel/sony/msm8998
+pick_repo
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching vendors .o0o. .o0o..o0o..o0o."${NC}
 
-cd ~/vendor/sony
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:${BRANCH})"  -g https://gerrit.nailyk.fr -P vendor/sony
+V_REPO=omni_vendor_sony
+V_PATH=vendor/sony
+pick_repo
+
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 

@@ -18,48 +18,16 @@ cd ~/
 source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
-repopick 27693 # twrp: Cleanup flags
-repopick 27694 # twrp: Remove APP
-repopick 28631 # twrp: scrypt <machine/cpu-features.h>.
-repopick 27792 # twrp: ext4: force keymaster v1 (Probably useless as is for FBE)
-repopick 32479
-repopick 32480 # twrp: fix vndk for arm32
-repopick 32481
-repopick 32482
-repopick 32483
-repopick 32636 # twrp: fix dosfstools on arm32
-repopick 32647
-repopick 32648
-repopick 32714
 
-repopick 29290 # qcom/sepolicy m7 workaround
-repopick 29291 # display/8974 allow 8960
-repopick 29294 # msm8960: Allow liblight override
-repopick 32756 # display-8974: use libhwui instead of libskia
-
-repopick 32817 # twrp: remove unused variable
-repopick 32819 # twrp: Fix missing dependencie
-
-repopick -t extract_elf_ramdisk_LZMA 
-
-cd ~/build/make
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-# pick rsync recovery patch
-git fetch ssh://nailyk@gerrit.omnirom.org:29418/android_build refs/changes/95/29895/2 && git cherry-pick FETCH_HEAD
-cd ~/
-
-cd ~/packages/apps/OpenDelta
-echo -e ${YELLOW}"-----Patching $PWD"${NC}
-cd ~/
-repopick 27639
-repopick 27640
+echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
+V_PSET="27639,27640"
+pick_custom
 
 
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common
 V_PATH=device/sony/msm8974-common
-V_EXCLUDE="28083"
 pick_repo
 
 

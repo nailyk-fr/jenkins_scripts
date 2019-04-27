@@ -40,7 +40,7 @@ pick_custom () {
 
   if [[ ${V_QUERY:-} ]]
   then
-    COMMAND="${COMMAND} -Q ${V_QUERY}"
+    COMMAND="${COMMAND} -Q \"${V_QUERY}\""
   fi
 
   if [[ ${V_PATH:-} ]]
@@ -70,8 +70,7 @@ pick_custom () {
     fi
   fi
 
-  echo $MYFOLDER/repopick.py ${COMMAND}
-  $($MYFOLDER/repopick.py ${COMMAND})
+  bash -c "$MYFOLDER/repopick.py ${COMMAND}"
 
   # do not clean up V_URI
   V_QUERY=""
@@ -96,7 +95,7 @@ pick_repo () {
 		return 6
 	fi
 
-	V_QUERY="\"NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:${V_REPO}+branch:${BRANCH})\""
+	V_QUERY="NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:${V_REPO}+branch:${BRANCH})"
 	pick_custom
 
     V_REPO=""

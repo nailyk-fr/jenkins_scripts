@@ -29,6 +29,8 @@ pick_custom
 # pick twrp fixes
 repopick -t omni-fix
 
+# Fix for device/sample/apns.xml
+repopick 34004
 
 V_URI=https://gerrit.omnirom.org
 

@@ -26,6 +26,9 @@ echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
 V_PSET="27639 27640"
 pick_custom
 
+# pick twrp fixes
+repopick -t omni-fix
+
 
 V_URI=https://gerrit.omnirom.org
 

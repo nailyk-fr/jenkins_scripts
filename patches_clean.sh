@@ -27,7 +27,7 @@ cleanup_wrapper () {
 }
 
 
-for a_repo in system/core build/soong build/make vendor/omni system/vold packages/apps/OpenDelta packages/apps/Messaging packages/apps/Dialer packages/apps/OmniClock packages/apps/Settings external/mksh hardware/interfaces hardware/libhardware hardware/qcom/gps hardware/qcom/media-caf-msm8974 hardware/qcom/audio-caf-msm8974 hardware/sony/macaddrsetup frameworks/base bootable/recovery frameworks/av system/sepolicy device/sony/shinano-common device/sony/msm8974-common device/sony/common-init kernel/sony/msm8974 device/qcom/sepolicy packages/apps/Phonograph device/sony/z3 device/sony/z3c device/sony/z2
+for a_repo in bionic system/core build/soong build/make vendor/omni system/vold packages/apps/OpenDelta packages/apps/Messaging packages/apps/Dialer packages/apps/OmniClock packages/apps/Settings external/mksh hardware/interfaces hardware/libhardware hardware/qcom/gps hardware/qcom/media-caf-msm8974 hardware/qcom/audio-caf-msm8974 hardware/sony/macaddrsetup frameworks/base bootable/recovery frameworks/av system/sepolicy device/sony/shinano-common device/sony/msm8974-common device/sony/common-init kernel/sony/msm8974 device/qcom/sepolicy packages/apps/Phonograph device/sony/z3 device/sony/z3c device/sony/z2
 do 
   cleanup_wrapper ${a_repo} omnirom/${BRANCH}
 done

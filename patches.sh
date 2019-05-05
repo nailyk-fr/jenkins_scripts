@@ -32,6 +32,9 @@ repopick -t omni-fix
 # Fix for device/sample/apns.xml
 repopick 34004
 
+# libstdc++ avaiable for vendor
+repopick 33998
+
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common

@@ -22,7 +22,7 @@ cleanup_repo () {
       return 2
   fi
 
-  echo -e "${GREEN}----- Cleaning ${V_PATH} from ${V_REPO}"
+  echo -e "${GREEN}----- Cleaning ${V_PATH} from ${V_REPO}${NC}"
 
 
   a_oldpath=$PWD

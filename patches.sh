@@ -35,6 +35,9 @@ repopick 34004
 # libstdc++ avaiable for vendor
 repopick 33998
 
+# Fix for audio-caf-8998 A2DP
+repopick 33985
+
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common

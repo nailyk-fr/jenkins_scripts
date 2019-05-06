@@ -104,7 +104,12 @@ cd ~/
 echo -e ${GREEN}"-----coping nailyk CA"${NC}
 cp $MYFOLDER/df9b0574.0 ~/system/ca-certificates/files/df9b0574.0
 
-echo -e ${GREEN}"-----Patching done --------------"${NC}
 
+echo -e ${RED}".o0o. .o0o..o0o..o0o. make build unsecure .o0o. .o0o..o0o..o0o."${NC}
+sed -i 's/ro.adb.secure=./ro.adb.secure=0/g' vendor/omni/config/common.mk 
+sed -i 's/ro.adb.secure=./ro.adb.secure=0/g' build/core/main.mk 
+sed -i 's/ro.secure=./ro.secure=0/g' build/core/main.mk 
+
+echo -e ${GREEN}"-----Patching done --------------"${NC}
 
 HOME=$V_OLDHOME

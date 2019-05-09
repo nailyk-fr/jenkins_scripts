@@ -23,17 +23,8 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 
 echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
-V_PSET="27639 27640"
-pick_custom
-
 # pick twrp fixes
 repopick -t omni-fix
-
-# Fix for device/sample/apns.xml
-repopick 34004
-
-# libstdc++ avaiable for vendor
-repopick 33998
 
 # Fix for audio-caf-8998 A2DP
 repopick 33985

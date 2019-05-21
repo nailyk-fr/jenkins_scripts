@@ -32,6 +32,9 @@ repopick 33985
 # fmradio.v4l2: Fix unused variable
 repopick 34084
 
+# fm: Silent warnings
+repopick 34085
+
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common

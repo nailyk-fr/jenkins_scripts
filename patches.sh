@@ -29,6 +29,9 @@ repopick -t omni-fix
 # Fix for audio-caf-8998 A2DP
 repopick 33985
 
+# fmradio.v4l2: Fix unused variable
+repopick 34084
+
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common

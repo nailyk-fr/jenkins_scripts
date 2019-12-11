@@ -35,6 +35,9 @@ repopick 34084
 # fm: Silent warnings
 repopick 34085
 
+# fix libskia.so
+repopick 32756
+
 V_URI=https://gerrit.omnirom.org
 
 V_REPO=android_device_sony_msm8974-common

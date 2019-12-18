@@ -109,6 +109,16 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_oneplus_oneplus5t+branch:android-8.1)" --exclude "28861"
 
+cd ~/device/samsung/j5y17lte
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/samsung/j5y17lte -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_j5y17lte+branch:android-8.1)"
+
+cd ~/device/samsung/exynos7870-common
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/samsung/exynos7870-common -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_exynos7870-common+branch:android-8.1)"
+
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/kernel/htc/msm8960
@@ -126,6 +136,11 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
 
+cd ~/kernel/samsung/j5y17lte
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_j5y17lte+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/j5y17lte
+
 #cd ~/kernel/sony/msm
 #echo -e ${YELLOW}"-----Patching $PWD"${NC}
 #cd ~/
@@ -137,6 +152,11 @@ cd ~/vendor/sony
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:omni_vendor_sony+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/sony
+
+cd ~/vendor/samsung
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_vendor_samsung+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/samsung
 
 cd ~/vendor/htc
 echo -e ${YELLOW}"-----Patching $PWD"${NC}

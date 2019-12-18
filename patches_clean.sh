@@ -40,6 +40,12 @@ git reset --hard
 git clean -fxd :/
 git checkout github/android-8.1
 
+cd ~/vendor/samsung
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout github/android-8.1
+
 cd ~/system/vold
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 git reset --hard
@@ -203,6 +209,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/device/samsung/j5y17lte
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
 cd ~/device/htc/m7-common
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -245,6 +257,12 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/device/samsung/exynos7870-common
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
 cd ~/kernel/sony/msm
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
@@ -258,6 +276,12 @@ git clean -fxd :/
 git checkout github/android-8.1
 
 cd ~/kernel/oneplus/msm8998
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/kernel/samsung/j5y17lte
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard
 git clean -fxd :/

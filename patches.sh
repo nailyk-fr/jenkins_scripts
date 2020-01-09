@@ -112,12 +112,12 @@ $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/oneplus/oneplus5t 
 cd ~/device/samsung/j5y17lte
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/samsung/j5y17lte -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_j5y17lte+branch:android-8.1)"
+$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P device/samsung/j5y17lte -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_j5y17lte+branch:android-8.1)"
 
 cd ~/device/samsung/exynos7870-common
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P device/samsung/exynos7870-common -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_exynos7870-common+branch:android-8.1)"
+$MYFOLDER/repopick.py -g https://gerrit.nailyk.fr -P device/samsung/exynos7870-common -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_device_samsung_exynos7870-common+branch:android-8.1)"
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching kernels .o0o. .o0o..o0o..o0o."${NC}
 

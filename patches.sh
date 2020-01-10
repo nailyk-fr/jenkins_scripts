@@ -139,7 +139,7 @@ $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -
 cd ~/kernel/samsung/exynos7870
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_exynos7870+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/exynos7870
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_exynos7870+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P kernel/samsung/exynos7870
 
 #cd ~/kernel/sony/msm
 #echo -e ${YELLOW}"-----Patching $PWD"${NC}

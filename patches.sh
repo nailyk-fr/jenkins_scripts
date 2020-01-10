@@ -136,10 +136,10 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -g https://gerrit.omnirom.org -P kernel/oneplus/msm8998  -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_oneplus_msm8998+branch:android-8.1)" 
 
-cd ~/kernel/samsung/j5y17lte
+cd ~/kernel/samsung/exynos7870
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
-$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_j5y17lte+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/j5y17lte
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_kernel_samsung_exynos7870+branch:android-8.1)"  -g https://gerrit.omnirom.org -P kernel/samsung/exynos7870
 
 #cd ~/kernel/sony/msm
 #echo -e ${YELLOW}"-----Patching $PWD"${NC}

@@ -25,6 +25,8 @@ repopick 29294 # msm8960: Allow liblight override
 
 repopick 32808 # Fix download provider missing SqlSelection type
 
+repopick 29805 -f # Add new power hints # TODO: Need to be done proparly instead of picking this
+
 repopick -t legacy-cam-8.1 # fmwk/av
 
 repopick -t extract_elf_ramdisk_LZMA 

@@ -125,6 +125,30 @@ git reset --hard
 git clean -fxd :/
 git checkout omnirom/android-8.1
 
+cd ~/hardware/samsung_slsi-cm/exynos
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/hardware/samsung_slsi-cm/exynos5
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/hardware/samsung_slsi-cm/exynos7870
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
+cd ~/hardware/samsung_slsi-cm/openmax
+echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
+git reset --hard
+git clean -fxd :/
+git checkout omnirom/android-8.1
+
 cd ~/frameworks/base
 echo -e ${YELLOW}"-----Cleaning $PWD"${NC}
 git reset --hard

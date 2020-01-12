@@ -107,6 +107,28 @@ echo -e ${YELLOW}"-----Patching $PWD"${NC}
 cd ~/
 $MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_vendor_samsung+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P vendor/samsung
 
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching hardware .o0o. .o0o..o0o..o0o."${NC}
+
+cd ~/hardware/samsung_slsi-cm/exynos
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos
+
+cd ~/hardware/samsung_slsi-cm/exynos5
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos5+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos5
+
+cd ~/hardware/samsung_slsi-cm/exynos7870
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_exynos7870+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/exynos7870
+
+cd ~/hardware/samsung_slsi-cm/openmax
+echo -e ${YELLOW}"-----Patching $PWD"${NC}
+cd ~/
+$MYFOLDER/repopick.py -Q "NOT+label:Code-Review=-2+AND+NOT+label:Verified=-1+(status:open+project:android_hardware_samsung_slsi-cm_openmax+branch:android-8.1)"  -g https://gerrit.nailyk.fr -P hardware/samsung_slsi-cm/openmax
+
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/vendor/omni

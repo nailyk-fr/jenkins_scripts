@@ -136,7 +136,7 @@ if [ ! -d "$HOME/apps/Tusky/.git" ]; then
   echo ${RED}".o0o. .o0o..o0o..o0o. $HOME/apps/Tusky/.git do not exist! .o0o. .o0o..o0o..o0o. "${NC}
   echo ${RED}".o0o. .o0o..o0o..o0o. Cloning! .o0o. .o0o..o0o..o0o. "${NC}
   cd ~/apps
-  git clone https://github.com/tuskyapp/Tusky -b master Tusky
+  git clone https://github.com/tuskyapp/Tusky -b develop Tusky
   cd ~/apps/Tusky/
 else 
   cd ~/apps/Tusky/

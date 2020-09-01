@@ -58,7 +58,7 @@ cp -v app/build/outputs/apk/green/release/app-green-release.apk ~/fdroiddata/rep
 echo ${GREEN}"--------------------- release "${NC}
 
 cd ~/fdroidserver
-export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
 cd ~/fdroidserver/
 pyvenv fdroidserver-env
 . env/bin/activate

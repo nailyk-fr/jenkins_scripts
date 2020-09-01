@@ -13,7 +13,7 @@ export ANDROID_HOME=/var/jenkins_home/SDK
 export GRADLE_USER_HOME=$HOME
 export NDK_PROJECT_PATH=/var/jenkins_home/NDK/android-ndk-r13b
 
-export LANG=C
+export LANG=C.UTF-8
 unset _JAVA_OPTIONS
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
@@ -58,13 +58,11 @@ cp -v app/build/outputs/apk/green/release/app-green-release.apk ~/fdroiddata/rep
 echo ${GREEN}"--------------------- release "${NC}
 
 cd ~/fdroidserver
- . env/bin/activate
-echo dans env:
-pip3 install --upgrade pyparsing
-pip3 install --upgrade appdirs
-pip3 install --upgrade backports.ssl_match_hostname
-pip3 install --upgrade  cryptography
-pip3 install -e .
+export LANG=C.UTF-8
+cd ~/fdroidserver/
+pyvenv fdroidserver-env
+. env/bin/activate
+pip3 install fdroidserver
 cd ~/fdroiddata/
 fdroid update -v
 

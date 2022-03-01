@@ -143,8 +143,8 @@ else
   echo ${GREEN}".o0o. .o0o..o0o..o0o. Patching $PWD .o0o. .o0o..o0o..o0o."${NC}
   git reset --hard
   git clean -fxd :/
-  git fetch origin master
-  git checkout origin/master
+  git fetch origin develop
+  git checkout origin/develop
 fi
 
 wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties

@@ -50,6 +50,11 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching for MicroG .o0o. .o0o..o0o..o0o.
 cd ~/frameworks/base
 wget -O- -q "https://github.com/lineageos4microg/docker-lineage-cicd/raw/master/src/signature_spoofing_patches/android_frameworks_base-S.patch" | patch -p1
 
+echo -e ${GREEN}".o0o. .o0o..o0o..o0o. f-droid .o0o. .o0o..o0o..o0o."${NC}
+cd ~/vendor/fdroid
+gpg --keyserver pgp.mit.edu --recv-keys 7A029E54DD5DCE7A
+./get_packages.sh
+
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 
 cd ~/vendor/lineage

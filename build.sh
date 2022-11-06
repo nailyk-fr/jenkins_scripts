@@ -12,6 +12,7 @@ cd ~/
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 export ROM_KEYS_PATH=.android-certs/
+export WITH_FDROID=true
 
 ./prebuilts/sdk/tools/jack-admin kill-server || true
 

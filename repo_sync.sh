@@ -1,4 +1,4 @@
-BUILD_VER="android-9.0"
+BUILD_VER="lineage-19.1"
 LOCAL_BRANCH="${BUILD_VER}"
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. syncing repos .o0o. .o0o..o0o..o0o."${NC}

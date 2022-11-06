@@ -9,7 +9,7 @@ MYFOLDER="$(dirname "$(realpath "$0")")"
 source $MYFOLDER/colors.sh
 source $MYFOLDER/functions.sh
 
-BRANCH=android-9.0
+BRANCH=lineage-19.1
 
 echo -e ${GREEN}"---------home set to: $HOME"${NC}
 

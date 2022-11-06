@@ -54,7 +54,8 @@ sed -i 's,UNOFFICIAL,'${PICKOFFICIAL}',g' config/common.mk
 
 cd ~/
 echo -e ${GREEN}"-----coping nailyk CA"${NC}
-cp $MYFOLDER/df9b0574.0 ~/system/ca-certificates/files/df9b0574.0
+# openssl x509 -in nailyk.crt -noout -subject_hash_old
+cp $MYFOLDER/7d587ea3.0 ~/system/ca-certificates/files/7d587ea3.0
 
 if [[ ${UNSECURE:-} ]]
 then

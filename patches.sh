@@ -52,8 +52,11 @@ wget -O- -q "https://github.com/lineageos4microg/docker-lineage-cicd/raw/master/
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. f-droid .o0o. .o0o..o0o..o0o."${NC}
 cd ~/vendor/fdroid
-gpg --keyserver pgp.mit.edu --recv-keys 7A029E54DD5DCE7A
-./get_packages.sh
+if [[ ! -f proprietary/app/org.fdroid.fdroid_1015053.apk ]]; then
+  git reset --hard
+  sed -i 's,1000013,1015053,g' repo/fdroid.txt
+  ./get_packages.sh
+fi
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..o0o."${NC}
 

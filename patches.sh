@@ -64,7 +64,7 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching customizations .o0o. .o0o..o0o..
 
 cd ~/vendor/lineage
 echo -e ${YELLOW}"-----Patching $PWD"${NC}
-sed -i 's,UNOFFICIAL,'${PICKOFFICIAL}',g' config/common.mk
+sed -i 's,UNOFFICIAL,'${PICKOFFICIAL}',g' config/version.mk
 
 cd ~/
 echo -e ${GREEN}"-----coping nailyk CA"${NC}

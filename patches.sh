@@ -49,6 +49,8 @@ echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching for MicroG .o0o. .o0o..o0o..o0o.
 # Documentation : https://github.com/microg/GmsCore/wiki/Signature-Spoofing
 cd ~/frameworks/base
 wget -O- -q "https://github.com/lineageos4microg/docker-lineage-cicd/raw/master/src/signature_spoofing_patches/android_frameworks_base-S.patch" | patch -p1 --batch --forward
+echo "Removing backup files created by patch: "
+find . -type f -name "*.orig" -delete -print
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. f-droid .o0o. .o0o..o0o..o0o."${NC}
 cd ~/vendor/fdroid

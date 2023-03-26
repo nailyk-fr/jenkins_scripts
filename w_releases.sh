@@ -10,8 +10,8 @@ export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
 cd ~/fdroidserver/
-pyvenv fdroidserver-env
-. env/bin/activate
+python -m venv fdroidserver-env
+. fdroidserver-env/bin/activate
 pip3 install fdroidserver
 cd ~/fdroiddata/
 fdroid update -v

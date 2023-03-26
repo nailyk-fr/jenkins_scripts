@@ -53,7 +53,7 @@ APP_BUILD_SCRIPT=$PWD/app/src/main/jni/Android.mk \
 ./gradlew assembleRelease
 ./gradlew --stop || true
 killall aapt || true
-cp -v app/build/outputs/apk/green/release/app-green-release.apk ~/fdroiddata/repo/Tusky-debug.apk
+cp -v app/build/outputs/apk/green/release/Tusky_*_green_release.apk ~/fdroiddata/repo/Tusky-debug.apk
 
 
 

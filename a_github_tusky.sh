@@ -45,7 +45,8 @@ android {
 
 echo ${GREEN}"--------------------- building "${NC}
 
-rm -rf app/build || true
+echo "---- cleaning"
+rm -rf build app/build .gradle || true
 
 APP_PROJECT_PATH=$PWD/app/src/main \
 NDK_PROJECT_PATH=$PWD/app/src/main \

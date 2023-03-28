@@ -23,7 +23,6 @@ else
   git checkout origin/master
 fi
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo ${YELLOW}"cat returned $? "${NC}
 echo "
@@ -59,7 +58,6 @@ else
   git checkout origin/master
 fi
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo ${YELLOW}"cat returned $? "${NC}
 echo "
@@ -147,7 +145,6 @@ else
   git checkout origin/develop
 fi
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo ${YELLOW}"cat returned $? "${NC}
 echo "
@@ -183,7 +180,6 @@ else
   git checkout origin/master
 fi
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo ${YELLOW}"cat returned $? "${NC}
 echo "
@@ -220,7 +216,6 @@ else
   git checkout origin/master
 fi
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo "
 android {
@@ -256,7 +251,6 @@ else
 fi
 
 cat "/var/jenkins_home/workspace/F-Droid/.signing-vlc" >> gradle.properties
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 
 cd ~/apps/vlc-android/vlc
 git reset --hard

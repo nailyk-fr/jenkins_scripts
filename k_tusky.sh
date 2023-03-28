@@ -11,6 +11,9 @@ export ANDROID_JACK_VM_ARGS="$JACK_SERVER_VM_ARGUMENTS"
 
 cd ~/apps/Tusky/
 
+echo "---- cleaning"
+rm -rf build app/build .gradle
+
 APP_PROJECT_PATH=$PWD/app/src/main \
 NDK_PROJECT_PATH=$PWD/app/src/main \
 APP_BUILD_SCRIPT=$PWD/app/src/main/jni/Android.mk \

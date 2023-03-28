@@ -24,7 +24,6 @@ echo ${GREEN}"--------------------- patching sources "${NC}
 # Inside the auto triggered script. So workspace is the root folder of the git clone
 cd ${WORKSPACE}
 
-wget "https://raw.githubusercontent.com/nailyk-fr/jenkins_scripts/nougat-mr1.1-release/patches/AndroidVTS.properties" -O local.properties
 cat "/var/jenkins_home/workspace/F-Droid/.signing" >> app/gradle.properties
 echo "
 android {

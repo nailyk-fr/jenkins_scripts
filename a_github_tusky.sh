@@ -1,6 +1,8 @@
 export HOME=/var/jenkins_home/workspace/F-Droid/
 echo "--------- home set"
 
+set -e
+
 echo ${GREEN}"--------------------- preparing env "${NC}
 
 MYFOLDER="$(dirname "$(realpath "$0")")"

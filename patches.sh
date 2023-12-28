@@ -22,28 +22,6 @@ source ./build/envsetup.sh
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching toolchain .o0o. .o0o..o0o..o0o."${NC}
 echo -e ${YELLOW}"-----Picking system wide commits"${NC}
 
-echo -e ${YELLOW}"-----Patching OpenDelta"${NC}
-V_URI=https://review.lineageos.org
-
-V_REPO=android_device_sony_voyager
-V_PATH=device/sony/voyager
-pick_repo
-
-V_REPO=android_device_sony_bahamut
-V_PATH=device/sony/bahamut
-pick_repo
-
-########### custom gerrit
-
-V_URI=https://gerrit.nailyk.fr
-
-V_REPO=android_device_sony_voyager
-V_PATH=device/sony/voyager
-pick_repo
-
-V_REPO=android_device_sony_bahamut
-V_PATH=device/sony/bahamut
-pick_repo
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. Patching for MicroG .o0o. .o0o..o0o..o0o."${NC}
 # Documentation : https://github.com/microg/GmsCore/wiki/Signature-Spoofing
@@ -51,6 +29,12 @@ cd ~/frameworks/base
 wget -O- -q "https://github.com/lineageos4microg/docker-lineage-cicd/raw/master/src/signature_spoofing_patches/android_frameworks_base-S.patch" | patch -p1 --batch --forward
 echo "Removing backup files created by patch: "
 find . -type f -name "*.orig" -delete -print
+
+cd ~/packages/modules/Permissions
+wget -O- -q "https://raw.githubusercontent.com/lineageos4microg/docker-lineage-cicd/master/src/signature_spoofing_patches/packages_modules_Permission-Android13.patch" | patch -p1 --batch --forward
+echo "Removing backup files created by patch: "
+find . -type f -name "*.orig" -delete -print
+
 
 echo -e ${GREEN}".o0o. .o0o..o0o..o0o. f-droid .o0o. .o0o..o0o..o0o."${NC}
 cd ~/vendor/fdroid

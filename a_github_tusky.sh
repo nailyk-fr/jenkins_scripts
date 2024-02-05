@@ -66,7 +66,7 @@ export LC_ALL=C.UTF-8
 cd ~/fdroidserver/
 python -m venv fdroidserver-env
 . fdroidserver-env/bin/activate
-pip3 install fdroidserver
+pip install git+https://gitlab.com/fdroid/fdroidserver.git
 cd ~/fdroiddata/
 fdroid update -v
 

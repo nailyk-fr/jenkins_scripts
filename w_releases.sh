@@ -11,7 +11,7 @@ export PATH=/var/jenkins_home/workspace/F-Droid/fdroidserver:$PATH
 export USER=jenkins
 export ANDROID_HOME=/var/jenkins_home/SDK
 export GRADLE_USER_HOME=$HOME
-export NDK_PROJECT_PATH=/var/jenkins_home/NDK/android-ndk-r13b
+export NDK_PROJECT_PATH=/var/jenkins_home/NDK/current
 
 export LANG=C.UTF-8
 unset _JAVA_OPTIONS

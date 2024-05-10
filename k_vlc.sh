@@ -1,6 +1,6 @@
 export ANDROID_HOME=/var/jenkins_home/SDK
 export GRADLE_USER_HOME=$HOME
-export NDK_PROJECT_PATH=/var/jenkins_home/NDK/android-ndk-r18b
+export NDK_PROJECT_PATH=/var/jenkins_home/NDK/current
 
 export LANG=C
 unset _JAVA_OPTIONS

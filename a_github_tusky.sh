@@ -26,6 +26,10 @@ echo ${GREEN}"--------------------- patching sources "${NC}
 # Inside the auto triggered script. So workspace is the root folder of the git clone
 cd ${WORKSPACE}
 
+## configure git to allow cherry-pick
+git config --global user.email "jenkins_git@nailyk.fr"
+git config --global user.name "nailyk"
+
 # cherry pick commit to change version number
 git cherry-pick 230f8f3917e4e6fe9f376293c4727bfbea7cf1a4
 

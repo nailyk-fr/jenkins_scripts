@@ -1,5 +1,28 @@
 #!/bin/bash
 
+###### All the bad Jenkins hack I made
+export HOME=/var/jenkins_home/workspace/F-Droid/
+echo "--------- home set"
+
+set -e
+
+echo ${GREEN}"--------------------- preparing env "${NC}
+
+MYFOLDER="$(dirname "$(realpath "$0")")"
+. $MYFOLDER/colors.sh
+. $MYFOLDER/env.sh
+
+export PATH=/var/jenkins_home/workspace/F-Droid/fdroidserver:$PATH
+
+echo ${GREEN}"--------------------- patching sources "${NC}
+
+# Inside the auto triggered script. So workspace is the root folder of the git clone
+cd ${WORKSPACE}
+
+##### End of - All the bad Jenkins hack I made
+
+
+
 
 T_SIGNAL_LATEST_JSON=$(curl -s https://api.github.com/repos/signalapp/Signal-Android/releases/latest)
 

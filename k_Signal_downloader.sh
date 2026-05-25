@@ -19,7 +19,7 @@ echo ${GREEN}"--------------------- Downloading "${NC}
 # Inside the auto triggered script. So workspace is the root folder of the git clone
 cd ${WORKSPACE}
 
-G_FDROID_FOLDER="~/fdroiddata/repo"
+G_FDROID_FOLDER="${HOME}/fdroiddata/repo"
 
 ##### End of - All the bad Jenkins hack I made
 
